@@ -15,7 +15,7 @@ Feel free to join the [Banshee-44 Mods Bot Discord](https://discord.gg/Pv3xrPV) 
 - [ ] - Passing CI pipeline
 
 ## Background
-![who-is-banshee](./media//media//media/banshee-44-stock.jpg)
+![who-is-banshee](./media/banshee-44-stock.jpg)
 Banshee-44 is the gunsmith in the popular [Destiny video game](https://www.destinythegame.com/).
 Banshee-44 sells mods for armor and weapons on a daily rotating schedule. This project is a Node JS
 Twitter bot that tweets Destiny 2's Banshee-44 daily mods available for sale.
