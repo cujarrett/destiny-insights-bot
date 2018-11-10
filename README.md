@@ -1,4 +1,4 @@
-![logo](./media/github-readme-banner.png)
+![logo](./media/github-readme-banner.jpg)
 
 ## What's it do?
 It's a Node JS Twitter bot that tweets Destiny 2's Banshee-44 daily mods available for sale. Check
