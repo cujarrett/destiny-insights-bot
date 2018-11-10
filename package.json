@@ -1,0 +1,22 @@
+{
+  "name": "banshee-44-mods-bot",
+  "version": "0.1.0",
+  "author": "Matt Jarrett",
+  "license": "MIT",
+  "description": "Node JS Twitter bot that tweets Destiny 2's Banshee-44 daily mods available for sale",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cujarrett/banshee-44-mods-bot.git"
+  },
+  "keywords": [
+    "Destiny"
+  ],
+  "bugs": {
+    "url": "https://github.com/cujarrett/banshee-44-mods-bot/issues"
+  },
+  "homepage": "https://github.com/cujarrett/banshee-44-mods-bot#readme"
+}
