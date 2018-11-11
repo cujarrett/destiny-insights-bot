@@ -6,6 +6,7 @@
   "description": "Node JS Twitter bot that tweets Destiny 2's Banshee-44 daily mods available for sale",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "nyc --reporter=lcov tape test/**/*.js | tap-spec && nyc report",
     "lint": "eslint .",
     "fix-lint": "eslint . --fix",
