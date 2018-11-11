@@ -34,7 +34,13 @@ const tweetBot = async () => {
       const minutesToRefresh = [5, 20, 35, 50]
       const currentMinutes = moment().format("mm")
       if (minutesToRefresh.includes(currentMinutes)) {
+        // Allow server side logging
+        // eslint-disable-next-line no-console
+        console.log(`${timestamp} - Hitting banshee-44-mods-bot to check it's pulse`)
         await fetch("http://banshee-44-mods-bot.herokuapp.com")
+        // Allow server side logging
+        // eslint-disable-next-line no-console
+        console.log(`${timestamp} - banshee-44-mods-bot is verified running`)
       }
 
       // Allow server side logging
