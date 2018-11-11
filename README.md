@@ -12,6 +12,9 @@ Feel free to join the [Banshee-44 Mods Bot Discord](https://discord.gg/Pv3xrPV) 
 ## Want to Contribute?
 [Check out the contributing guide](CONTRIBUTING.md)
 
+## Thank You!
+- Big thanks to [Tom Chapman](https://github.com/justrealmilk) for his help with the Bungie API.
+
 ## Changelog
 [banshee-44-mods-bot changelog](CHANGELOG.md)
 
