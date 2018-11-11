@@ -22,7 +22,7 @@ const tweetBot = async () => {
       const currentTime = moment().format("hh:mm a")
       const timestamp = moment().format("YYYY-DD-MM, hh:mm:ss a")
 
-      if (currentTime === "11:01 am") {
+      if (currentTime === "11:01 am" || currentTime === "03:01 pm") {
         const { mods } = await braytech.getModsForSale()
         const [firstMod, secondMod] = mods
         // Allow tweet to be longer than 100 characters
