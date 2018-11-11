@@ -6,7 +6,14 @@
   "description": "Node JS Twitter bot that tweets Destiny 2's Banshee-44 daily mods available for sale",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "nyc --reporter=lcov tape test/**/*.js | tap-spec && nyc report",
+    "lint": "eslint .",
+    "fix-lint": "eslint . --fix",
+    "ci": "npm run lint && npm run test"
+  },
+  "engines": {
+    "node": ">10.13.0",
+    "npm": ">6.4.1"
   },
   "repository": {
     "type": "git",
@@ -18,5 +25,16 @@
   "bugs": {
     "url": "https://github.com/cujarrett/banshee-44-mods-bot/issues"
   },
-  "homepage": "https://github.com/cujarrett/banshee-44-mods-bot#readme"
+  "homepage": "https://github.com/cujarrett/banshee-44-mods-bot#readme",
+  "devDependencies": {
+    "eslint": "~5.9.0",
+    "nyc": "~13.1.0",
+    "tap-spec": "~5.0.0",
+    "tape-async": "~2.3.0"
+  },
+  "dependencies": {
+    "nconf": "~0.10.0",
+    "node-fetch": "~2.2.1",
+    "statman-stopwatch": "~2.7.0"
+  }
 }
