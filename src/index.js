@@ -27,7 +27,7 @@ const twitterBotConfig = {
 }
 /* eslint-disable camelcase*/
 
-const main = async () => {
+const tweetBot = async () => {
   momentTimezone.tz.setDefault("America/Chicago")
 
   try {
@@ -62,10 +62,6 @@ const main = async () => {
   }
 }
 
-try {
-  main()
-} catch (error) {
-  // Allow app to log errors
-  // eslint-disable-next-line no-console
-  console.log(error)
-}
+
+tweetBot()
+
