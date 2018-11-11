@@ -33,7 +33,7 @@ const main = async () => {
       const twitter = new Twit(twitterBotConfig)
       // Allow tweet to be longer than 100 characters
       // eslint-disable-next-line max-len
-      const tweet = `Banshee-44 is selling ${firstMod} and ${secondMod} today. #Destiny2 #TwitterBot`
+      const tweet = `${timestamp} Banshee-44 is selling ${firstMod} and ${secondMod} today. #Destiny2 #TwitterBot`
 
       twitter.post("statuses/update", { status: tweet })
       // Allow server side logging
