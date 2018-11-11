@@ -21,7 +21,7 @@ const main = async () => {
   process.env.PORT || 3000
   momentTimezone.tz.setDefault("America/Chicago")
 
-  setInterval(async () => {
+  // setInterval(async () => {
     const currentTime = moment().format("hh:mm a")
     const timestamp = moment().format("YYYY-DD-MM, hh:mm:ss a")
 
