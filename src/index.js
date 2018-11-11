@@ -33,7 +33,7 @@ const tweetBot = async () => {
 
       const minutesToRefresh = [5, 20, 35, 50]
       const currentMinutes = moment().format("mm")
-      if (minutesToRefresh.contains(currentMinutes)) {
+      if (minutesToRefresh.includes(currentMinutes)) {
         await fetch("http://banshee-44-mods-bot.herokuapp.com")
       }
 
