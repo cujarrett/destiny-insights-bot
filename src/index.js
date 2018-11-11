@@ -10,6 +10,8 @@ const port = process.env.PORT || 3000
 const app = express()
 
 app.listen(port, () => {
+  // Allow server side logging
+  // eslint-disable-next-line no-console
   console.log(`Server started on port ${port}`)
 })
 
@@ -33,7 +35,7 @@ const main = async () => {
       const currentTime = moment().format("hh:mm a")
       const timestamp = moment().format("YYYY-DD-MM, hh:mm:ss a")
 
-      // if (currentTime === "11:01 am") {
+      if (currentTime === "11:01 am") {
         const { mods } = await braytech.getModsForSale()
         const firstMod = mods[0]
         const secondMod = mods[1]
@@ -47,13 +49,16 @@ const main = async () => {
         // Allow server side logging
         // eslint-disable-next-line no-console
         console.log(`${timestamp} - Tweeted: ${tweet}`)
-    //   }
-    //   // Allow server side logging
-    //   // eslint-disable-next-line no-console
-    //   console.log(`${timestamp} - Not time to tweet yet`)
+      }
+      // Allow server side logging
+      // eslint-disable-next-line no-console
+      console.log(`${timestamp} - Not time to tweet yet`)
     }, 60 * 1000)
   } catch (error) {
-    console.log(error)
+    const timestamp = moment().format("YYYY-DD-MM, hh:mm:ss a")
+    // Allow server side logging
+    // eslint-disable-next-line no-console
+    console.log(`${timestamp} - ${error}`)
   }
 }
 
