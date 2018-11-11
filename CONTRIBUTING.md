@@ -33,6 +33,18 @@ software listed in Setup.
 ## Code Setup
 Clone this project with Git to your prefered location.
 
+## Configuration
+For local development and testing, create a `.banshee-44-mods-bot.ini` file your root folder.
+You'll need to Twitter API settings, you can get them [here](https://apps.twitter.com/app/new).
+
+Example:
+```ini
+twitterConsumerApiKey = "<twitterConsumerApiKey here>"
+twitterConsumerSecret = "<twitterConsumerSecret here>"
+twitterAccessToken = "<twitterAccessToken here>"
+twitterAccessTokenSecret = "<twitterAccessTokenSecret here>"
+```
+
 #### Cloning & Dependency Installations
 ```sh
 git clone https://github.com/cujarrett/banshee-44-mods-bot.git
