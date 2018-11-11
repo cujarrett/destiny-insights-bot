@@ -39,7 +39,7 @@ const main = async () => {
       // Allow server side logging
       // eslint-disable-next-line no-console
       console.log(`${timestamp} - Tweeted: ${tweet}`)
-    }
+    // }
     // Allow server side logging
     // eslint-disable-next-line no-console
     // console.log(`${timestamp} - Not time to tweet yet`)
