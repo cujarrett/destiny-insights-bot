@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [v1.2.0] - 2018-11-12
+### Added
+- App pulse to app to ensure it's up
+
 ## [v1.1.0] - 2018-11-11
 ### Added
 - More info on server side logs
@@ -16,6 +20,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Integration with Twitter to post tweets
 - Continuous Integration pipeline config
 
-[Unreleased]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.0.0...master
+[Unreleased]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.2.0...master
+[v1.2.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/cujarrett/banshee-44-mods-bot/releases/tag/v1.0.0
