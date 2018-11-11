@@ -18,7 +18,7 @@ const twitterBotConfig = {
 /* eslint-disable camelcase*/
 
 const main = async () => {
-  process.env.PORT || 5000
+  process.env.PORT || 3000
   momentTimezone.tz.setDefault("America/Chicago")
 
   setInterval(async () => {
