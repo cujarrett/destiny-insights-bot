@@ -22,7 +22,7 @@ const tweetBot = async () => {
       const currentTime = moment().format("hh:mm a")
       const timestamp = moment().format("YYYY-DD-MM, hh:mm:ss a")
 
-      if (currentTime === "11:01 am" || currentTime === "03:21 pm") {
+      if (currentTime === "11:01 am") {
         const { mods } = await braytech.getModsForSale()
         const [firstMod, secondMod] = mods
         // Allow tweet to be longer than 100 characters
@@ -31,10 +31,9 @@ const tweetBot = async () => {
         twitter.post(message)
       }
 
-      const minutesToRefresh = ["00", "15", "30", "45", "19"]
+      const minutesToRefresh = ["00", "15", "30", "45"]
       const currentMinutes = moment().format("mm")
 
-      console.log(minutesToRefresh.includes(currentMinutes))
       if (minutesToRefresh.includes(currentMinutes)) {
         // Allow server side logging
         // eslint-disable-next-line no-console
