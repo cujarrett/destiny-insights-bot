@@ -30,6 +30,7 @@
     "tape-async": "~2.3.0"
   },
   "dependencies": {
+    "express": "~4.16.4",
     "moment": "~2.22.2",
     "moment-timezone": "~0.5.23",
     "nconf": "~0.10.0",
