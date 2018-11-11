@@ -12,8 +12,8 @@
     "ci": "npm run lint && npm run test"
   },
   "engines": {
-    "node": ">10.13.0",
-    "npm": ">6.4.1"
+    "node": ">10.12.0",
+    "npm": ">6.3.0"
   },
   "repository": {
     "type": "git",
