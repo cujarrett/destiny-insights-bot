@@ -1,6 +1,7 @@
 ![logo](./media/github-readme-banner.jpg)
 
 [![Build Status](https://travis-ci.org/cujarrett/banshee-44-mods-bot.svg?branch=master)](https://travis-ci.org/cujarrett/banshee-44-mods-bot)
+[![codecov](https://codecov.io/gh/cujarrett/banshee-44-mods-bot/branch/master/graph/badge.svg)](https://codecov.io/gh/cujarrett/banshee-44-mods-bot)
 
 ## What's it do?
 It's a Node JS Twitter bot that tweets Destiny 2's Banshee-44 daily mods available for sale. Check
