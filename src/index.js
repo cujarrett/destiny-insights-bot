@@ -62,6 +62,4 @@ const tweetBot = async () => {
   }
 }
 
-
 tweetBot()
-
