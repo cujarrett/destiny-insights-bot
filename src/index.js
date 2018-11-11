@@ -31,8 +31,10 @@ const tweetBot = async () => {
         twitter.post(message)
       }
 
-      const minutesToRefresh = ["0", "15", "30", "45"]
+      const minutesToRefresh = ["00", "04", "15", "30", "45"]
       const currentMinutes = moment().format("mm")
+
+      console.log(minutesToRefresh.includes(currentMinutes))
       if (minutesToRefresh.includes(currentMinutes)) {
         // Allow server side logging
         // eslint-disable-next-line no-console
