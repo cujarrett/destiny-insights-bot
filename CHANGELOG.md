@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [v1.1.0] - 2018-11-11
+### Added
+- More info on server side logs
+- startup script used after deployment
+
 ## [v1.0.0] - 2018-11-11
 ### Added
 - Integration with Braytech to search Banshee mods for sale
@@ -12,4 +17,5 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Continuous Integration pipeline config
 
 [Unreleased]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.0.0...master
+[v1.1.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/cujarrett/banshee-44-mods-bot/releases/tag/v1.0.0
