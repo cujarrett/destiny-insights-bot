@@ -50,9 +50,16 @@ const tweetBot = async () => {
         // eslint-disable-next-line no-console
         console.log(`${timestamp} - Tweeted: ${tweet}`)
       }
+
+      const minutesToRefresh = [5, 20, 35, 50]
+      const currentMinutes = moment().format("mm")
+      if (minutesToRefresh.contains(currentMinutes)) {
+        http.get("http://banshee-44-mods-bot.herokuapp.com")
+      }
+
       // Allow server side logging
       // eslint-disable-next-line no-console
-      console.log(`${timestamp} - Not time to tweet yet`)
+      console.log(`${timestamp} - banshee-44-mods-bot running`)
     }, 60 * 1000)
   } catch (error) {
     const timestamp = moment().format("YYYY-DD-MM, hh:mm:ss a")
