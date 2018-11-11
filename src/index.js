@@ -1,4 +1,5 @@
 const express = require("express")
+const fetch = require("node-fetch")
 const moment = require("moment")
 const momentTimezone = require("moment-timezone")
 const Twit = require("twit")
@@ -54,7 +55,7 @@ const tweetBot = async () => {
       const minutesToRefresh = [5, 20, 35, 50]
       const currentMinutes = moment().format("mm")
       if (minutesToRefresh.contains(currentMinutes)) {
-        http.get("http://banshee-44-mods-bot.herokuapp.com")
+        await fetch("http://banshee-44-mods-bot.herokuapp.com")
       }
 
       // Allow server side logging
