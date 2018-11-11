@@ -27,7 +27,7 @@ const tweetBot = async () => {
         const [firstMod, secondMod] = mods
         // Allow tweet to be longer than 100 characters
         // eslint-disable-next-line max-len
-        const message = `${timestamp} Banshee-44 is selling ${firstMod} and ${secondMod} today. #Destiny2 #TwitterBot`
+        const message = `Banshee-44 is selling ${firstMod} and ${secondMod} today. #Destiny2 #TwitterBot`
         twitter.post(message)
       }
 
