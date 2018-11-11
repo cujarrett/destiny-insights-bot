@@ -21,9 +21,10 @@ const main = async () => {
   momentTimezone.tz.setDefault("America/Chicago")
 
   setInterval(async () => {
-    const timestamp = moment().format("hh:mm a")
+    const currentTime = moment().format("hh:mm a")
+    const timestamp = moment().format("YYYY-DD-MM, hh:mm:ss a")
 
-    if (timestamp === "11:01 am") {
+    if (currentTime === "11:01 am") {
       const { mods } = await braytech.getModsForSale()
       const firstMod = mods[0]
       const secondMod = mods[1]
@@ -36,8 +37,11 @@ const main = async () => {
       twitter.post("statuses/update", { status: tweet })
       // Allow server side logging
       // eslint-disable-next-line no-console
-      console.log(`${timestamp} Tweeted: ${tweet}`)
+      console.log(`${timestamp} - Tweeted: ${tweet}`)
     }
+    // Allow server side logging
+    // eslint-disable-next-line no-console
+    console.log(`${timestamp} - Not time to tweet yet`)
   }, 60 * 1000)
 }
 
