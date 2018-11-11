@@ -1,6 +1,10 @@
 # dependencies
 /node_modules
 
+# testing
+coverage
+.nyc_output
+
 # misc
 .DS_Store
 
