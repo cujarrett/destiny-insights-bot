@@ -5,6 +5,3 @@ node_js:
 install: npm install
 before_script: npm run ci
 sudo: false
-branches:
-  only:
-  - master
