@@ -20,13 +20,9 @@ module.exports.post = async (message) => {
     const timestamp = moment().format("YYYY-DD-MM, hh:mm:ss a")
     const twitter = new Twit(twitterBotConfig)
     twitter.post("statuses/update", { status: message })
-    // Allow server side logging
-    // eslint-disable-next-line no-console
     console.log(`${timestamp} - Tweeted: ${message}`)
   } catch (error) {
     const timestamp = moment().format("YYYY-DD-MM, hh:mm:ss a")
-    // Allow server side logging
-    // eslint-disable-next-line no-console
     console.log(`${timestamp} - ${error}`)
   }
 }

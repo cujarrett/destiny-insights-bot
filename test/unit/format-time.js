@@ -12,7 +12,5 @@ test("Unit - Util format-time", (assert) => {
   stopwatch.stop()
   const time = formatTime(stopwatch.time())
 
-  // Allow test to log test time
-  // eslint-disable-next-line no-console
   console.log(`Time to complete: ${time}`)
 })
