@@ -16,13 +16,8 @@ const twitterBotConfig = {
 /* eslint-disable camelcase*/
 
 module.exports.post = async (message) => {
-  try {
-    const timestamp = moment().format("YYYY-DD-MM, hh:mm:ss a")
-    const twitter = new Twit(twitterBotConfig)
-    twitter.post("statuses/update", { status: message })
-    console.log(`${timestamp} - Tweeted: ${message}`)
-  } catch (error) {
-    const timestamp = moment().format("YYYY-DD-MM, hh:mm:ss a")
-    console.log(`${timestamp} - ${error}`)
-  }
+  const timestamp = moment().format("YYYY-DD-MM, hh:mm:ss a")
+  const twitter = new Twit(twitterBotConfig)
+  twitter.post("statuses/update", { status: message })
+  console.log(`${timestamp} - Tweeted: ${message}`)
 }
