@@ -9,13 +9,13 @@ const tweetBot = async () => {
   try {
     const currentTime = moment().format("hh:mm a")
 
-    if (currentTime === "11:01 am") {
+    if (currentTime === "11:00 am" || currentTime === "04:30 am") {
       const { mods } = await braytech.getModsForSale()
       const [firstMod, secondMod] = mods
 
       // Allow tweet to be longer than 100 characters
       // eslint-disable-next-line max-len
-      const message = `Banshee-44 is selling ${firstMod} and ${secondMod} today. #Destiny2 #TwitterBot`
+      const message = `${currentTime} Banshee-44 is selling ${firstMod} and ${secondMod} today. #Destiny2 #TwitterBot`
       twitter.post(message)
     }
   } catch (error) {
