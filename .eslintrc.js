@@ -125,9 +125,6 @@ module.exports = {
     "no-confusing-arrow": [
       "error"
     ],
-    "no-console": [
-      "error"
-    ],
     "no-const-assign": [
       "error"
     ],
@@ -268,6 +265,9 @@ module.exports = {
     ],
     "no-trailing-spaces": [
       "error"
-    ]
+    ],
+    "no-console": [
+      "off"
+    ],
   }
 }
