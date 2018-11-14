@@ -1,57 +1,29 @@
-const express = require("express")
-const fetch = require("node-fetch")
+// const express = require("express")
+// const fetch = require("node-fetch")
 const moment = require("moment")
 const momentTimezone = require("moment-timezone")
 const braytech = require("./integrations/braytech.js")
 const twitter = require("./integrations/twitter.js")
 
-const port = process.env.PORT || 3000
-const app = express()
+// const port = process.env.PORT || 3000
+// const app = express()
 
-app.listen(port, () => {
-  // Allow server side logging
-  // eslint-disable-next-line no-console
-  console.log(`Server started on port ${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Server started on port ${port}`)
+// })
 
 const tweetBot = async () => {
-  momentTimezone.tz.setDefault("America/Chicago")
+  momentTimezone.tz.setDefault("UTC")
 
   try {
-    setInterval(async () => {
-      const currentTime = moment().format("hh:mm a")
-      const timestamp = moment().format("YYYY-DD-MM, hh:mm:ss a")
-
-      if (currentTime === "11:01 am") {
-        const { mods } = await braytech.getModsForSale()
-        const [firstMod, secondMod] = mods
-        // Allow tweet to be longer than 100 characters
-        // eslint-disable-next-line max-len
-        const message = `Banshee-44 is selling ${firstMod} and ${secondMod} today. #Destiny2 #TwitterBot`
-        twitter.post(message)
-      }
-
-      const minutesToRefresh = ["00", "15", "30", "45"]
-      const currentMinutes = moment().format("mm")
-
-      if (minutesToRefresh.includes(currentMinutes)) {
-        // Allow server side logging
-        // eslint-disable-next-line no-console
-        console.log(`${timestamp} - Hitting banshee-44-mods-bot to check it's pulse`)
-        await fetch("http://banshee-44-mods-bot.herokuapp.com")
-        // Allow server side logging
-        // eslint-disable-next-line no-console
-        console.log(`${timestamp} - banshee-44-mods-bot is verified running`)
-      }
-
-      // Allow server side logging
-      // eslint-disable-next-line no-console
-      console.log(`${timestamp} - banshee-44-mods-bot running`)
-    }, 60 * 1000)
+    const { mods } = await braytech.getModsForSale()
+    const [firstMod, secondMod] = mods
+    // Allow tweet to be longer than 100 characters
+    // eslint-disable-next-line max-len
+    const message = `Banshee-44 is selling ${firstMod} and ${secondMod} today. #Destiny2 #TwitterBot`
+    twitter.post(message)
   } catch (error) {
     const timestamp = moment().format("YYYY-DD-MM, hh:mm:ss a")
-    // Allow server side logging
-    // eslint-disable-next-line no-console
     console.log(`${timestamp} - ${error}`)
   }
 }
