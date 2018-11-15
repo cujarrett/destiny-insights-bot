@@ -1,9 +1,12 @@
 const moment = require("moment")
+const momentTimezone = require("moment-timezone")
 const braytech = require("./integrations/braytech.js")
 const twitter = require("./integrations/twitter.js")
 
 const tweetBot = async () => {
   try {
+    momentTimezone.tz.setDefault("America/Chicago")
+
     const { mods } = await braytech.getModsForSale()
     const [firstMod, secondMod] = mods
 
