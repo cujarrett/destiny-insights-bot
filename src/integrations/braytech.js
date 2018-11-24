@@ -3,7 +3,7 @@ const StopWatch = require("statman-stopwatch")
 const { formatTime } = require("../../src/util/format-time.js")
 
 module.exports.getModsForSale = async () => {
-  const endpoint = "https://api.braytech.org/?request=vendor&hash=672118013"
+  const endpoint = "https://api.braytech.org/?request=vendor&hash=672118013&defined"
 
   const options = {
     method: "GET",
