@@ -5,13 +5,17 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [v1.6.0] - 2018-11-24
+### Added
+- npm script `start` to echo the app version, useful for when you want to check version deployed
+
 ## [v1.5.0] - 2018-11-24
 ### Changed
-- Braytech endpoint where mods are looked up from.
+- Braytech endpoint where mods are looked up from
 
 ## [v1.4.0] - 2018-11-14
 ### Changed
-- Twitter Bot to tweet via `npm run tweet` and removes time from the conditions of when to tweet.
+- Twitter Bot to tweet via `npm run tweet` and removes time from the conditions of when to tweet
 
 ## [v1.3.0] - 2018-11-13
 ### Changed
@@ -32,7 +36,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Integration with Twitter to post tweets
 - Continuous Integration pipeline config
 
-[Unreleased]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.5.0...master
+[Unreleased]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.6.0...master
+[v1.6.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.5.0...v1.6.0
 [v1.5.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.4.0...v1.5.0
 [v1.4.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.3.0...v1.4.0
 [v1.3.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.2.0...v1.3.0
