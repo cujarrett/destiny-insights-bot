@@ -4,8 +4,9 @@
   "author": "Matt Jarrett",
   "license": "MIT",
   "description": "Node JS Twitter bot that tweets Destiny 2's Banshee-44 daily mods available for sale",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "start": "node src/util/echo-version.js",
     "tweet": "node src/index.js",
     "test": "nyc --reporter=lcov tape test/**/*.js | tap-spec && nyc report",
     "lint": "eslint .",
