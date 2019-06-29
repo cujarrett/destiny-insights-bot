@@ -37,7 +37,7 @@ action "Login to Heroku" {
 action "Push to Heroku" {
   uses = "actions/heroku@466fea5e8253586a6df75b10e95447b0bfe383c1"
   needs = ["Login to Heroku"]
-  args = "container:push -a banshee-44-mods web"
+  args = "container:push -a banshee-44-mods-bot web"
   secrets = ["HEROKU_API_KEY"]
 }
 
@@ -45,5 +45,5 @@ action "Deploy to Heroku" {
   uses = "actions/heroku@466fea5e8253586a6df75b10e95447b0bfe383c1"
   needs = ["Push to Heroku"]
   secrets = ["HEROKU_API_KEY"]
-  args = "container:release -a banshee-44-mods web"
+  args = "container:release -a banshee-44-mods-bot web"
 }
