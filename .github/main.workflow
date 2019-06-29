@@ -1,6 +1,6 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["Test", "Deploy to Heroku"]
+  resolves = ["Build", "Lint", "Test", "Filter for master only", "Login to Heroku", "Push to Heroku", "Deploy to Heroku"]
 }
 
 action "Build" {
