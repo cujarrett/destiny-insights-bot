@@ -3,7 +3,10 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [v1.7.0] - 2019-06-28
+### Updated
+- Braytech API (:raised_hands:)
+- Migrates from Travis CI to GitHub Actions :tada:
 
 ## [v1.6.0] - 2018-11-24
 ### Added
@@ -36,7 +39,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Integration with Twitter to post tweets
 - Continuous Integration pipeline config
 
-[Unreleased]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.6.0...master
+[v1.7.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.6.0...v1.7.0
 [v1.6.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.5.0...v1.6.0
 [v1.5.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.4.0...v1.5.0
 [v1.4.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.3.0...v1.4.0
