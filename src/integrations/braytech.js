@@ -3,7 +3,7 @@ const StopWatch = require("statman-stopwatch")
 const { formatTime } = require("../../src/util/format-time.js")
 
 module.exports.getModsForSale = async () => {
-  const endpoint = "https://api.braytech.org/?request=vendor&hash=672118013&defined"
+  const endpoint = "https://voluspa.braytech.org/vendor/?hash=672118013&defined=true"
 
   const options = {
     method: "GET",
@@ -13,13 +13,14 @@ module.exports.getModsForSale = async () => {
   const stopwatch = new StopWatch(true)
   const rawResponse = await fetch(endpoint, options)
   const response = await rawResponse.json()
-  const firstMod = await response.response.data[0].sales[1].item.perks[0].displayProperties.name
-  const secondMod = await response.response.data[0].sales[2].item.perks[0].displayProperties.name
+  
+  const mods = Object.values(response.Response.sales.data).filter(i => i.itemDefinition.itemType === 19)
+  
   stopwatch.stop()
   const braytechProcessTime = formatTime(stopwatch.time())
 
   return {
-    mods: [firstMod, secondMod],
+    mods: mods.map(m => m.itemDefinition.displayProperties.name),
     braytechProcessTime
   }
 }
