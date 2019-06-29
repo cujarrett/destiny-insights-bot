@@ -1,4 +1,4 @@
-workflow "New workflow" {
+workflow "CI/CD" {
   on = "push"
   resolves = ["Build", "Lint", "Test", "Filter for master only", "Login to Heroku", "Push to Heroku", "Deploy to Heroku"]
 }
@@ -20,6 +20,7 @@ action "Test" {
   runs = "npm run test"
 }
 
+
 action "Filter for master only" {
   uses = "actions/bin/filter@3c0b4f0e63ea54ea5df2914b4fabf383368cd0da"
   needs = ["Lint", "Test"]
@@ -28,21 +29,21 @@ action "Filter for master only" {
 
 action "Login to Heroku" {
   uses = "actions/heroku@466fea5e8253586a6df75b10e95447b0bfe383c1"
-  needs = ["Filters for master only"]
-  runs = "container:login"
+  needs = ["Filter for master only"]
+  args = "container:login"
   secrets = ["HEROKU_API_KEY"]
 }
 
 action "Push to Heroku" {
   uses = "actions/heroku@466fea5e8253586a6df75b10e95447b0bfe383c1"
   needs = ["Login to Heroku"]
-  runs = "container:push -a banshee-44-mods-bot web"
+  args = "container:push -a banshee-44-mods web"
   secrets = ["HEROKU_API_KEY"]
 }
 
 action "Deploy to Heroku" {
   uses = "actions/heroku@466fea5e8253586a6df75b10e95447b0bfe383c1"
   needs = ["Push to Heroku"]
-  runs = "container:release -a banshee-44-mods-bot web"
   secrets = ["HEROKU_API_KEY"]
+  args = "container:release -a banshee-44-mods web"
 }
