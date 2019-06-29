@@ -20,7 +20,7 @@ action "Test" {
   runs = "npm run test"
 }
 
-action "Filters for master only" {
+action "Filter for master only" {
   uses = "actions/bin/filter@3c0b4f0e63ea54ea5df2914b4fabf383368cd0da"
   needs = ["Lint", "Test"]
   args = "branch master"
