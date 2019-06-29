@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [v1.7.0] - 2019-06-28
 ### Updated
 - Braytech API (:raised_hands:)
+- Migrates from Travis CI to GitHub Actions :tada:
 
 ## [v1.6.0] - 2018-11-24
 ### Added
