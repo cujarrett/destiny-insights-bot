@@ -1,6 +1,6 @@
+const prettyMs = require("pretty-ms")
 const fetch = require("node-fetch")
 const StopWatch = require("statman-stopwatch")
-const { formatTime } = require("../../src/util/format-time.js")
 
 module.exports.getModsForSale = async () => {
   const endpoint = "https://voluspa.braytech.org/vendor/?hash=672118013&defined=true"
@@ -20,7 +20,7 @@ module.exports.getModsForSale = async () => {
   })
 
   stopwatch.stop()
-  const braytechProcessTime = formatTime(stopwatch.time())
+  const braytechProcessTime = prettyMs(stopwatch.time())
   const mods = modsData.map((modData) => modData.itemDefinition.displayProperties.name)
 
   return {

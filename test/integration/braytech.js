@@ -1,7 +1,7 @@
+const prettyMs = require("pretty-ms")
 const test = require("tape-async")
 const StopWatch = require("statman-stopwatch")
 const braytech = require("../../src/integrations/braytech.js")
-const { formatTime } = require("../../src/util/format-time.js")
 
 test("Integration - Braytech", async (assert) => {
   const stopwatch = new StopWatch(true)
@@ -12,7 +12,7 @@ test("Integration - Braytech", async (assert) => {
   assert.true(response.mods[1], "First mod verified")
 
   stopwatch.stop()
-  const time = formatTime(stopwatch.time())
+  const time = prettyMs(stopwatch.time())
 
   console.log(`Time to complete: ${time}`)
 })
