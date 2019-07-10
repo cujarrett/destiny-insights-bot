@@ -35,7 +35,7 @@
     "moment-timezone": "~0.5.26",
     "nconf": "~0.10.0",
     "node-fetch": "~2.6.0",
-    "statman-stopwatch": "~2.7.0",
+    "statman-stopwatch": "~2.8.2",
     "twit": "~2.2.11"
   }
 }
