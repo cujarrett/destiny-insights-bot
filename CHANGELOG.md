@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.8.0] - 2019-10-16
+### Changed
+- Updates dependencies
+- Updates CI/CD to accomidate GitHub Actions move from HCL to YML :/
+
 ## [v1.7.2] - 2019-07-13
 ### Changed
 - Updates dependencies
@@ -47,6 +52,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Integration with Twitter to post tweets
 - Continuous Integration pipeline config
 
+[v1.8.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.7.2...v1.8.0
 [v1.7.2]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.7.1...v1.7.2
 [v1.7.1]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.7.0...v1.7.1
 [v1.7.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.6.0...v1.7.0
