@@ -1,17 +1,16 @@
 {
   "name": "banshee-44-mods-bot",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "author": "Matt Jarrett",
   "license": "MIT",
   "description": "Node JS Twitter bot that tweets Destiny 2's Banshee-44 daily mods available for sale",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/util/echo-version.js",
-    "tweet": "node src/index.js",
     "test": "nyc --reporter=lcov tape test/**/*.js | tap-spec && nyc report",
     "lint": "eslint .",
     "fix-lint": "eslint . --fix",
-    "ci": "npm run lint && npm run test"
+    "ci": "npm run lint && npm run test",
+    "build": "npm install --production && rm -rf build && mkdir build && zip -r -q -x='*media*' -x=*coverage* -x='*.md' -x='LICENSE' -x='*build*' -x='*test*' -x='*.DS_Store*' -x='*.nyc_output*' -x='*.git*' -x='*.nycrc' -x='*.eslintrc.js' build/banshee-44-mods-bot.zip . && du -sh build"
   },
   "repository": {
     "type": "git",
@@ -25,18 +24,14 @@
   },
   "homepage": "https://github.com/cujarrett/banshee-44-mods-bot#readme",
   "devDependencies": {
-    "eslint": "~6.0.1",
-    "nyc": "~14.1.1",
+    "eslint": "~6.8.0",
+    "nyc": "~15.0.0",
     "tap-spec": "~5.0.0",
     "tape-async": "~2.3.0"
   },
   "dependencies": {
-    "moment": "~2.24.0",
-    "moment-timezone": "~0.5.26",
     "nconf": "~0.10.0",
     "node-fetch": "~2.6.0",
-    "pretty-ms": "~5.0.0",
-    "statman-stopwatch": "~2.8.2",
     "twit": "~2.2.11"
   }
 }
