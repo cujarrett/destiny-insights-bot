@@ -1,0 +1,83 @@
+version: 2.1
+
+jobs:
+
+  build-for-test:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - run:
+          name: Install & Cache Dependencies
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+
+  test:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Audit Dependencies
+          command: npm audit
+      - run:
+          name: Lint Code
+          command: npm run lint
+      - run:
+          name: Run Tests
+          command: npm run test
+
+  build-for-production:
+    docker:
+      - image: circleci/node:lts
+    working_directory: ~/temp
+    steps:
+      - checkout
+      - run:
+          name: Build Production App
+          command: npm run build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build
+
+  deploy:
+    docker:
+      - image: 'circleci/python:3.7.6'
+    working_directory: ~/temp
+    steps:
+      - attach_workspace:
+          at: ~/temp
+      - run:
+          name: Install AWS CLI
+          command: sudo pip install awscli
+      - deploy:
+          name: Deploy to AWS S3
+          command: |
+            aws lambda update-function-code \
+              --function-name  banshee-44-mods-bot \
+              --zip-file fileb://build/banshee-44-mods-bot.zip 1> /dev/null \
+              --region us-east-1
+
+workflows:
+  version: 2
+  cicd:
+    jobs:
+      - build-for-test
+      - test:
+          requires:
+            - build-for-test
+      - build-for-production:
+          requires:
+            - test
+      - deploy:
+          requires:
+            - build-for-production
+          filters:
+            branches:
+              only: master
