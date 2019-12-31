@@ -15,10 +15,10 @@ exports.handler = async (event, context, callback) => {
       body: JSON.stringify(`${message} posted.`)
     }
     context.callbackWaitsForEmptyEventLoop = false
-    callback(null)
+    callback(null, 200)
     return response
   } catch (error) {
     context.callbackWaitsForEmptyEventLoop = false
-    callback(new Error(error), "banshee-44-mods-bot error thrown")
+    callback(new Error(error), 424)
   }
 }
