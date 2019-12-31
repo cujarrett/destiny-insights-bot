@@ -60,9 +60,9 @@ jobs:
           name: Deploy to AWS S3
           command: |
             aws lambda update-function-code \
-              --function-name  banshee-44-mods-bot \
-              --zip-file fileb://build/banshee-44-mods-bot.zip 1> /dev/null \
-              --region us-east-1
+              --function-name=banshee-44-mods-bot \
+              --zip-file=fileb://build/banshee-44-mods-bot.zip 1> /dev/null \
+              --region=us-east-1
 
 workflows:
   version: 2
