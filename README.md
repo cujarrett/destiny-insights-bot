@@ -21,4 +21,6 @@ Feel free to join the [Banshee-44 Mods Bot Discord](https://discord.gg/jAA5U52) 
 ## Changelog
 [banshee-44-mods-bot changelog](CHANGELOG.md)
 
-Made with :heart:, JavaScript, and GitHub.
+<p align="center">
+  Made with :heart:, JavaScript, and GitHub. Powered by <a href="https://braytech.org/">Braytech</a> and AWS.
+</p>
