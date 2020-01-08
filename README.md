@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://circleci.com/gh/cujarrett/banshee-44-mods-bot/tree/master"><img alt="Circle CI" src="https://circleci.com/gh/cujarrett/banshee-44-mods-bot/tree/master.svg?style=svg"></a>
-  <a href="https://twitter.com/intent/follow?screen_name=babeljs"><img alt="Follow on Twitter" src="https://img.shields.io/twitter/follow/banshee44mods?label=Follow&style=social"></a>
+  <a href="https://twitter.com/intent/follow?screen_name=banshee44mods"><img alt="Follow on Twitter" src="https://img.shields.io/twitter/follow/banshee44mods?label=Follow&style=social"></a>
 </p>
 
 ## What's it do?
