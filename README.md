@@ -6,8 +6,8 @@
   <a href="https://discord.gg/jAA5U52"><img alt="Chat on Discord" src="https://img.shields.io/discord/460598989939802115?label=Discord"></a>
 </p>
 
-## What's it do?
-It's a Node JS Twitter bot that tweets Destiny 2's Banshee-44 daily mods available for sale. Check
+## What is it?
+It's a serverless Twitter bot powered by JavaScript, AWS, and Braytech that tweets Destiny 2's Banshee-44 daily mods available for sale. Check
 out [Banshee-44's current mods for sale right now on Twitter](https://twitter.com/banshee44mods).
 
 ## How's it work?
