@@ -10,6 +10,9 @@
 It's a Node JS Twitter bot that tweets Destiny 2's Banshee-44 daily mods available for sale. Check
 out [Banshee-44's current mods for sale right now on Twitter](https://twitter.com/banshee44mods).
 
+## How's it work?
+![design](./media/design.jpg)
+
 ## Questions & Contact
 Feel free to join the [Banshee-44 Mods Bot Discord](https://discord.gg/jAA5U52) if you have questions.
 
