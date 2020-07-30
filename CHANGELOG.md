@@ -5,7 +5,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [v1.10.0] - 2020-07-30
 ### Changed
-- :sparkle: Adds thanks for 3,000 followers on tomorrows scheduled tweet
+- :sparkle: Added thanks for 3,000 followers on tomorrows scheduled tweet
+
+### Fixed
+- :wrench: Fixed CI/CD to not build for production during non master branch runs
 
 ## [v1.9.2] - 2020-07-26
 ### Changed
