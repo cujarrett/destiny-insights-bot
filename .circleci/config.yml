@@ -75,6 +75,9 @@ workflows:
       - build-for-production:
           requires:
             - test
+          filters:
+            branches:
+              only: master
       - deploy:
           requires:
             - build-for-production
