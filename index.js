@@ -7,11 +7,7 @@ exports.handler = async (event, context, callback) => {
     const [firstMod, secondMod] = mods
     // Allow tweet to be longer than 100 characters
     // eslint-disable-next-line max-len
-    const message = `Thanks for 3,000 followers 🎉
-
-Seeing folks happy from a small hack makes me smile.
-
-Banshee-44 is selling ${firstMod} and ${secondMod} today. #Destiny2 #TwitterBot`
+    const message = `Banshee-44 is selling ${firstMod} and ${secondMod} today. #Destiny2 #TwitterBot`
     await twitter.post(message)
 
     const response = {

@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.11.0] - 2020-07-31
+### Changed
+- :sparkle: Removed thanks for 3,000 followers on tomorrows scheduled tweet
+
 ## [v1.10.0] - 2020-07-30
 ### Changed
 - :sparkle: Added thanks for 3,000 followers on tomorrows scheduled tweet
@@ -72,6 +76,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - :sparkles: Integration with Twitter to post tweets
 - :rocket: Continuous Integration pipeline config
 
+[v1.11.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.10.0...v1.11.0
 [v1.10.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.9.2...v1.10.0
 [v1.9.2]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.9.1...v1.9.2
 [v1.9.1]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.9.0...v1.9.1
