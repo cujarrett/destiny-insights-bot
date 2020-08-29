@@ -13,3 +13,18 @@ coverage
 
 # local logs
 npm-debug.log*
+
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files
+*.tfvars
+
+# Terraform
+terraform.tfstate
+terraform.tfstate.backup
+lambda-function-payload.zip
