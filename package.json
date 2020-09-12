@@ -1,14 +1,14 @@
 {
   "name": "banshee-44-mods-bot",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "author": "Matt Jarrett",
   "license": "MIT",
   "description": "Node JS Twitter bot that tweets Destiny 2's Banshee-44 daily mods available for sale",
   "main": "src/index.js",
   "scripts": {
-    "test": "nyc --reporter=lcov tape test/**/*.js | tap-spec && nyc report",
     "lint": "eslint .",
     "fix-lint": "eslint . --fix",
+    "test": "nyc --reporter=lcov tape test/**/*.js | tap-spec && nyc report",
     "ci": "npm run lint && npm run test",
     "build": "npm install --production && rm -rf build && mkdir build && zip -r -q -x='*media*' -x='*terraform*' -x=*coverage* -x='*.md' -x='LICENSE' -x='*build*' -x='*test*' -x='*.DS_Store*' -x='*.nyc_output*' -x='*.git*' -x='*.nycrc' -x='*.eslintrc.js' build/banshee-44-mods-bot.zip . && du -sh build"
   },

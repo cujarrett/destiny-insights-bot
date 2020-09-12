@@ -23,7 +23,7 @@ resource "aws_lambda_function_event_invoke_config" "banshee-44-mods-bot-event-in
 
   destination_config {
     on_failure {
-      destination = var.error_sns_topic
+      destination = var.error-sns-topic
     }
   }
 }
