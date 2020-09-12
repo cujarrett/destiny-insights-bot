@@ -3,7 +3,7 @@ const { getOrdinal } = require("./get-ordinal.js")
 module.exports.getModDetails = async (modData) => {
   let soldCountMessage = ""
   let soldRateMessage = ""
-  let lastSoldDateMessage = "Not sold in the last year"
+  let lastSoldDateMessage = ""
 
   const soldCount = modData.length
   if (soldCount === 0) {
