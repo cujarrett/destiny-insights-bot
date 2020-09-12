@@ -1,13 +1,36 @@
 const braytech = require("./src/integrations/braytech.js")
+const dynamodb = require("./src/integrations/dynamodb.js")
 const twitter = require("./src/integrations/twitter.js")
+const { getModDetails } = require("./src/util/get-mod-details.js")
+const { getTimeWording } = require("./src/util/get-time-wording.js")
 
 exports.handler = async (event, context, callback) => {
   try {
     const mods = await braytech.getModsForSale()
-    const [firstMod, secondMod] = mods
-    // Allow tweet to be longer than 100 characters
-    // eslint-disable-next-line max-len
-    const message = `Banshee-44 is selling ${firstMod} and ${secondMod} today. #Destiny2 #TwitterBot`
+    const [mod1, mod2] = mods
+    await dynamodb.insertData(mod1, mod2)
+
+    const mod1Data = await dynamodb.getDataForMod(mod1)
+    const mod2Data = await dynamodb.getDataForMod(mod2)
+    const mod1Details = await getModDetails(mod1Data)
+    const mod2Details = await getModDetails(mod2Data)
+
+    const mod1TimeWording = getTimeWording(mod1Details.dropCount)
+    const mod2TimeWording = getTimeWording(mod2Details.dropCount)
+
+    const message = `Banshee-44 is selling:
+
+${mod1}
+- Sold ${mod1Details.dropCount} ${mod1TimeWording} in the last year
+- ${mod1Details.dropRate}% Drop Rate
+- Last sold ${mod1Details.lastDropDate}
+
+${mod2}
+- Sold ${mod2Details.dropCount} ${mod2TimeWording} in the last year
+- ${mod2Details.dropRate}% Drop Rate
+- Last sold ${mod2Details.lastDropDate}
+
+#Destiny2 #TwitterBot`
     await twitter.post(message)
 
     const response = {

@@ -54,7 +54,7 @@ resource "aws_iam_policy" "banshee-44-mods-bot-sns" {
     {
       "Effect": "Allow",
       "Action": "sns:Publish",
-      "Resource": "${var.error_sns_topic}"
+      "Resource": "${var.error-sns-topic}"
     }
   ]
 }
@@ -92,6 +92,33 @@ EOF
 resource "aws_iam_role_policy_attachment" "attach-secrets-manager" {
   role       = aws_iam_role.banshee-44-mods-bot.name
   policy_arn = aws_iam_policy.banshee-44-mods-bot-secrets-manager.arn
+}
+
+resource "aws_iam_policy" "banshee-44-mods-bot-dynamodb" {
+  name        = "banshee-44-mods-bot-dynamodb"
+  description = "Adds DynamoDB access"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:PutItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:Scan"
+      ],
+      "Resource": "${var.aws-dynamodb-table-banshee-44-mods-bot-arn}"
+    }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_role_policy_attachment" "attach-dynamodb" {
+  role       = aws_iam_role.banshee-44-mods-bot.name
+  policy_arn = aws_iam_policy.banshee-44-mods-bot-dynamodb.arn
 }
 
 output "aws-iam-role-banshee-44-mods-bot-arn" {

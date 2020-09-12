@@ -1,4 +1,4 @@
-variable "error_sns_topic" {
+variable "error-sns-topic" {
   description = "SNS Topic ARN to trigger on lambda failure"
   type = string
 }
