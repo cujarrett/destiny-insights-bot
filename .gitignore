@@ -8,6 +8,12 @@
 coverage
 .nyc_output
 
+# temp
+/temp
+
+# ignore eslint temp
+.eslintignore
+
 # misc
 .DS_Store
 
