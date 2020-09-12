@@ -88,7 +88,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - :sparkles: Integration with Twitter to post tweets
 - :rocket: Continuous Integration pipeline config
 
-[v1.13.1]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.13.1...v1.13.1
+[v1.13.1]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.13.0...v1.13.1
 [v1.13.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.12.0...v1.13.0
 [v1.12.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.11.0...v1.12.0
 [v1.11.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.10.0...v1.11.0
