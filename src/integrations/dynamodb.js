@@ -60,9 +60,9 @@ module.exports.getDataForMod = async (mod) => {
   responses.push(...response.Items)
 
   for (const tweet of responses) {
-    const dropDate = new Date(tweet.timestamp.S)
+    const soldDate = new Date(tweet.timestamp.S)
     const now = new Date()
-    const difference = Math.floor((now - dropDate) / (1000 * 60 * 60 * 24))
+    const difference = Math.floor((now - soldDate) / (1000 * 60 * 60 * 24))
 
     if (difference < 366) {
       results.push({

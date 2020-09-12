@@ -1,42 +1,46 @@
 const { getOrdinal } = require("./get-ordinal.js")
 
 module.exports.getModDetails = async (modData) => {
-  const dropCount = modData.length
-  let dropRate = modData.length / 365 * 100
+  let soldCountMessage = ""
+  let soldRateMessage = ""
+  let lastSoldDateMessage = "Not sold in the last year"
 
-  if (dropRate !== 0) {
-    dropRate = dropRate.toFixed(2)
+  const soldCount = modData.length
+  if (soldCount === 0) {
+    soldCountMessage = "Not sold in the last year"
+  } else if (soldCount > 1) {
+    soldCountMessage = `Sold ${soldCount} times in the last year`
+  } else {
+    soldCountMessage = "First time sold in the last year"
   }
 
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec"
-  ]
+  let soldRate = soldCount / 365 * 100
+  if (soldRate !== 0) {
+    soldRate = soldRate.toFixed(2)
+  }
+  soldRateMessage = `${soldRate}% year drop rate`
 
-  let lastDropDate
-
+  // eslint-disable-next-line max-len
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
   if (modData[1] && modData[1].timestamp) {
-    lastDropDate = new Date(modData[1].timestamp)
-    const year = lastDropDate.getFullYear()
-    const month = months[lastDropDate.getMonth()]
-    const day = lastDropDate.getDate()
+    const lastSoldDate = new Date(modData[1].timestamp)
+    const year = lastSoldDate.getFullYear()
+    const month = months[lastSoldDate.getMonth()]
+    const day = lastSoldDate.getDate()
     const ordinal = getOrdinal(day)
-    lastDropDate = `${month} ${day}${ordinal} ${year}`
+    lastSoldDateMessage = `Last sold ${month} ${day}${ordinal} ${year}`
   }
 
-  return {
-    dropCount,
-    dropRate,
-    lastDropDate
+  if (soldCount < 2) {
+    return {
+      soldCountMessage,
+      soldRateMessage
+    }
+  } else {
+    return {
+      soldCountMessage,
+      soldRateMessage,
+      lastSoldDateMessage
+    }
   }
 }
