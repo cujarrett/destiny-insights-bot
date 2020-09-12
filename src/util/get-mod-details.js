@@ -8,10 +8,10 @@ module.exports.getModDetails = async (modData) => {
   const soldCount = modData.length
   if (soldCount === 0) {
     soldCountMessage = "Not sold in the last year"
-  } else if (soldCount > 1) {
-    soldCountMessage = `Sold ${soldCount} times in the last year`
-  } else {
+  } else if (soldCount === 1) {
     soldCountMessage = "First time sold in the last year"
+  } else {
+    soldCountMessage = `Sold ${soldCount} times in the last year`
   }
 
   let soldRate = soldCount / 365 * 100
