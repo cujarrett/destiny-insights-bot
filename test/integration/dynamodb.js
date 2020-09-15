@@ -3,14 +3,14 @@ const { deleteKey, getDataForMod, insertData } = require("../../src/integrations
 
 test("Integration - DynamoDb", async (assert) => {
   assert.plan(3)
-  await insertData("foo", "bar")
-  let modInfo = await getDataForMod("foo")
+  await insertData("foobaz", "barbaz")
+  let modInfo = await getDataForMod("foobaz")
   assert.true(modInfo.length > 0, "insertData verified")
   for (const item of modInfo) {
     await deleteKey(item.timestamp)
   }
-  modInfo = await getDataForMod("foo")
-  modInfo = await getDataForMod("bar")
+  modInfo = await getDataForMod("foobaz")
+  modInfo = await getDataForMod("barbaz")
   assert.true(modInfo.length === 0, "deleteKey verified")
   assert.true(modInfo.length === 0, "getModInfo verified")
 })
