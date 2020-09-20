@@ -2,13 +2,8 @@ const Twit = require("twit")
 const { getSecret } = require("./aws-secrets-manager.js")
 
 module.exports.test = async (message) => {
-  const {
-    TWITTER_TEST_CONSUMER_API_KEY,
-    TWITTER_TEST_CONSUMER_SECRET,
-    TWITTER_TEST_ACCESS_TOKEN,
-    TWITTER_TEST_ACCESS_TOKEN_SECRET
-  } = await getSecret()
-
+  // eslint-disable-next-line max-len
+  const { TWITTER_TEST_CONSUMER_API_KEY, TWITTER_TEST_CONSUMER_SECRET, TWITTER_TEST_ACCESS_TOKEN, TWITTER_TEST_ACCESS_TOKEN_SECRET } = require("../settings.js")
   // Allow Twit mandated use of _ in object keys
   /* eslint-disable camelcase*/
   const twitterBotConfig = {
@@ -19,20 +14,13 @@ module.exports.test = async (message) => {
     timeout_ms: 60 * 1000,
     strictSSL: true
   }
-  /* eslint-disable camelcase*/
 
-  const response = await tweet(message, twitterBotConfig)
-  return response
+  return await post(message, twitterBotConfig)
 }
 
-module.exports.post = async (message) => {
-  const {
-    TWITTER_CONSUMER_API_KEY,
-    TWITTER_CONSUMER_SECRET,
-    TWITTER_ACCESS_TOKEN,
-    TWITTER_ACCESS_TOKEN_SECRET
-  } = await getSecret()
-
+module.exports.tweet = async (message) => {
+  // eslint-disable-next-line max-len
+  const { TWITTER_CONSUMER_API_KEY, TWITTER_CONSUMER_SECRET, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET } = await getSecret()
   // Allow Twit mandated use of _ in object keys
   /* eslint-disable camelcase*/
   const twitterBotConfig = {
@@ -43,13 +31,11 @@ module.exports.post = async (message) => {
     timeout_ms: 60 * 1000,
     strictSSL: true
   }
-  /* eslint-disable camelcase*/
 
-  const response = await tweet(message, twitterBotConfig)
-  console.log(response)
+  await post(message, twitterBotConfig)
 }
 
-const tweet = async (message, twitterBotConfig) => {
+const post = async (message, twitterBotConfig) => {
   try {
     const twitter = new Twit(twitterBotConfig)
     await twitter.post("statuses/update", { status: message })
