@@ -8,7 +8,6 @@ exports.handler = async (event, context, callback) => {
   try {
     const mods = await braytech.getModsForSale()
     const [mod1, mod2] = mods
-    await dynamodb.insertData(mod1, mod2)
 
     const mod1Data = await dynamodb.getDataForMod(mod1)
     const mod2Data = await dynamodb.getDataForMod(mod2)
@@ -20,13 +19,14 @@ exports.handler = async (event, context, callback) => {
 
     const message = `Banshee-44 is selling:
 
-${getMod1TweetMessage}
+    ${getMod1TweetMessage}
 
-${getMod2TweetMessage}
+    ${getMod2TweetMessage}
 
-#Destiny2 #TwitterBot`
+    #Destiny2 #TwitterBot`
 
     await tweet(message)
+    await dynamodb.insertData(mod1, mod2)
 
     const response = {
       statusCode: 200,
