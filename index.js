@@ -1,6 +1,6 @@
 const braytech = require("./src/integrations/braytech.js")
 const dynamodb = require("./src/integrations/dynamodb.js")
-const twitter = require("./src/integrations/twitter.js")
+const { tweet } = require("./src/integrations/twitter.js")
 const { getModDetails } = require("./src/util/get-mod-details.js")
 const { getModTweetMessage } = require("./src/util/get-mod-tweet-message.js")
 
@@ -26,7 +26,7 @@ ${getMod2TweetMessage}
 
 #Destiny2 #TwitterBot`
 
-    await twitter.post(message)
+    await tweet(message)
 
     const response = {
       statusCode: 200,
