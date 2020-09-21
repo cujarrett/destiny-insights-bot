@@ -8,8 +8,6 @@ module.exports.getModDetails = async (modData) => {
   const soldCount = modData.length
   if (soldCount === 0) {
     soldCountMessage = "Not sold in the last year"
-  } else if (soldCount === 1) {
-    soldCountMessage = "First time sold in the last year"
   } else {
     soldCountMessage = `Sold ${soldCount} times in the last year`
   }
@@ -22,8 +20,8 @@ module.exports.getModDetails = async (modData) => {
 
   // eslint-disable-next-line max-len
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-  if (modData[1] && modData[1].timestamp) {
-    const lastSoldDate = new Date(modData[1].timestamp)
+  if (modData[0] && modData[0].timestamp) {
+    const lastSoldDate = new Date(modData[0].timestamp)
     const year = lastSoldDate.getFullYear()
     const month = months[lastSoldDate.getMonth()]
     const day = lastSoldDate.getDate()
@@ -31,7 +29,7 @@ module.exports.getModDetails = async (modData) => {
     lastSoldDateMessage = `Last sold ${month} ${day}${ordinal} ${year}`
   }
 
-  if (soldCount < 2) {
+  if (soldCount < 1) {
     return {
       soldCountMessage,
       soldRateMessage
