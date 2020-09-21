@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.15.0] - 2020-09-21
+### Changed
+- :wrench: Updated Lambda timeout from 30 seconds to 60 seconds
+
 ## [v1.14.2] - 2020-09-21
 ### Fixed
 - :bug: Fixed bug with last sold dates by avoiding adding the mod to the
@@ -101,6 +105,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - :sparkles: Integration with Twitter to post tweets
 - :rocket: Continuous Integration pipeline config
 
+[v1.15.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.14.2...v1.15.0
 [v1.14.2]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.14.1...v1.14.2
 [v1.14.1]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.14.0...v1.14.1
 [v1.14.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.13.1...v1.14.0

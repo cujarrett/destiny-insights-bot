@@ -5,7 +5,7 @@ resource "aws_lambda_function" "banshee-44-mods-bot" {
   role          = var.aws-iam-role-banshee-44-mods-bot-arn
   runtime       = "nodejs12.x"
   memory_size   = 128
-  timeout       = 30
+  timeout       = 60
 }
 
 resource "aws_lambda_permission" "allow_cloudwatch_to_call_banshee-44-mods-bot" {
