@@ -19,11 +19,11 @@ exports.handler = async (event, context, callback) => {
 
     const message = `Banshee-44 is selling:
 
-    ${getMod1TweetMessage}
+${getMod1TweetMessage}
 
-    ${getMod2TweetMessage}
+${getMod2TweetMessage}
 
-    #Destiny2 #TwitterBot`
+#Destiny2 #TwitterBot`
 
     await tweet(message)
     await dynamodb.insertData(mod1, mod2)
