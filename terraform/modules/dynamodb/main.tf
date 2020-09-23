@@ -35,10 +35,10 @@ resource "aws_dynamodb_table" "banshee-44-mods-bot" {
     read_capacity      = 5
     projection_type    = "ALL"
   }
-}
 
-lifecycle {
-  prevent_destroy = true
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 output "aws-dynamodb-table-banshee-44-mods-bot-arn" {
