@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.16.0] - 2020-09-22
+### Changed
+- :wrench: Updated DynamoDB Terraform to not destroy the database on `terraform destroy`
+- :wrench: Reduced DynamoDB read and write capacity
+
 ## [v1.15.1] - 2020-09-22
 ### Fixed
 - :bug: Fixed bug with missing current mods sold factored into tweets data as
@@ -110,6 +115,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - :sparkles: Integration with Twitter to post tweets
 - :rocket: Continuous Integration pipeline config
 
+[v1.16.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.15.1...v1.16.0
 [v1.15.1]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.15.0...v1.15.1
 [v1.15.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.14.2...v1.15.0
 [v1.14.2]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.14.1...v1.14.2
