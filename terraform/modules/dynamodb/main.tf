@@ -1,8 +1,8 @@
 resource "aws_dynamodb_table" "banshee-44-mods-bot" {
   name           = "banshee-44-mods-bot"
   billing_mode   = "PROVISIONED"
-  read_capacity  = 20
-  write_capacity = 20
+  read_capacity  = 10
+  write_capacity = 10
   hash_key       = "timestamp"
 
   attribute {
@@ -23,18 +23,22 @@ resource "aws_dynamodb_table" "banshee-44-mods-bot" {
     global_secondary_index {
     name               = "mod1"
     hash_key           = "mod1"
-    write_capacity     = 10
-    read_capacity      = 10
+    write_capacity     = 5
+    read_capacity      = 5
     projection_type    = "ALL"
   }
 
   global_secondary_index {
     name               = "mod2"
     hash_key           = "mod2"
-    write_capacity     = 10
-    read_capacity      = 10
+    write_capacity     = 5
+    read_capacity      = 5
     projection_type    = "ALL"
   }
+}
+
+lifecycle {
+  prevent_destroy = true
 }
 
 output "aws-dynamodb-table-banshee-44-mods-bot-arn" {
