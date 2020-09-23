@@ -11,9 +11,16 @@ exports.handler = async (event, context, callback) => {
 
     const mod1Data = await dynamodb.getDataForMod(mod1)
     const mod2Data = await dynamodb.getDataForMod(mod2)
+
+    // Add currently sold mods to front of array of mod sold data as I don't add
+    // it to the database until after the tweet is successful to prevent
+    // duplicates in the database from runtime errors
+    const currentMods = { timestamp: new Date().toISOString(), mod1, mod2 }
+    mod1Data.unshift(currentMods)
+    mod2Data.unshift(currentMods)
+
     const mod1Details = await getModDetails(mod1Data)
     const mod2Details = await getModDetails(mod2Data)
-
     const getMod1TweetMessage = getModTweetMessage(mod1, mod1Details)
     const getMod2TweetMessage = getModTweetMessage(mod2, mod2Details)
 
