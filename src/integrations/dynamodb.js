@@ -32,20 +32,6 @@ const getQuery = (modNumber, mod) => {
   }
 }
 
-module.exports.deleteKey = async (key) => {
-  AWS.config.update({ region: "us-east-1" })
-  const ddb = new AWS.DynamoDB.DocumentClient()
-
-  const params = {
-    TableName: "banshee-44-mods-bot",
-    Key: {
-      timestamp: key
-    }
-  }
-
-  await ddb.delete(params).promise()
-}
-
 module.exports.getDataForMod = async (mod) => {
   AWS.config.update({ region: "us-east-1" })
   const ddb = new AWS.DynamoDB({ apiVersion: "2012-08-10" })
