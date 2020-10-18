@@ -1,7 +1,7 @@
 const fetch = require("node-fetch")
 
 module.exports.getModsForSale = async () => {
-  const endpoint = "https://voluspa.braytech.org/vendor/?hash=672118013&defined=true"
+  const endpoint = "https://b.vlsp.network/vendor/?hash=672118013&defined=true"
   const options = {
     method: "GET",
     json: true
