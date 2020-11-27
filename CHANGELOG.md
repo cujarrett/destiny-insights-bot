@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.18.0] - 2020-11-27
+### Changed
+- :wrench: Added point in time recovery for DynamoDB database
+
 ## [v1.17.0] - 2020-10-18
 ### Changed
 - :wrench: Updated Braytech endpoint from upstream change
@@ -120,6 +124,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - :sparkles: Integration with Twitter to post tweets
 - :rocket: Continuous Integration pipeline config
 
+[v1.18.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.17.0...v1.18.0
 [v1.17.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.16.0...v1.17.0
 [v1.16.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.15.1...v1.16.0
 [v1.15.1]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.15.0...v1.15.1

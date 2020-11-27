@@ -5,6 +5,10 @@ resource "aws_dynamodb_table" "banshee-44-mods-bot" {
   write_capacity = 10
   hash_key       = "timestamp"
 
+  point_in_time_recovery {
+    enabled = true
+  }
+
   attribute {
     name = "timestamp"
     type = "S"
@@ -20,7 +24,7 @@ resource "aws_dynamodb_table" "banshee-44-mods-bot" {
     type = "S"
   }
 
-    global_secondary_index {
+  global_secondary_index {
     name               = "mod1"
     hash_key           = "mod1"
     write_capacity     = 5
