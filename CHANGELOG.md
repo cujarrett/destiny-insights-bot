@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.19.0] - 2020-12-11
+### Changed
+- ":wrench Migrates to AWS Param Store from AWS Secrets Manager"
+
 ## [v1.18.0] - 2020-11-27
 ### Changed
 - :wrench: Added point in time recovery for DynamoDB database
@@ -124,6 +128,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - :sparkles: Integration with Twitter to post tweets
 - :rocket: Continuous Integration pipeline config
 
+[v1.19.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.18.0...v1.19.0
 [v1.18.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.17.0...v1.18.0
 [v1.17.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.16.0...v1.17.0
 [v1.16.0]: https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.15.1...v1.16.0
