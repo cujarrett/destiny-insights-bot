@@ -6,7 +6,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [v1.19.0] - 2020-12-11
 ### Changed
 - :wrench: Migrates to AWS Param Store from AWS Secrets Manager
-- :arrow_up: Bump ini from 1.3.5 to 1.3.7
+- :arrow_up: Updated dependencies
 
 ## [v1.18.0] - 2020-11-27
 ### Changed
