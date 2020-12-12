@@ -1,5 +1,5 @@
 const Twit = require("twit")
-const { getSecret } = require("./aws-secrets-manager.js")
+const { getParameters } = require("./aws-parameter-store.js")
 
 module.exports.test = async (message) => {
   // eslint-disable-next-line max-len
@@ -20,7 +20,7 @@ module.exports.test = async (message) => {
 
 module.exports.tweet = async (message) => {
   // eslint-disable-next-line max-len
-  const { TWITTER_CONSUMER_API_KEY, TWITTER_CONSUMER_SECRET, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET } = await getSecret()
+  const { TWITTER_CONSUMER_API_KEY, TWITTER_CONSUMER_SECRET, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET } = await getParameters()
   // Allow Twit mandated use of _ in object keys
   /* eslint-disable camelcase*/
   const twitterBotConfig = {

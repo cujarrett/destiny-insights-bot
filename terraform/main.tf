@@ -10,7 +10,7 @@ module "iam" {
   source = "./modules/iam"
   error-sns-topic = var.error-sns-topic
   aws-dynamodb-table-banshee-44-mods-bot-arn = module.dynamodb.aws-dynamodb-table-banshee-44-mods-bot-arn
-  secret = var.secret
+  parameter-store-twitter-auth-arn = var.parameter-store-twitter-auth-arn
 }
 
 module "event-bridge" {

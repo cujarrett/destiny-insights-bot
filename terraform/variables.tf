@@ -9,7 +9,7 @@ variable "error-sns-topic" {
   type = string
 }
 
-variable "secret" {
-  description = "Secret Manager secret ARN"
+variable "parameter-store-twitter-auth-arn" {
+  description = "Parameter Store twitter auth config path ARN"
   type = string
 }

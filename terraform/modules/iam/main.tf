@@ -66,9 +66,9 @@ resource "aws_iam_role_policy_attachment" "attach-sns" {
   policy_arn = aws_iam_policy.banshee-44-mods-bot-sns.arn
 }
 
-resource "aws_iam_policy" "banshee-44-mods-bot-secrets-manager" {
-  name        = "banshee-44-mods-bot-secrets-manager"
-  description = "Adds Secrets Manager access"
+resource "aws_iam_policy" "banshee-44-mods-bot-parameter-store" {
+  name        = "banshee-44-mods-bot-parameter-store"
+  description = "Adds Parameter Store access"
 
   policy = <<EOF
 {
@@ -76,22 +76,19 @@ resource "aws_iam_policy" "banshee-44-mods-bot-secrets-manager" {
   "Statement": [
     {
       "Effect": "Allow",
-      "Action": [
-        "secretsmanager:GetResourcePolicy",
-        "secretsmanager:GetSecretValue",
-        "secretsmanager:DescribeSecret",
-        "secretsmanager:ListSecretVersionIds"
-      ],
-      "Resource": "${var.secret}"
+      "Action": "ssm:GetParametersByPath",
+      "Resource": [
+        "${var.parameter-store-twitter-auth-arn}"
+      ]
     }
   ]
 }
 EOF
 }
 
-resource "aws_iam_role_policy_attachment" "attach-secrets-manager" {
+resource "aws_iam_role_policy_attachment" "attach-parameter-store" {
   role       = aws_iam_role.banshee-44-mods-bot.name
-  policy_arn = aws_iam_policy.banshee-44-mods-bot-secrets-manager.arn
+  policy_arn = aws_iam_policy.banshee-44-mods-bot-parameter-store.arn
 }
 
 resource "aws_iam_policy" "banshee-44-mods-bot-dynamodb" {
