@@ -33,7 +33,7 @@ module.exports.tweet = async (message) => {
   }
 
   console.log(message, twitterBotConfig)
-
+  // TODO
   // await post(message, twitterBotConfig)
 }
 

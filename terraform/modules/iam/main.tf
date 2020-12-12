@@ -78,10 +78,7 @@ resource "aws_iam_policy" "banshee-44-mods-bot-parameter-store" {
       "Effect": "Allow",
       "Action": "ssm:GetParametersByPath",
       "Resource": [
-        "${var.parameter-store-twitter-access-token-arn}",
-        "${var.parameter-store-twitter-access-token-secret-arn}",
-        "${var.parameter-store-twitter-consumer-api-key-arn}",
-        "${var.parameter-store-twitter-consumer-secret-arn}"
+        "${var.parameter-store-twitter-auth-arn}"
       ]
     }
   ]
