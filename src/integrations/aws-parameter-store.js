@@ -1,5 +1,5 @@
 const AWS = require("aws-sdk")
-const ssm = new AWS.SSM({region: "us-east-1"})
+const ssm = new AWS.SSM({ region: "us-east-1" })
 
 module.exports.getParameters = async () => {
   const params = {
