@@ -32,9 +32,7 @@ module.exports.tweet = async (message) => {
     strictSSL: true
   }
 
-  console.log(message, twitterBotConfig)
-  // TODO
-  // await post(message, twitterBotConfig)
+  await post(message, twitterBotConfig)
 }
 
 const post = async (message, twitterBotConfig) => {

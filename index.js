@@ -33,8 +33,7 @@ ${getMod2TweetMessage}
 #Destiny2 #TwitterBot`
 
     await tweet(message)
-    // TODO
-    // await dynamodb.insertData(mod1, mod2)
+    await dynamodb.insertData(mod1, mod2)
 
     const response = {
       statusCode: 200,
