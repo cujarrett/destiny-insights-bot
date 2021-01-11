@@ -1,3 +1,18 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+# [1.13.0](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.12.0...v1.13.0) (2021-01-11)
+
+
+### Features
+
+* **semantic-release:** adds semantic-release ([062f471](https://github.com/cujarrett/banshee-44-mods-bot/commit/062f4716be263cd4a1e4344de48cd0cda72a45f6))
+* **semantic-release:** adds semantic-release ([398da7e](https://github.com/cujarrett/banshee-44-mods-bot/commit/398da7e00e13c3ef7e235ba484cfef259362de7c))
+* **semantic-release:** adds semantic-release ([56249a1](https://github.com/cujarrett/banshee-44-mods-bot/commit/56249a17b869f37c9c790314a1ea3bcb9374b31b))
+* **semantic-release:** adds semantic-release ([9ca049d](https://github.com/cujarrett/banshee-44-mods-bot/commit/9ca049db6cf9b236e3d377c881526d5273e7bfc5))
+* **semantic-release:** adds semantic-release ([24db3f9](https://github.com/cujarrett/banshee-44-mods-bot/commit/24db3f9020fe897ca0a5e4929215b099775c4a2f))
+
 ## [v1.19.0] - 2020-12-11
 ### Changed
 - :wrench: Migrates to AWS Param Store from AWS Secrets Manager
