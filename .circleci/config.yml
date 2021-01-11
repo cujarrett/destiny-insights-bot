@@ -109,16 +109,12 @@ workflows:
               only:
                 - master
       - build-for-production:
-          requires:
-            - release
           filters:
             tags:
               only: /^v\d+\.\d+\.\d+$/
             branches:
               ignore: /.*/
       - deploy:
-          requires:
-            - build-for-production
           filters:
             tags:
               only: /^v\d+\.\d+\.\d+$/
