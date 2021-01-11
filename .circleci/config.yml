@@ -46,13 +46,25 @@ jobs:
           paths:
             - build
 
-  deploy:
+  release:
     docker:
       - image: 'circleci/python:3.7.6'
+    environment:
+      GIT_AUTHOR_NAME: cujarrett
+      GIT_AUTHOR_EMAIL: cujarrett@gmail.com
+      GIT_COMMITTER_NAME: cujarrett
+      GIT_COMMITTER_EMAIL: cujarrett@gmail.com
+    description: "semantic-release"
+    parameters:
+      dry-run:
+        description: "semantic-release --dry-run flag"
+        default: false
+        type: boolean
     working_directory: ~/temp
     steps:
       - attach_workspace:
           at: ~/temp
+      - run: npx semantic-release --branch $CIRCLE_BRANCH --dry-run=<< parameters.dry-run >>
       - run:
           name: Install AWS CLI
           command: sudo pip install awscli
@@ -77,10 +89,21 @@ workflows:
             - test
           filters:
             branches:
-              only: master
-      - deploy:
+              only:
+                - master
+      - release:
+          name: release-dry-run
+          requires:
+            - test
+          dry-run: true
+          filters:
+            branches:
+              ignore:
+                - master
+      - release:
           requires:
             - build-for-production
           filters:
             branches:
-              only: master
+              only:
+                - master
