@@ -112,15 +112,15 @@ workflows:
           requires:
             - release
           filters:
-            branches:
-              ignore: /.*/
             tags:
               only: /^v\d+\.\d+\.\d+$/
+            branches:
+              ignore: /.*/
       - deploy:
           requires:
             - build-for-production
           filters:
-            branches:
-              ignore: /.*/
             tags:
               only: /^v\d+\.\d+\.\d+$/
+            branches:
+              ignore: /.*/
