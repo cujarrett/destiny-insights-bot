@@ -32,6 +32,26 @@ jobs:
           name: Run Tests
           command: npm run test
 
+  release:
+    docker:
+      - image: circleci/node:lts
+    environment:
+      GIT_AUTHOR_NAME: cujarrett
+      GIT_AUTHOR_EMAIL: cujarrett@gmail.com
+      GIT_COMMITTER_NAME: cujarrett
+      GIT_COMMITTER_EMAIL: cujarrett@gmail.com
+    description: "semantic-release"
+    parameters:
+      dry-run:
+        description: "semantic-release --dry-run flag"
+        default: false
+        type: boolean
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run: npx semantic-release --branch $CIRCLE_BRANCH --dry-run=<< parameters.dry-run >>
+
   build-for-production:
     docker:
       - image: circleci/node:lts
@@ -64,26 +84,6 @@ jobs:
               --zip-file=fileb://build/banshee-44-mods-bot.zip 1> /dev/null \
               --region=us-east-1
 
-  release:
-    docker:
-      - image: circleci/node:lts
-    environment:
-      GIT_AUTHOR_NAME: cujarrett
-      GIT_AUTHOR_EMAIL: cujarrett@gmail.com
-      GIT_COMMITTER_NAME: cujarrett
-      GIT_COMMITTER_EMAIL: cujarrett@gmail.com
-    description: "semantic-release"
-    parameters:
-      dry-run:
-        description: "semantic-release --dry-run flag"
-        default: false
-        type: boolean
-    steps:
-      - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run: npx semantic-release --branch $CIRCLE_BRANCH --dry-run=<< parameters.dry-run >>
-
 workflows:
   version: 2
   cicd:
@@ -92,13 +92,6 @@ workflows:
       - test:
           requires:
             - build-for-test
-      - build-for-production:
-          requires:
-            - test
-          filters:
-            branches:
-              only:
-                - master
       - release:
           name: release-dry-run
           requires:
@@ -110,14 +103,21 @@ workflows:
                 - master
       - release:
           requires:
-            - build-for-production
+            - test
+          filters:
+            branches:
+              only:
+                - master
+      - build-for-production:
+          requires:
+            - release
           filters:
             branches:
               only:
                 - master
       - deploy:
           requires:
-            - release
+            - build-for-production
           filters:
             branches:
               only:
