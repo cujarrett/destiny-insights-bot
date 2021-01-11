@@ -108,16 +108,16 @@ workflows:
             branches:
               ignore:
                 - master
-      - deploy:
+      - release:
           requires:
             - build-for-production
           filters:
             branches:
               only:
                 - master
-      - release:
+      - deploy:
           requires:
-            - deploy
+            - release
           filters:
             branches:
               only:
