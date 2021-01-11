@@ -5,7 +5,7 @@ If you're new to contributing to open source software
 
 ## Not sure where to start?
 
-A great place to jump in are issues labeled[Beginner Friendly](https://github.com/cujarrett/banshee-44-mods-bot/labels/Beginner%20Friendly).
+A great place to jump in are issues labeled [Beginner Friendly](https://github.com/cujarrett/banshee-44-mods-bot/labels/Beginner%20Friendly).
 
 ## Chat
 
