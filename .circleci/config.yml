@@ -117,7 +117,7 @@ workflows:
                 - master
       - release:
           requires:
-            - build-for-production
+            - deploy
           filters:
             branches:
               only:
