@@ -46,9 +46,27 @@ jobs:
           paths:
             - build
 
-  release:
+  deploy:
     docker:
       - image: 'circleci/python:3.7.6'
+    working_directory: ~/temp
+    steps:
+      - attach_workspace:
+          at: ~/temp
+      - run:
+          name: Install AWS CLI
+          command: sudo pip install awscli
+      - deploy:
+          name: Deploy to AWS S3
+          command: |
+            aws lambda update-function-code \
+              --function-name=banshee-44-mods-bot \
+              --zip-file=fileb://build/banshee-44-mods-bot.zip 1> /dev/null \
+              --region=us-east-1
+
+  release:
+    docker:
+      - image: circleci/node:lts
     environment:
       GIT_AUTHOR_NAME: cujarrett
       GIT_AUTHOR_EMAIL: cujarrett@gmail.com
@@ -65,16 +83,6 @@ jobs:
       - attach_workspace:
           at: ~/temp
       - run: npx semantic-release --branch $CIRCLE_BRANCH --dry-run=<< parameters.dry-run >>
-      - run:
-          name: Install AWS CLI
-          command: sudo pip install awscli
-      - deploy:
-          name: Deploy to AWS S3
-          command: |
-            aws lambda update-function-code \
-              --function-name=banshee-44-mods-bot \
-              --zip-file=fileb://build/banshee-44-mods-bot.zip 1> /dev/null \
-              --region=us-east-1
 
 workflows:
   version: 2
@@ -99,6 +107,13 @@ workflows:
           filters:
             branches:
               ignore:
+                - master
+      - deploy:
+          requires:
+            - build-for-production
+          filters:
+            branches:
+              only:
                 - master
       - release:
           requires:
