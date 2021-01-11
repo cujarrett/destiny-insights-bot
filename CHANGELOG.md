@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.22.0](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.21.7...v1.22.0) (2021-01-11)
+
+
+### Features
+
+* pushes tweet back one min ([3346507](https://github.com/cujarrett/banshee-44-mods-bot/commit/3346507b799c618ba30869327d96d001277170ab))
+
 ## [1.21.7](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.21.6...v1.21.7) (2021-01-11)
 
 
