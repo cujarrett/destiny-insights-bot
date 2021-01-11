@@ -64,6 +64,26 @@ jobs:
               --zip-file=fileb://build/banshee-44-mods-bot.zip 1> /dev/null \
               --region=us-east-1
 
+  release:
+    docker:
+      - image: circleci/node:lts
+    environment:
+      GIT_AUTHOR_NAME: cujarrett
+      GIT_AUTHOR_EMAIL: cujarrett@gmail.com
+      GIT_COMMITTER_NAME: cujarrett
+      GIT_COMMITTER_EMAIL: cujarrett@gmail.com
+    description: "semantic-release"
+    parameters:
+      dry-run:
+        description: "semantic-release --dry-run flag"
+        default: false
+        type: boolean
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run: npx semantic-release --branch $CIRCLE_BRANCH --dry-run=<< parameters.dry-run >>
+
 workflows:
   version: 2
   cicd:
@@ -77,10 +97,28 @@ workflows:
             - test
           filters:
             branches:
-              only: master
+              only:
+                - master
+      - release:
+          name: release-dry-run
+          requires:
+            - test
+          dry-run: true
+          filters:
+            branches:
+              ignore:
+                - master
       - deploy:
           requires:
             - build-for-production
           filters:
             branches:
-              only: master
+              only:
+                - master
+      - release:
+          requires:
+            - deploy
+          filters:
+            branches:
+              only:
+                - master

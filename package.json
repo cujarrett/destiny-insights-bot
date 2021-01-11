@@ -1,20 +1,28 @@
 {
   "name": "banshee-44-mods-bot",
-  "version": "1.19.0",
+  "version": "0.0.0-development",
   "author": "Matt Jarrett",
   "license": "MIT",
   "description": "Node JS Twitter bot that tweets Destiny 2's Banshee-44 daily mods available for sale",
   "main": "src/index.js",
   "scripts": {
+    "commit": "git-cz",
     "lint": "eslint .",
     "fix-lint": "eslint . --fix",
     "test": "nyc --reporter=lcov tape test/**/*.js | tap-spec && nyc report",
     "ci": "npm run lint && npm run test",
-    "build": "npm install --production && rm -rf build && mkdir build && zip -r -q -x='*media*' -x='*terraform*' -x=*coverage* -x='*.md' -x='LICENSE' -x='*build*' -x='*test*' -x='*.DS_Store*' -x='*.nyc_output*' -x='*.git*' -x='*.nycrc' -x='*.eslintrc.js' build/banshee-44-mods-bot.zip . && du -sh build"
+    "build": "npm install --production && rm -rf build && mkdir build && zip -r -q -x='*media*' -x='*terraform*' -x=*coverage* -x='*.md' -x='LICENSE' -x='*build*' -x='*test*' -x='*.DS_Store*' -x='*.nyc_output*' -x='*.git*' -x='*.nycrc' -x='*.eslintrc.js' build/banshee-44-mods-bot.zip . && du -sh build",
+    "semantic-release": "semantic-release"
   },
+  "contributors": [
+    {
+      "name": "Matt Jarrett",
+      "web": "https://mattjarrett.dev"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cujarrett/banshee-44-mods-bot.git"
+    "url": "https://github.com/cujarrett/banshee-44-mods-bot.git"
   },
   "keywords": [
     "Destiny"
@@ -24,17 +32,39 @@
   },
   "homepage": "https://github.com/cujarrett/banshee-44-mods-bot#readme",
   "devDependencies": {
+    "@commitlint/cli": "~11.0.0",
+    "@commitlint/config-conventional": "~11.0.0",
+    "@semantic-release/changelog": "~5.0.1",
+    "@semantic-release/commit-analyzer": "~8.0.1",
+    "@semantic-release/exec": "~5.0.0",
+    "@semantic-release/git": "~9.0.0",
+    "@semantic-release/github": "~7.2.0",
+    "@semantic-release/release-notes-generator": "~9.0.1",
     "aws-sdk": "~2.809.0",
+    "commitizen": "~4.2.2",
+    "cz-conventional-changelog": "~3.3.0",
     "eslint": "~7.15.0",
+    "husky": "~4.3.7",
     "nconf": "~0.11.0",
     "nyc": "~15.1.0",
     "os": "~0.1.1",
     "path": "~0.12.7",
+    "semantic-release": "~17.3.1",
     "tap-spec": "~5.0.0",
     "tape-async": "~2.3.0"
   },
   "dependencies": {
     "node-fetch": "~2.6.1",
     "twit": "~2.2.11"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

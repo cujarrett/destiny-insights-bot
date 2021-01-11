@@ -1,8 +1,3 @@
-# Changelog
-All notable changes to this project will be documented in this file.
-
-This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
 ## [v1.19.0] - 2020-12-11
 ### Changed
 - :wrench: Migrates to AWS Param Store from AWS Secrets Manager
@@ -83,7 +78,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [v1.8.0] - 2019-10-16
 ### Changed
 - :arrow_up: Updated dependencies
-- :alien: Updates CI/CD to accomidate GitHub Actions move from HCL to YML :/
+- :alien: Updates CI/CD to accommodate GitHub Actions move from HCL to YML :/
 
 ## [v1.7.2] - 2019-07-13
 ### Changed
