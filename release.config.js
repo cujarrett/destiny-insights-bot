@@ -8,12 +8,8 @@ module.exports = {
   plugins: [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    [
-      "@semantic-release/changelog",
-      {
-        changelogTitle
-      }
-    ],
+    ["@semantic-release/npm", { npmPublish: false }],
+    ["@semantic-release/changelog", { changelogTitle }],
     "@semantic-release/git",
     "@semantic-release/github",
     ["@semantic-release/exec", {
