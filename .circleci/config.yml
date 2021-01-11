@@ -115,6 +115,8 @@ workflows:
             branches:
               ignore: /.*/
       - deploy:
+          requires:
+            - build-for-production
           filters:
             tags:
               only: /^v\d+\.\d+\.\d+$/
