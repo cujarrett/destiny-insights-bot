@@ -11,7 +11,7 @@
     "fix-lint": "eslint . --fix",
     "test": "nyc --reporter=lcov tape test/**/*.js | tap-spec && nyc report",
     "ci": "npm run lint && npm run test",
-    "build": "npm install --production && rm -rf build && mkdir build && zip -r -q -x='*media*' -x='*terraform*' -x=*coverage* -x='*.md' -x='LICENSE' -x='*build*' -x='*test*' -x='*.DS_Store*' -x='*.nyc_output*' -x='*.git*' -x='*.nycrc' -x='*.eslintrc.js' build/banshee-44-mods-bot.zip . && du -sh build",
+    "build": "npm install --production && rm -rf build && mkdir build && zip -r -q -x='*media*' -x='*terraform*' -x=*coverage* -x='*.md' -x='LICENSE' -x='*build*' -x='*test*' -x='*.DS_Store*' -x='*.nyc_output*' -x='*.git*' -x='*.nycrc' -x='*.eslintrc.js' -x='release.config.js' -x='commitlint.config.js' build/banshee-44-mods-bot.zip . && du -sh build",
     "semantic-release": "semantic-release"
   },
   "contributors": [
