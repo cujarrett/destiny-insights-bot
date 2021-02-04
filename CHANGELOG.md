@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.23.1](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.23.0...v1.23.1) (2021-02-04)
+
+
+### Bug Fixes
+
+* commit message config ([12f7ea2](https://github.com/cujarrett/banshee-44-mods-bot/commit/12f7ea2b3599ee056bd0493bf32e6b66134e9da1))
+
 # [1.23.0](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.22.0...v1.23.0) (2021-01-25)
 
 
