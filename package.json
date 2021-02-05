@@ -1,6 +1,6 @@
 {
   "name": "banshee-44-mods-bot",
-  "version": "1.23.0",
+  "version": "1.23.2",
   "author": "Matt Jarrett",
   "license": "MIT",
   "description": "Node JS Twitter bot that tweets Destiny 2's Banshee-44 daily mods available for sale",
@@ -50,7 +50,7 @@
     "nyc": "~15.1.0",
     "os": "~0.1.1",
     "path": "~0.12.7",
-    "semantic-release": "~17.3.1",
+    "semantic-release": "~17.3.7",
     "tap-spec": "~5.0.0",
     "tape-async": "~2.3.0"
   },
