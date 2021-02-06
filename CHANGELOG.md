@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.23.4](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.23.3...v1.23.4) (2021-02-06)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump eslint from 7.15.0 to 7.19.0 ([75aee18](https://github.com/cujarrett/banshee-44-mods-bot/commit/75aee18ccb5c529fd92756c007b18a1349b50c35))
+
 ## [1.23.3](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.23.2...v1.23.3) (2021-02-05)
 
 
