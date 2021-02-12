@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.23.12](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.23.11...v1.23.12) (2021-02-12)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump aws-sdk from 2.841.0 to 2.842.0 ([084e70e](https://github.com/cujarrett/banshee-44-mods-bot/commit/084e70e848c14b0454c544b59ca3270b7acedda1))
+
 ## [1.23.11](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.23.10...v1.23.11) (2021-02-11)
 
 
