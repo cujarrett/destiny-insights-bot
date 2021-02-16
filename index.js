@@ -1,4 +1,4 @@
-const braytech = require("./src/integrations/braytech.js")
+const { getModsForSale } = require("./src/integrations/banshee-44-mods.js")
 const dynamodb = require("./src/integrations/dynamodb.js")
 const { tweet } = require("./src/integrations/twitter.js")
 const { getModDetails } = require("./src/util/get-mod-details.js")
@@ -6,7 +6,7 @@ const { getModTweetMessage } = require("./src/util/get-mod-tweet-message.js")
 
 exports.handler = async (event, context, callback) => {
   try {
-    const mods = await braytech.getModsForSale()
+    const mods = await getModsForSale()
     const [mod1, mod2] = mods
 
     const mod1Data = await dynamodb.getDataForMod(mod1)
