@@ -9,11 +9,8 @@
 </p>
 
 ## What is it?
-It's a serverless Twitter bot powered by JavaScript, AWS, and Braytech that tweets Destiny 2's Banshee-44 daily mods available for sale. Check
+It's a serverless Twitter bot powered by JavaScript and AWS that tweets Destiny 2's Banshee-44 daily mods available for sale. Check
 out [Banshee-44's current mods for sale right now on Twitter](https://twitter.com/banshee44mods).
-
-## How's it work?
-![design](./media/design.jpg)
 
 ## Questions & Contact
 Feel free to join the [Banshee-44 Mods Bot Discord](https://discord.gg/jAA5U52) if you have questions.
@@ -22,7 +19,7 @@ Feel free to join the [Banshee-44 Mods Bot Discord](https://discord.gg/jAA5U52) 
 [Check out the contributing guide](CONTRIBUTING.md)
 
 ## Thank You!
-- Big thanks to [Tom Chapman](https://github.com/justrealmilk) for his help with the Bungie API.
+- Big thanks to [Tom Chapman](https://github.com/justrealmilk) for his help with Bungie's API.
 
 ## Changelog
 [banshee-44-mods-bot changelog](CHANGELOG.md)

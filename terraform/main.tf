@@ -2,14 +2,10 @@ module "archive" {
   source = "./modules/archive"
 }
 
-module "dynamodb" {
-  source = "./modules/dynamodb"
-}
-
 module "iam" {
   source = "./modules/iam"
   error-sns-topic = var.error-sns-topic
-  aws-dynamodb-table-banshee-44-mods-bot-arn = module.dynamodb.aws-dynamodb-table-banshee-44-mods-bot-arn
+  dynamodb-table-banshee-44-mods-backend-mods-arn = var.dynamodb-table-banshee-44-mods-backend-mods-arn
   parameter-store-twitter-auth-arn = var.parameter-store-twitter-auth-arn
 }
 

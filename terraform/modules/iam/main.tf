@@ -106,7 +106,7 @@ resource "aws_iam_policy" "banshee-44-mods-bot-dynamodb" {
         "dynamodb:DeleteItem",
         "dynamodb:Scan"
       ],
-      "Resource": "${var.aws-dynamodb-table-banshee-44-mods-bot-arn}"
+      "Resource": "${var.dynamodb-table-banshee-44-mods-backend-mods-arn}"
     }
   ]
 }

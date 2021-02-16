@@ -5,7 +5,7 @@ module.exports.insertData = async (mod1, mod2) => {
   const ddb = new AWS.DynamoDB({ apiVersion: "2012-08-10" })
 
   const params = {
-    TableName: "banshee-44-mods-bot",
+    TableName: "banshee-44-mods-backend-mods",
     Item: {
       // AWS DynamoDB uses single char for types
       // eslint-disable-next-line id-length
@@ -22,7 +22,7 @@ module.exports.insertData = async (mod1, mod2) => {
 
 const getQuery = (modNumber, mod) => {
   return {
-    TableName: "banshee-44-mods-bot",
+    TableName: "banshee-44-mods-backend-mods",
     FilterExpression: `${modNumber} = :value`,
     ExpressionAttributeValues: {
       // AWS DynamoDB uses single char for types
