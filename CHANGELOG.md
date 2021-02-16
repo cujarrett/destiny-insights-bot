@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.24.0](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.23.12...v1.24.0) (2021-02-16)
+
+
+### Features
+
+* migrate backend from braytech to api.banshee44mods ([e6052d7](https://github.com/cujarrett/banshee-44-mods-bot/commit/e6052d774591fc0cd7f6aeb2f6c6400e2980e4d5))
+
 ## [1.23.12](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.23.11...v1.23.12) (2021-02-12)
 
 
