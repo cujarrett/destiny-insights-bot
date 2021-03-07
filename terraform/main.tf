@@ -5,7 +5,6 @@ module "archive" {
 module "iam" {
   source = "./modules/iam"
   error-sns-topic = var.error-sns-topic
-  dynamodb-table-banshee-44-mods-backend-mods-arn = var.dynamodb-table-banshee-44-mods-backend-mods-arn
   parameter-store-twitter-auth-arn = var.parameter-store-twitter-auth-arn
 }
 

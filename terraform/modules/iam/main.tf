@@ -91,33 +91,6 @@ resource "aws_iam_role_policy_attachment" "attach-parameter-store" {
   policy_arn = aws_iam_policy.banshee-44-mods-bot-parameter-store.arn
 }
 
-resource "aws_iam_policy" "banshee-44-mods-bot-dynamodb" {
-  name        = "banshee-44-mods-bot-dynamodb"
-  description = "Adds DynamoDB access"
-
-  policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "dynamodb:PutItem",
-        "dynamodb:DeleteItem",
-        "dynamodb:Scan"
-      ],
-      "Resource": "${var.dynamodb-table-banshee-44-mods-backend-mods-arn}"
-    }
-  ]
-}
-EOF
-}
-
-resource "aws_iam_role_policy_attachment" "attach-dynamodb" {
-  role       = aws_iam_role.banshee-44-mods-bot.name
-  policy_arn = aws_iam_policy.banshee-44-mods-bot-dynamodb.arn
-}
-
 output "aws-iam-role-banshee-44-mods-bot-arn" {
   value = aws_iam_role.banshee-44-mods-bot.arn
 }
