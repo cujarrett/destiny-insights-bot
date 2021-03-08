@@ -1,25 +1,22 @@
 const { getModsForSale } = require("./src/integrations/banshee-44-mods.js")
-const { tweet } = require("./src/integrations/twitter.js")
+const { getLastModTweetDate, tweet } = require("./src/integrations/twitter.js")
 const { getModTweetMessage } = require("./src/util/get-mod-tweet-message.js")
 
 exports.handler = async (event, context, callback) => {
   try {
     const modsResponse = await getModsForSale()
 
-    const now = new Date()
     const lastUpdated = modsResponse.metadata.lastUpdated
     const lastUpdatedDate = new Date(lastUpdated)
-    const minsSinceModUpdate = ((now - lastUpdatedDate) / 1000) / 60
-    const isTweetReady = minsSinceModUpdate < 15
+    const lastModTweet = await getLastModTweetDate()
+    const isTweetReady = lastUpdatedDate > lastModTweet
     let response = {}
 
     if (isTweetReady) {
       const mods = modsResponse.inventory.mods
       const [mod1, mod2] = mods
-
       const getMod1TweetMessage = getModTweetMessage(mod1)
       const getMod2TweetMessage = getModTweetMessage(mod2)
-
       const message = `Banshee-44 is selling:
 
 ${getMod1TweetMessage}
