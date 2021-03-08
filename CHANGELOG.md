@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.28.0](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.27.1...v1.28.0) (2021-03-08)
+
+
+### Features
+
+* updates tweet trigger logic ([a9fdbe5](https://github.com/cujarrett/banshee-44-mods-bot/commit/a9fdbe51b0915f366acb00e5e525e2128c5e1f6b))
+
 ## [1.27.1](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.27.0...v1.27.1) (2021-03-07)
 
 
