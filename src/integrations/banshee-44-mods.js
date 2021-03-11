@@ -6,8 +6,25 @@ module.exports.getModsForSale = async () => {
     method: "GET",
     json: true
   }
+  const maxRetries = 3
+  let rawResponse = await fetch(endpoint, options)
+  let isValidModData = rawResponse.status === 200
+  let getModDataRetries = 0
 
-  const rawResponse = await fetch(endpoint, options)
+  if (!isValidModData) {
+    while (getModDataRetries < maxRetries && !isValidModData) {
+      getModDataRetries += 1
+      console.log({ getModDataRetries })
+      rawResponse = await fetch(endpoint, options)
+      isValidModData = rawResponse.status === 200
+    }
+
+    if (getModDataRetries === maxRetries && !isValidModData) {
+      // eslint-disable-next-line max-len
+      return { metadata: { error: `https://api.banshee44mods.com/info failed to respond successfully ${maxRetries} times` } }
+    }
+  }
+
   const response = await rawResponse.json()
   return response
 }
