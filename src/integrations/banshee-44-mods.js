@@ -7,12 +7,7 @@ module.exports.getModsForSale = async () => {
     json: true
   }
 
-  try {
-    const rawResponse = await fetch(endpoint, options)
-    const response = await rawResponse.json()
-    return response
-  } catch (error) {
-    console.log(error)
-    throw new Error("https://api.banshee44mods.com/info is not available or not working.")
-  }
+  const rawResponse = await fetch(endpoint, options)
+  const response = await rawResponse.json()
+  return response
 }
