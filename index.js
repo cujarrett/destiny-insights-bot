@@ -4,20 +4,26 @@ const { getModTweetMessage } = require("./src/util/get-mod-tweet-message.js")
 
 exports.handler = async (event, context, callback) => {
   try {
-    const modsResponse = await getModsForSale()
-
-    const lastUpdated = modsResponse.metadata.lastUpdated
-    const lastUpdatedDate = new Date(lastUpdated)
-    const lastModTweet = await getLastModTweetDate()
-    const isTweetReady = lastUpdatedDate > lastModTweet
     let response = {}
+    const modsResponse = await getModsForSale()
+    const error = modsResponse.metadata.error
+    if (error) {
+      response = {
+        statusCode: 424,
+        body: error
+      }
+    } else {
+      const lastUpdated = modsResponse.metadata.lastUpdated
+      const lastUpdatedDate = new Date(lastUpdated)
+      const lastModTweet = await getLastModTweetDate()
+      const isTweetReady = lastUpdatedDate > lastModTweet
 
-    if (isTweetReady) {
-      const mods = modsResponse.inventory.mods
-      const [mod1, mod2] = mods
-      const getMod1TweetMessage = getModTweetMessage(mod1)
-      const getMod2TweetMessage = getModTweetMessage(mod2)
-      const message = `Banshee-44 is selling:
+      if (isTweetReady) {
+        const mods = modsResponse.inventory.mods
+        const [mod1, mod2] = mods
+        const getMod1TweetMessage = getModTweetMessage(mod1)
+        const getMod2TweetMessage = getModTweetMessage(mod2)
+        const message = `Banshee-44 is selling:
 
 ${getMod1TweetMessage}
 
@@ -25,24 +31,30 @@ ${getMod2TweetMessage}
 
 #Destiny2 #TwitterBot`
 
-      await tweet(message)
+        await tweet(message)
 
-      response = {
-        statusCode: 200,
-        body: JSON.stringify(`${message} posted.`)
-      }
-    } else {
-      response = {
-        statusCode: 200,
-        body: JSON.stringify("New tweet is not ready.")
+        response = {
+          statusCode: 200,
+          body: `Tweeted:\n${message}`
+        }
+      } else {
+        response = {
+          statusCode: 200,
+          body: "New tweet is not ready"
+        }
       }
     }
 
     context.callbackWaitsForEmptyEventLoop = false
-    callback(null, 200)
+    callback(null, response)
     return response
   } catch (error) {
+    console.log(error)
     context.callbackWaitsForEmptyEventLoop = false
-    callback(new Error(error), 424)
+    const response = {
+      statusCode: 500,
+      body: error
+    }
+    callback(new Error(error), response)
   }
 }
