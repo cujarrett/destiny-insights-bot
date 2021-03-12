@@ -2,6 +2,18 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.32.0](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.31.0...v1.32.0) (2021-03-12)
+
+
+### Bug Fixes
+
+* updates dependencies ([eed1cad](https://github.com/cujarrett/banshee-44-mods-bot/commit/eed1cadf957b7824486b18761329fdb97e96f158))
+
+
+### Features
+
+* updates runtime to node 14 ([ecc2551](https://github.com/cujarrett/banshee-44-mods-bot/commit/ecc255112d0b20c1d9474405906e7c01779a113d))
+
 # [1.31.0](https://github.com/cujarrett/banshee-44-mods-bot/compare/v1.30.0...v1.31.0) (2021-03-12)
 
 
