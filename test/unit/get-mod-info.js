@@ -1,7 +1,7 @@
 const test = require("tape-async")
-const { getModTweetMessage } = require("../../src/util/get-mod-tweet-message.js")
+const { getModInfo } = require("../../src/util/get-mod-info.js")
 
-test("Unit - getModTweetMessage", async (assert) => {
+test("Unit - getModInfo", async (assert) => {
   assert.plan(2)
   let mod = {
     name: "Freehand Grip",
@@ -10,7 +10,7 @@ test("Unit - getModTweetMessage", async (assert) => {
     lastSold: "2021-03-10",
     timesSoldInLastYear: 37
   }
-  let result = getModTweetMessage(mod)
+  let result = getModInfo(mod)
   let expected = `Freehand Grip
 - Sold 37 times in the last year
 - 10.14% year drop rate
@@ -25,7 +25,7 @@ test("Unit - getModTweetMessage", async (assert) => {
     lastSold: "2021-03-01",
     timesSoldInLastYear: 1
   }
-  result = getModTweetMessage(mod)
+  result = getModInfo(mod)
   expected = `Unflinching Sniper Aim
 - First time sold in the last year
 - 0.27% year drop rate`

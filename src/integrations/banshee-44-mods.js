@@ -21,7 +21,7 @@ module.exports.getModsForSale = async () => {
 
     if (getModDataRetries === maxRetries && !isValidModData) {
       // eslint-disable-next-line max-len
-      return { metadata: { error: `https://api.banshee44mods.com/info failed to respond successfully ${maxRetries} times` } }
+      throw new Error(`https://api.banshee44mods.com/info failed to respond successfully ${maxRetries} times`)
     }
   }
 

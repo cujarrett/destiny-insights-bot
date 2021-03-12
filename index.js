@@ -1,60 +1,43 @@
 const { getModsForSale } = require("./src/integrations/banshee-44-mods.js")
 const { getLastModTweetDate, tweet } = require("./src/integrations/twitter.js")
-const { getModTweetMessage } = require("./src/util/get-mod-tweet-message.js")
+const { getModInfo } = require("./src/util/get-mod-info.js")
+const { getTweetMessage } = require("./src/util/get-tweet-message.js")
+const { name, version } = require("./package.json")
 
 exports.handler = async (event, context, callback) => {
+  console.log(`${name} ${version} called`)
+  let modsResponse
+  let result
   try {
-    let response = {}
-    const modsResponse = await getModsForSale()
-    const error = modsResponse.metadata.error
-    if (error) {
-      response = {
-        statusCode: 424,
-        body: error
-      }
-    } else {
-      const lastUpdated = modsResponse.metadata.lastUpdated
-      const lastUpdatedDate = new Date(lastUpdated)
-      const lastModTweet = await getLastModTweetDate()
-      const isTweetReady = lastUpdatedDate > lastModTweet
-
-      if (isTweetReady) {
-        const mods = modsResponse.inventory.mods
-        const [mod1, mod2] = mods
-        const getMod1TweetMessage = getModTweetMessage(mod1)
-        const getMod2TweetMessage = getModTweetMessage(mod2)
-        const message = `Banshee-44 is selling:
-
-${getMod1TweetMessage}
-
-${getMod2TweetMessage}
-
-#Destiny2 #TwitterBot`
-
-        await tweet(message)
-
-        response = {
-          statusCode: 200,
-          body: `Tweeted:\n${message}`
-        }
-      } else {
-        response = {
-          statusCode: 200,
-          body: "New tweet is not ready"
-        }
-      }
-    }
-
-    context.callbackWaitsForEmptyEventLoop = false
-    callback(null, response)
-    return response
+    modsResponse = await getModsForSale()
   } catch (error) {
-    console.log(error)
-    context.callbackWaitsForEmptyEventLoop = false
-    const response = {
-      statusCode: 500,
-      body: error
-    }
-    callback(new Error(error), response)
+    result = { statusCode: 424, body: error }
   }
+
+  const lastUpdated = modsResponse.metadata.lastUpdated
+  const lastUpdatedDate = new Date(lastUpdated)
+  const lastModTweet = await getLastModTweetDate()
+  const isTweetReady = lastUpdatedDate > lastModTweet
+
+  if (isTweetReady) {
+    const mods = modsResponse.inventory.mods
+    const [mod1, mod2] = mods
+    const mod1Info = getModInfo(mod1)
+    const mod2Info = getModInfo(mod2)
+    const message = getTweetMessage(mod1Info, mod2Info)
+    await tweet(message)
+    result = { statusCode: 200, body: `Tweeted:\n${message}` }
+  } else {
+    result = { statusCode: 200, body: "New tweet is not ready" }
+  }
+
+  if (result.statusCode === 200) {
+    callback(null, result)
+  } else {
+    callback(new Error(result.body), result)
+  }
+
+  context.callbackWaitsForEmptyEventLoop = false
+  console.log(`Completing request:\n${JSON.stringify(result, null, "  ")}`)
+  return result
 }

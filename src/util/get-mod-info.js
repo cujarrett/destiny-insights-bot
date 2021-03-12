@@ -1,6 +1,6 @@
 const { getOrdinal } = require("./get-ordinal.js")
 
-module.exports.getModTweetMessage = (mod) => {
+module.exports.getModInfo = (mod) => {
   const timesSoldInLastYear = mod.timesSoldInLastYear
 
   let timesSoldInLastYearMessage = `Sold ${timesSoldInLastYear} times in the last year`
