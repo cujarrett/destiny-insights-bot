@@ -56,7 +56,7 @@ const post = async (message, twitterBotConfig) => {
 module.exports.getLastModTweetDate = async () => {
   const twitterBotConfig = await getTwitterBotConfig()
   const twitter = new Twit(twitterBotConfig)
-  const queryOptions = { screen_name: "banshee44mods", count: 10 }
+  const queryOptions = { screen_name: "destinyinsights", count: 15 }
   const response = await twitter.get("statuses/user_timeline", queryOptions)
   const tweets = response.data
 

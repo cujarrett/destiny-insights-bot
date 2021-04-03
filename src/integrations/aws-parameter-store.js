@@ -3,7 +3,7 @@ const ssm = new AWS.SSM({ region: "us-east-1" })
 
 module.exports.getParameters = async () => {
   const params = {
-    Path: "/banshee-44-mods-bot/",
+    Path: "/destiny-insights-bot/",
     Recursive: false,
     WithDecryption: true
   }

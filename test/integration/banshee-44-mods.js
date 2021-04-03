@@ -1,7 +1,7 @@
 const test = require("tape-async")
-const { getModsForSale } = require("../../src/integrations/banshee-44-mods.js")
+const { getModsForSale } = require("../../src/integrations/destiny-insights-backend.js")
 
-test("Integration - api.banshee44mods", async (assert) => {
+test("Integration - api.destinyinsights", async (assert) => {
   assert.plan(2)
   const response = await getModsForSale()
   const [firstMod, secondMod] = response.inventory.mods

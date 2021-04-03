@@ -1,5 +1,5 @@
-resource "aws_iam_role" "banshee-44-mods-bot" {
-  name               = "banshee-44-mods-bot"
+resource "aws_iam_role" "destiny_insights_bot" {
+  name               = "destiny_insights_bot"
   assume_role_policy = <<POLICY
 {
   "Version": "2012-10-17",
@@ -16,8 +16,8 @@ resource "aws_iam_role" "banshee-44-mods-bot" {
 POLICY
 }
 
-resource "aws_iam_policy" "banshee-44-mods-bot-logs" {
-  name        = "banshee-44-mods-bot-logs"
+resource "aws_iam_policy" "destiny_insights_bot_logs" {
+  name        = "destiny_insights_bot_logs"
   description = "Adds logging access"
 
   policy = <<EOF
@@ -38,13 +38,13 @@ resource "aws_iam_policy" "banshee-44-mods-bot-logs" {
 EOF
 }
 
-resource "aws_iam_role_policy_attachment" "attach-logs" {
-  role       = aws_iam_role.banshee-44-mods-bot.name
-  policy_arn = aws_iam_policy.banshee-44-mods-bot-logs.arn
+resource "aws_iam_role_policy_attachment" "attach_logs" {
+  role       = aws_iam_role.destiny_insights_bot.name
+  policy_arn = aws_iam_policy.destiny_insights_bot_logs.arn
 }
 
-resource "aws_iam_policy" "banshee-44-mods-bot-sns" {
-  name        = "banshee-44-mods-bot-sns"
+resource "aws_iam_policy" "destiny_insights_bot_sns" {
+  name        = "destiny_insights_bot_sns"
   description = "Adds sns access"
 
   policy = <<EOF
@@ -54,20 +54,20 @@ resource "aws_iam_policy" "banshee-44-mods-bot-sns" {
     {
       "Effect": "Allow",
       "Action": "sns:Publish",
-      "Resource": "${var.error-sns-topic}"
+      "Resource": "${var.error_sns_topic}"
     }
   ]
 }
 EOF
 }
 
-resource "aws_iam_role_policy_attachment" "attach-sns" {
-  role       = aws_iam_role.banshee-44-mods-bot.name
-  policy_arn = aws_iam_policy.banshee-44-mods-bot-sns.arn
+resource "aws_iam_role_policy_attachment" "attach_sns" {
+  role       = aws_iam_role.destiny_insights_bot.name
+  policy_arn = aws_iam_policy.destiny_insights_bot_sns.arn
 }
 
-resource "aws_iam_policy" "banshee-44-mods-bot-parameter-store" {
-  name        = "banshee-44-mods-bot-parameter-store"
+resource "aws_iam_policy" "destiny_insights_bot_parameter_store" {
+  name        = "destiny_insights_bot_parameter_store"
   description = "Adds Parameter Store access"
 
   policy = <<EOF
@@ -78,7 +78,7 @@ resource "aws_iam_policy" "banshee-44-mods-bot-parameter-store" {
       "Effect": "Allow",
       "Action": "ssm:GetParametersByPath",
       "Resource": [
-        "${var.parameter-store-twitter-auth-arn}"
+        "${var.parameter_store_twitter_auth_arn}"
       ]
     }
   ]
@@ -86,11 +86,11 @@ resource "aws_iam_policy" "banshee-44-mods-bot-parameter-store" {
 EOF
 }
 
-resource "aws_iam_role_policy_attachment" "attach-parameter-store" {
-  role       = aws_iam_role.banshee-44-mods-bot.name
-  policy_arn = aws_iam_policy.banshee-44-mods-bot-parameter-store.arn
+resource "aws_iam_role_policy_attachment" "attach_parameter_store" {
+  role       = aws_iam_role.destiny_insights_bot.name
+  policy_arn = aws_iam_policy.destiny_insights_bot_parameter_store.arn
 }
 
-output "aws-iam-role-banshee-44-mods-bot-arn" {
-  value = aws_iam_role.banshee-44-mods-bot.arn
+output "aws_iam_role_destiny_insights_bot_arn" {
+  value = aws_iam_role.destiny_insights_bot.arn
 }

@@ -8,6 +8,6 @@ data "archive_file" "placeholder" {
   }
 }
 
-output "data-archive-file-placeholder-output-path" {
+output "data_archive_file_placeholder_output_path" {
   value = data.archive_file.placeholder.output_path
 }
