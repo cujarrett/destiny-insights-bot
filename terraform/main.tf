@@ -4,19 +4,19 @@ module "archive" {
 
 module "iam" {
   source = "./modules/iam"
-  error-sns-topic = var.error-sns-topic
-  parameter-store-twitter-auth-arn = var.parameter-store-twitter-auth-arn
+  error_sns_topic = var.error_sns_topic
+  parameter_store_twitter_auth_arn = var.parameter_store_twitter_auth_arn
 }
 
-module "event-bridge" {
-  source = "./modules/event-bridge"
+module "event_bridge" {
+  source = "./modules/event_bridge"
 }
 
 module "lambda" {
   source = "./modules/lambda"
-  error-sns-topic = var.error-sns-topic
-  data-archive-file-placeholder-output-path = module.archive.data-archive-file-placeholder-output-path
-  aws-iam-role-banshee-44-mods-bot-arn = module.iam.aws-iam-role-banshee-44-mods-bot-arn
-  aws-cloudwatch-event-rule-once-daily-at-destiny-reset-arn = module.event-bridge.aws-cloudwatch-event-rule-once-daily-at-destiny-reset-arn
-  aws-cloudwatch-event-rule-once-daily-at-destiny-reset-name = module.event-bridge.aws-cloudwatch-event-rule-once-daily-at-destiny-reset-name
+  error_sns_topic = var.error_sns_topic
+  data_archive_file_placeholder_output_path = module.archive.data_archive_file_placeholder_output_path
+  aws_iam_role_destiny_insights_bot_arn = module.iam.aws_iam_role_destiny_insights_bot_arn
+  aws_cloudwatch_event_rule_once_daily_at_destiny_reset_arn = module.event_bridge.aws_cloudwatch_event_rule_once_daily_at_destiny_reset_arn
+  aws_cloudwatch_event_rule_once_daily_at_destiny_reset_name = module.event_bridge.aws_cloudwatch_event_rule_once_daily_at_destiny_reset_name
 }

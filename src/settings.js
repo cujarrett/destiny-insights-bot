@@ -6,7 +6,7 @@ nconf.stores = {}
 nconf.env()
 
 const homeDirectory = os.homedir()
-const configFilePath = path.join(homeDirectory, ".banshee-44-mods-bot.ini")
+const configFilePath = path.join(homeDirectory, ".destiny-insights-bot.ini")
 
 nconf.use("file", {
   file: configFilePath,

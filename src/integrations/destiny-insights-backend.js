@@ -1,7 +1,7 @@
 const fetch = require("node-fetch")
 
 module.exports.getModsForSale = async () => {
-  const endpoint = "https://api.banshee44mods.com/info"
+  const endpoint = "https://api.destinyinsights.com/mods"
   const options = {
     method: "GET",
     json: true
@@ -21,7 +21,7 @@ module.exports.getModsForSale = async () => {
 
     if (getModDataRetries === maxRetries && !isValidModData) {
       // eslint-disable-next-line max-len
-      throw new Error(`https://api.banshee44mods.com/info failed to respond successfully ${maxRetries} times`)
+      throw new Error(`https://api.destinyinsights.com/mods failed to respond successfully ${maxRetries} times`)
     }
   }
 

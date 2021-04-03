@@ -1,4 +1,4 @@
-const { getModsForSale } = require("./src/integrations/banshee-44-mods.js")
+const { getModsForSale } = require("./src/integrations/destiny-insights-backend.js")
 const { getLastModTweetDate, tweet } = require("./src/integrations/twitter.js")
 const { getModInfo } = require("./src/util/get-mod-info.js")
 const { getTweetMessage } = require("./src/util/get-tweet-message.js")
