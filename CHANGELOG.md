@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.35.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.34.0...v1.35.0) (2021-04-05)
+
+
+### Features
+
+* adds new logo ([#111](https://github.com/cujarrett/destiny-insights-bot/issues/111)) ([aa8e431](https://github.com/cujarrett/destiny-insights-bot/commit/aa8e4315c559f2f9d3b222e60db8b19115de9620))
+
 # [1.34.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.33.0...v1.34.0) (2021-04-03)
 
 
