@@ -1,4 +1,4 @@
-![logo](./media/github-readme-banner.png)
+![logo](./media/logo.jpg)
 
 <p align="center">
   <a href="https://circleci.com/gh/cujarrett/destiny-insights-bot/tree/main"><img alt="Circle CI" src="https://circleci.com/gh/cujarrett/destiny-insights-bot/tree/main.svg?style=svg"></a>
