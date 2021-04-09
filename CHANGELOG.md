@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.36.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.35.0...v1.36.0) (2021-04-09)
+
+
+### Features
+
+* removes sale percents ([#113](https://github.com/cujarrett/destiny-insights-bot/issues/113)) ([4253651](https://github.com/cujarrett/destiny-insights-bot/commit/4253651239beff517746342f038561960071714c))
+
 # [1.35.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.34.0...v1.35.0) (2021-04-05)
 
 
