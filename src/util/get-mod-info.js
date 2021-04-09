@@ -23,12 +23,8 @@ module.exports.getModInfo = (mod) => {
   const ordinal = getOrdinal(day)
   lastSoldDateMessage = `Last sold ${month} ${day}${ordinal} ${year}`
 
-  let soldRate = timesSoldInLastYear / 365 * 100
-  soldRate = soldRate.toFixed(2)
-
   let message = `${mod.name}
-- ${timesSoldInLastYearMessage}
-- ${soldRate}% year drop rate`
+- ${timesSoldInLastYearMessage}`
 
   if (mod && mod.timesSoldInLastYear > 1) {
     message += `\n- ${lastSoldDateMessage}`
