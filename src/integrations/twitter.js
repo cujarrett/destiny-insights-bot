@@ -56,7 +56,7 @@ const post = async (message, twitterBotConfig) => {
 module.exports.getLastModTweetDate = async () => {
   const twitterBotConfig = await getTwitterBotConfig()
   const twitter = new Twit(twitterBotConfig)
-  const queryOptions = { screen_name: "destinyinsights", count: 15 }
+  const queryOptions = { screen_name: "destinyinsights", count: 20 }
   const response = await twitter.get("statuses/user_timeline", queryOptions)
   const tweets = response.data
 
@@ -81,4 +81,34 @@ module.exports.getLastModTweetDate = async () => {
   })
 
   return sortedModTweets[0]
+}
+
+module.exports.getLastXurTweetDate = async () => {
+  const twitterBotConfig = await getTwitterBotConfig()
+  const twitter = new Twit(twitterBotConfig)
+  const queryOptions = { screen_name: "destinyinsights", count: 40 }
+  const response = await twitter.get("statuses/user_timeline", queryOptions)
+  const tweets = response.data
+
+  const timeline = []
+  for (const tweet of tweets) {
+    timeline.push({ timestamp: tweet.created_at, message: tweet.text })
+  }
+
+  const sortedTweets = timeline.sort((first, second) => {
+    return new Date(second.timestamp) - new Date(first.timestamp)
+  })
+
+  const pastXurTweets = []
+  for (const tweet of sortedTweets) {
+    if (tweet.message.startsWith("Xur is selling:")) {
+      pastXurTweets.push(new Date(tweet.timestamp))
+    }
+  }
+
+  const sortedXurTweets = pastXurTweets.sort((first, second) => {
+    return new Date(second.timestamp) - new Date(first.timestamp)
+  })
+
+  return sortedXurTweets[0]
 }

@@ -1,43 +1,37 @@
-const { getModsForSale } = require("./src/integrations/destiny-insights-backend.js")
-const { getLastModTweetDate, tweet } = require("./src/integrations/twitter.js")
-const { getModInfo } = require("./src/util/get-mod-info.js")
-const { getTweetMessage } = require("./src/util/get-tweet-message.js")
 const { name, version } = require("./package.json")
+const { mods } = require("./src/tweet-types/mods.js")
+const { xur } = require("./src/tweet-types/xur.js")
 
 exports.handler = async (event, context, callback) => {
   console.log(`${name} ${version} called`)
-  let modsResponse
-  let result
+
+  let modsResult
+  let xurResult
   try {
-    modsResponse = await getModsForSale()
+    modsResult = await mods()
+    console.log({ modsResult })
   } catch (error) {
-    result = { statusCode: 424, body: error }
+    console.log(error)
   }
 
-  const lastUpdated = modsResponse.metadata.lastUpdated
-  const lastUpdatedDate = new Date(lastUpdated)
-  const lastModTweet = await getLastModTweetDate()
-  const isTweetReady = lastUpdatedDate > lastModTweet
-
-  if (isTweetReady) {
-    const mods = modsResponse.inventory.mods
-    const [mod1, mod2] = mods
-    const mod1Info = getModInfo(mod1)
-    const mod2Info = getModInfo(mod2)
-    const message = getTweetMessage(mod1Info, mod2Info)
-    await tweet(message)
-    result = { statusCode: 200, body: `Tweeted:\n${message}` }
-  } else {
-    result = { statusCode: 200, body: "New tweet is not ready" }
+  try {
+    xurResult = await xur()
+    console.log({ xurResult })
+  } catch (error) {
+    console.log(error)
   }
 
-  if (result.statusCode === 200) {
-    callback(null, result)
+  const result = `Completing request:
+${modsResult}
+
+${xurResult}`
+
+  if (modsResult && xurResult) {
+    callback(null, { statusCode: 200, body: result })
   } else {
-    callback(new Error(result.body), result)
+    callback(new Error(result), { statusCode: 500, body: result })
   }
 
   context.callbackWaitsForEmptyEventLoop = false
-  console.log(`Completing request:\n${JSON.stringify(result, null, "  ")}`)
   return result
 }

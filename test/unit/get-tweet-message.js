@@ -1,5 +1,5 @@
 const test = require("tape-async")
-const { getTweetMessage } = require("../../src/util/get-tweet-message.js")
+const { getTweetMessage } = require("../../src/tweet-types/mods.js")
 
 test("Unit - getTweetMessage", async (assert) => {
   assert.plan(1)
