@@ -1,5 +1,5 @@
 const test = require("tape-async")
-const { getModInfo } = require("../../src/util/get-mod-info.js")
+const { getModInfo } = require("../../src/tweet-types/mods.js")
 
 test("Unit - getModInfo", async (assert) => {
   assert.plan(2)

@@ -1,6 +1,6 @@
 const fetch = require("node-fetch")
 
-module.exports.getModsForSale = async () => {
+module.exports.getMods = async () => {
   const endpoint = "https://api.destinyinsights.com/mods"
   const options = {
     method: "GET",
@@ -8,20 +8,49 @@ module.exports.getModsForSale = async () => {
   }
   const maxRetries = 3
   let rawResponse = await fetch(endpoint, options)
-  let isValidModData = rawResponse.status === 200
+  let isValidResponse = rawResponse.status === 200
   let getModDataRetries = 0
 
-  if (!isValidModData) {
-    while (getModDataRetries < maxRetries && !isValidModData) {
+  if (!isValidResponse) {
+    while (getModDataRetries < maxRetries && !isValidResponse) {
       getModDataRetries += 1
       console.log({ getModDataRetries })
       rawResponse = await fetch(endpoint, options)
-      isValidModData = rawResponse.status === 200
+      isValidResponse = rawResponse.status === 200
     }
 
-    if (getModDataRetries === maxRetries && !isValidModData) {
+    if (getModDataRetries === maxRetries && !isValidResponse) {
       // eslint-disable-next-line max-len
-      throw new Error(`https://api.destinyinsights.com/mods failed to respond successfully ${maxRetries} times`)
+      throw new Error(`${endpoint} failed to respond successfully ${maxRetries} times`)
+    }
+  }
+
+  const response = await rawResponse.json()
+  return response
+}
+
+module.exports.getXur = async () => {
+  const endpoint = "https://api.destinyinsights.com/xur"
+  const options = {
+    method: "GET",
+    json: true
+  }
+  const maxRetries = 3
+  let rawResponse = await fetch(endpoint, options)
+  let isValidResponse = rawResponse.status === 200
+  let getXurDataRetries = 0
+
+  if (!isValidResponse) {
+    while (getXurDataRetries < maxRetries && !isValidResponse) {
+      getXurDataRetries += 1
+      console.log({ getXurDataRetries })
+      rawResponse = await fetch(endpoint, options)
+      isValidResponse = rawResponse.status === 200
+    }
+
+    if (getXurDataRetries === maxRetries && !isValidResponse) {
+      // eslint-disable-next-line max-len
+      throw new Error(`${endpoint} failed to respond successfully ${maxRetries} times`)
     }
   }
 
