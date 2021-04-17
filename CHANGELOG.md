@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.38.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.37.0...v1.38.0) (2021-04-17)
+
+
+### Features
+
+* renames iam names ([#115](https://github.com/cujarrett/destiny-insights-bot/issues/115)) ([07d1e64](https://github.com/cujarrett/destiny-insights-bot/commit/07d1e64585c8186f2de7d757b76a04d761a23b73))
+
 # [1.37.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.36.0...v1.37.0) (2021-04-12)
 
 
