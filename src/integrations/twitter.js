@@ -53,7 +53,37 @@ const post = async (message, twitterBotConfig) => {
   }
 }
 
-module.exports.getLastModTweetDate = async () => {
+module.exports.getLastAda1TweetDate = async () => {
+  const twitterBotConfig = await getTwitterBotConfig()
+  const twitter = new Twit(twitterBotConfig)
+  const queryOptions = { screen_name: "destinyinsights", count: 20 }
+  const response = await twitter.get("statuses/user_timeline", queryOptions)
+  const tweets = response.data
+
+  const timeline = []
+  for (const tweet of tweets) {
+    timeline.push({ timestamp: tweet.created_at, message: tweet.text })
+  }
+
+  const sortedTweets = timeline.sort((first, second) => {
+    return new Date(second.timestamp) - new Date(first.timestamp)
+  })
+
+  const pastModTweets = []
+  for (const tweet of sortedTweets) {
+    if (tweet.message.startsWith("Ada-1 is selling:")) {
+      pastModTweets.push(new Date(tweet.timestamp))
+    }
+  }
+
+  const sortedModTweets = pastModTweets.sort((first, second) => {
+    return new Date(second.timestamp) - new Date(first.timestamp)
+  })
+
+  return sortedModTweets[0]
+}
+
+module.exports.getLastBanshee44TweetDate = async () => {
   const twitterBotConfig = await getTwitterBotConfig()
   const twitter = new Twit(twitterBotConfig)
   const queryOptions = { screen_name: "destinyinsights", count: 20 }

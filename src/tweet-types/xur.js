@@ -16,8 +16,6 @@ module.exports.xur = async () => {
 
 ${inventory[0].name}
 
-Mob-Res-Rec-Dis-Int-Str
-
 ${inventory[1].name}
 ${inventory[1].mobility}-${inventory[1].resilience}-${inventory[1].recovery}-${inventory[1].discipline}-${inventory[1].intellect}-${inventory[1].strength} (${inventory[1].total})
 
@@ -26,6 +24,8 @@ ${inventory[2].mobility}-${inventory[2].resilience}-${inventory[2].recovery}-${i
 
 ${inventory[3].name}
 ${inventory[3].mobility}-${inventory[3].resilience}-${inventory[3].recovery}-${inventory[3].discipline}-${inventory[3].intellect}-${inventory[3].strength} (${inventory[3].total})
+
+Mob-Res-Rec-Dis-Int-Str
 
 #Destiny2 #TwitterBot`
     /* eslint-enable max-len */
