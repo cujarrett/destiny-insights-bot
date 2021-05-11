@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.39.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.38.1...v1.39.0) (2021-05-11)
+
+
+### Features
+
+* adds ada-1 support ([#119](https://github.com/cujarrett/destiny-insights-bot/issues/119)) ([5032e73](https://github.com/cujarrett/destiny-insights-bot/commit/5032e736931ae78aebd30ebba79ecce9e35c3e26))
+
 ## [1.38.1](https://github.com/cujarrett/destiny-insights-bot/compare/v1.38.0...v1.38.1) (2021-05-09)
 
 
