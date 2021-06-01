@@ -52,7 +52,7 @@
     "nyc": "~15.1.0",
     "os": "~0.1.1",
     "path": "~0.12.7",
-    "semantic-release": "~17.4.2",
+    "semantic-release": "~17.4.3",
     "tap-spec": "~2.2.2",
     "tape-async": "~2.3.0"
   },
