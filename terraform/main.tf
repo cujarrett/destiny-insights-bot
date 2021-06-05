@@ -2,9 +2,15 @@ module "archive" {
   source = "./modules/archive"
 }
 
+module "dynamodb" {
+  source = "./modules/dynamodb"
+}
+
 module "iam" {
   source = "./modules/iam"
   error_sns_topic = var.error_sns_topic
+  destiny_insights_mods_arn = module.dynamodb.destiny_insights_mods_arn
+  destiny_insights_xur_arn = module.dynamodb.destiny_insights_xur_arn
   parameter_store_twitter_auth_arn = var.parameter_store_twitter_auth_arn
 }
 
