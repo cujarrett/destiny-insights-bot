@@ -1,6 +1,7 @@
 const fetch = require("node-fetch")
 
 module.exports.getAda1 = async () => {
+  console.log("getAda1 called")
   const endpoint = "https://api.destinyinsights.com/ada-1"
   const options = {
     method: "GET",
@@ -30,6 +31,7 @@ module.exports.getAda1 = async () => {
 }
 
 module.exports.getBanshee44 = async () => {
+  console.log("getBanshee44 called")
   const endpoint = "https://api.destinyinsights.com/banshee-44"
   const options = {
     method: "GET",
@@ -59,6 +61,7 @@ module.exports.getBanshee44 = async () => {
 }
 
 module.exports.getXur = async () => {
+  console.log("getXur called")
   const endpoint = "https://api.destinyinsights.com/xur"
   const options = {
     method: "GET",

@@ -1,18 +1,24 @@
 const { getXur } = require("../integrations/destiny-insights-backend.js")
-const { getLastXurTweetDate, tweet } = require("../integrations/twitter.js")
+const { addXurItem, getLastSoldXurItems } = require("../integrations/dynamodb.js")
+const { isNewInventory } = require ("../util/is-new-inventory.js")
+const { tweet } = require("../integrations/twitter.js")
 
 module.exports.xur = async () => {
   let result
-  const xurResponse = await getXur()
-  const lastUpdated = xurResponse.metadata.lastUpdated
-  const lastUpdatedDate = new Date(lastUpdated)
-  const lastXurTweet = await getLastXurTweetDate()
-  const isTweetReady = lastUpdatedDate > lastXurTweet
+  const { inventory } = await getXur()
+  const lastSoldItems = await getLastSoldXurItems()
+  const newInventory = await isNewInventory(inventory, lastSoldItems)
 
-  if (isTweetReady) {
-    const inventory = xurResponse.inventory
-    /* eslint-disable max-len */
-    const message = `Xur is selling:
+  if (newInventory) {
+    const { inventory: doubleCheckedMods } = await getXur()
+    const confirmedNewInventory = await isNewInventory(doubleCheckedMods, lastSoldItems)
+    if (confirmedNewInventory) {
+      const timestamp = new Date().toISOString()
+      for (const item of inventory) {
+        await addXurItem(item, timestamp)
+      }
+      /* eslint-disable max-len */
+      const message = `Xur is selling:
 
 ${inventory[0].name}
 
@@ -28,9 +34,10 @@ ${inventory[3].mobility}-${inventory[3].resilience}-${inventory[3].recovery}-${i
 Mob-Res-Rec-Dis-Int-Str
 
 #Destiny2 #TwitterBot`
-    /* eslint-enable max-len */
-    await tweet(message)
-    result = `Tweeted:\n${message}`
+      /* eslint-enable max-len */
+      await tweet(message)
+      result = `Tweeted:\n${message}`
+    }
   } else {
     result = "New Xur tweet is not ready"
   }
