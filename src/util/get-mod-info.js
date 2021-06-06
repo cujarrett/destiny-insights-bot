@@ -1,7 +1,9 @@
+const { getModSalesInLastYear } = require("../integrations/dynamodb.js")
 const { getOrdinal } = require("../util/get-ordinal.js")
 
-module.exports.getModInfo = (mod) => {
-  const timesSoldInLastYear = mod.timesSoldInLastYear
+module.exports.getModInfo = async (mod) => {
+  const modSales = await getModSalesInLastYear(mod)
+  const timesSoldInLastYear = modSales.length
 
   let timesSoldInLastYearMessage = `Sold ${timesSoldInLastYear} times in the last year`
   if (mod && mod.timesSoldInLastYear === 1) {
@@ -11,7 +13,8 @@ module.exports.getModInfo = (mod) => {
   // eslint-disable-next-line max-len
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
   let lastSoldDateMessage = undefined
-  const lastSoldDate = mod.lastSold
+  // eslint-disable-next-line newline-per-chained-call
+  const lastSoldDate = new Date(modSales[1]).toISOString().split("T")[0]
   const year = lastSoldDate.substring(0, 4)
   // monthNumber - 1 to account for zero based array counting
   const monthNumber = Number(lastSoldDate.substring(5, 7)) - 1
@@ -26,7 +29,7 @@ module.exports.getModInfo = (mod) => {
   let message = `${mod.name}
 - ${timesSoldInLastYearMessage}`
 
-  if (mod && mod.timesSoldInLastYear > 1) {
+  if (mod && timesSoldInLastYear > 1) {
     message += `\n- ${lastSoldDateMessage}`
   }
 
