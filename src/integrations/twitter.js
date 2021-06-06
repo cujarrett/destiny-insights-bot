@@ -34,11 +34,13 @@ const getTestTwitterBotConfig = () => {
 }
 
 module.exports.test = async (message) => {
+  console.log("test called")
   const twitterBotConfig = getTestTwitterBotConfig()
   return await post(message, twitterBotConfig)
 }
 
 module.exports.tweet = async (message) => {
+  console.log("tweet called")
   const twitterBotConfig = await getTwitterBotConfig()
   await post(message, twitterBotConfig)
 }
