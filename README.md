@@ -15,6 +15,10 @@ It's a serverless Twitter bot powered by JavaScript and AWS that tweets Destiny
 available for sale. Check out
 [@destinyinsights right now on Twitter](https://twitter.com/destinyinsights).
 
+## How's it work?
+
+![design](./media/design.png)
+
 ## Questions & Contact
 
 Feel free to join the [Discord](https://discord.gg/jAA5U52) if you have
