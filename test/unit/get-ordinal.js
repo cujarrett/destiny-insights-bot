@@ -1,16 +1,15 @@
-const test = require("tape-async")
+const test = require("ava")
 const { getOrdinal } = require("../../src/util/get-ordinal.js")
 
-test("Unit - getOrdinal", async (assert) => {
-  assert.plan(5)
+test("Unit - getOrdinal verified", async (assert) => {
   let result = getOrdinal(4)
-  assert.equal(result, "th", "getOrdinal handling th verified")
+  assert.is(result, "th")
   result = getOrdinal(25)
-  assert.equal(result, "th", "getOrdinal handling th verified")
+  assert.is(result, "th")
   result = getOrdinal(31)
-  assert.equal(result, "st", "getOrdinal handling st verified")
+  assert.is(result, "st")
   result = getOrdinal(22)
-  assert.equal(result, "nd", "getOrdinal handling nd verified")
+  assert.is(result, "nd")
   result = getOrdinal(23)
-  assert.equal(result, "rd", "getOrdinal handling rd verified")
+  assert.is(result, "rd")
 })
