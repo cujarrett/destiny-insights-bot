@@ -12,8 +12,7 @@
 
 It's a serverless Twitter bot powered by JavaScript and AWS that tweets Destiny
 2's note worthy items such as mods, high stat armor, or well rolled weapons
-available for sale. Check out
-[@destinyinsights right now on Twitter](https://twitter.com/destinyinsights).
+available for sale. Check out [@destinyinsights right now on Twitter](https://twitter.com/destinyinsights).
 
 ## Questions & Contact
 
