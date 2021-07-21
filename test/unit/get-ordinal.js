@@ -1,7 +1,7 @@
 const test = require("ava")
 const { getOrdinal } = require("../../src/util/get-ordinal.js")
 
-test("Unit - getOrdinal verified", async (assert) => {
+test("Unit - getOrdinal", async (assert) => {
   let result = getOrdinal(4)
   assert.is(result, "th")
   result = getOrdinal(25)
