@@ -57,7 +57,7 @@
     "semantic-release": "~17.4.7"
   },
   "dependencies": {
-    "node-fetch": "~2.6.1",
+    "node-fetch": "~2.6.2",
     "twit": "~2.2.11"
   },
   "husky": {
