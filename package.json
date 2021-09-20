@@ -54,7 +54,7 @@
     "nyc": "~15.1.0",
     "os": "~0.1.2",
     "path": "~0.12.7",
-    "semantic-release": "~17.4.7"
+    "semantic-release": "~18.0.0"
   },
   "dependencies": {
     "node-fetch": "~2.6.2",
