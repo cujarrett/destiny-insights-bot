@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.41.1](https://github.com/cujarrett/destiny-insights-bot/compare/v1.41.0...v1.41.1) (2021-10-05)
+
+
+### Bug Fixes
+
+* xur new inventory check ([#176](https://github.com/cujarrett/destiny-insights-bot/issues/176)) ([1e097ac](https://github.com/cujarrett/destiny-insights-bot/commit/1e097ac44502ca1891ecd6072938df59a5e2d333))
+
 # [1.41.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.24...v1.41.0) (2021-10-05)
 
 
