@@ -6,30 +6,32 @@ const { tweet } = require("../integrations/twitter.js")
 module.exports.xur = async () => {
   let result
   const { inventory } = await getXur()
+  const exotics = inventory.filter((item) => item.type.startsWith("Exotic"))
   const lastSoldItems = await getLastSoldXurItems()
-  const newInventory = await isNewInventory(inventory, lastSoldItems)
+  const newInventory = await isNewInventory(exotics, lastSoldItems)
 
   if (newInventory) {
     const { inventory: doubleCheckedMods } = await getXur()
+    const exotics = inventory.filter((item) => item.type.startsWith("Exotic"))
     const confirmedNewInventory = await isNewInventory(doubleCheckedMods, lastSoldItems)
     if (confirmedNewInventory) {
       const timestamp = new Date().toISOString()
-      for (const item of inventory) {
+      for (const item of exotics) {
         await addXurItem(item, timestamp)
       }
       /* eslint-disable max-len */
       const message = `Xur is selling:
 
-${inventory[0].name}
+${exotics[0].name}
 
-${inventory[1].name}
-${inventory[1].mobility}-${inventory[1].resilience}-${inventory[1].recovery}-${inventory[1].discipline}-${inventory[1].intellect}-${inventory[1].strength} (${inventory[1].total})
+${exotics[1].name}
+${exotics[1].mobility}-${exotics[1].resilience}-${exotics[1].recovery}-${exotics[1].discipline}-${exotics[1].intellect}-${exotics[1].strength} (${exotics[1].total})
 
-${inventory[2].name}
-${inventory[2].mobility}-${inventory[2].resilience}-${inventory[2].recovery}-${inventory[2].discipline}-${inventory[2].intellect}-${inventory[2].strength} (${inventory[2].total})
+${exotics[2].name}
+${exotics[2].mobility}-${exotics[2].resilience}-${exotics[2].recovery}-${exotics[2].discipline}-${exotics[2].intellect}-${exotics[2].strength} (${exotics[2].total})
 
-${inventory[3].name}
-${inventory[3].mobility}-${inventory[3].resilience}-${inventory[3].recovery}-${inventory[3].discipline}-${inventory[3].intellect}-${inventory[3].strength} (${inventory[3].total})
+${exotics[3].name}
+${exotics[3].mobility}-${exotics[3].resilience}-${exotics[3].recovery}-${exotics[3].discipline}-${exotics[3].intellect}-${exotics[3].strength} (${exotics[3].total})
 
 Mob-Res-Rec-Dis-Int-Str
 
