@@ -1,0 +1,45 @@
+name: release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: release
+    environment: main
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v2
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npx semantic-release
+  deploy:
+    name: deploy
+    needs: release
+    environment: main
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v2
+      - run: npm install --production
+      - run: npm run build
+      - env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          aws lambda update-function-code \
+              --function-name=destiny-insights-bot \
+              --zip-file=fileb://build/destiny-insights-bot.zip 1> /dev/null \
+              --region=us-east-1
