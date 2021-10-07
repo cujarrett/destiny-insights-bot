@@ -4,7 +4,7 @@ resource "aws_cloudwatch_event_rule" "check_after_destiny_reset" {
   schedule_expression = "cron(0/5 17-23 * * ? *)"
 
   tags = {
-    app = "var.app_name"
+    app = var.app_name
   }
 }
 

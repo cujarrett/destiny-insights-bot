@@ -1,9 +1,9 @@
 data "archive_file" "placeholder" {
-  type = "zip"
+  type        = "zip"
   output_path = "${path.root}/lambda-function-payload.zip"
 
   source {
-    content = "placeholder"
+    content  = "placeholder"
     filename = "placeholder.txt"
   }
 }
