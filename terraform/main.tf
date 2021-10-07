@@ -4,10 +4,12 @@ module "archive" {
 
 module "dynamodb" {
   source = "./modules/dynamodb"
+  app_name = var.app_name
 }
 
 module "iam" {
   source = "./modules/iam"
+  app_name = var.app_name
   error_sns_topic = var.error_sns_topic
   destiny_insights_mods_arn = module.dynamodb.destiny_insights_mods_arn
   destiny_insights_xur_arn = module.dynamodb.destiny_insights_xur_arn
@@ -16,10 +18,12 @@ module "iam" {
 
 module "event_bridge" {
   source = "./modules/event_bridge"
+  app_name = var.app_name
 }
 
 module "lambda" {
   source = "./modules/lambda"
+  app_name = var.app_name
   error_sns_topic = var.error_sns_topic
   data_archive_file_placeholder_output_path = module.archive.data_archive_file_placeholder_output_path
   aws_iam_role_destiny_insights_bot_arn = module.iam.aws_iam_role_destiny_insights_bot_arn

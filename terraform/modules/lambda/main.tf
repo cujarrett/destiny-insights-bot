@@ -8,7 +8,7 @@ resource "aws_lambda_function" "destiny_insights_bot" {
   timeout       = 60
 
   tags = {
-    app = "destiny-insights-bot"
+    app = "var.app_name"
   }
 }
 

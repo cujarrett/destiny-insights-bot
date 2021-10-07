@@ -58,7 +58,7 @@ resource "aws_dynamodb_table" "destiny_insights_mods" {
   }
 
   tags = {
-    app = "destiny-insights-bot"
+    app = "var.app_name"
   }
 }
 
@@ -122,7 +122,7 @@ resource "aws_dynamodb_table" "destiny_insights_xur" {
   }
 
   tags = {
-    app = "destiny-insights-bot"
+    app = "var.app_name"
   }
 }
 

@@ -16,7 +16,7 @@ resource "aws_iam_role" "destiny_insights_bot" {
 POLICY
 
   tags = {
-    app = "destiny-insights-bot"
+    app = "var.app_name"
   }
 }
 
@@ -42,7 +42,7 @@ resource "aws_iam_policy" "destiny_insights_bot_logs" {
 EOF
 
   tags = {
-    app = "destiny-insights-bot"
+    app = "var.app_name"
   }
 }
 
@@ -69,7 +69,7 @@ resource "aws_iam_policy" "destiny_insights_bot_sns" {
 EOF
 
   tags = {
-    app = "destiny-insights-bot"
+    app = "var.app_name"
   }
 }
 
@@ -98,7 +98,7 @@ resource "aws_iam_policy" "destiny_insights_bot_parameter_store" {
 EOF
 
   tags = {
-    app = "destiny-insights-bot"
+    app = "var.app_name"
   }
 }
 
@@ -128,7 +128,7 @@ resource "aws_iam_policy" "destiny_insights_mods" {
 EOF
 
   tags = {
-    app = "destiny-insights-bot"
+    app = "var.app_name"
   }
 }
 
@@ -158,7 +158,7 @@ resource "aws_iam_policy" "destiny_insights_xur" {
 EOF
 
   tags = {
-    app = "destiny-insights-bot"
+    app = "var.app_name"
   }
 }
 
