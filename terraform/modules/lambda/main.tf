@@ -6,6 +6,10 @@ resource "aws_lambda_function" "destiny_insights_bot" {
   runtime       = "nodejs14.x"
   memory_size   = 128
   timeout       = 60
+
+  tags = {
+    app = var.app_name
+  }
 }
 
 resource "aws_lambda_permission" "allow_cloudwatch_to_call_destiny_insights_bot" {
@@ -17,7 +21,7 @@ resource "aws_lambda_permission" "allow_cloudwatch_to_call_destiny_insights_bot"
 }
 
 resource "aws_lambda_function_event_invoke_config" "destiny_insights_bot_event_invoke_config" {
-  function_name = aws_lambda_function.destiny_insights_bot.arn
+  function_name                = aws_lambda_function.destiny_insights_bot.arn
   maximum_event_age_in_seconds = 60
   maximum_retry_attempts       = 2
 

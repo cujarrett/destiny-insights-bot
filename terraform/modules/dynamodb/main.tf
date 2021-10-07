@@ -30,31 +30,35 @@ resource "aws_dynamodb_table" "destiny_insights_mods" {
   }
 
   global_secondary_index {
-    name               = "timestamp"
-    hash_key           = "timestamp"
-    write_capacity     = 2
-    read_capacity      = 2
-    projection_type    = "ALL"
+    name            = "timestamp"
+    hash_key        = "timestamp"
+    write_capacity  = 2
+    read_capacity   = 2
+    projection_type = "ALL"
   }
 
   global_secondary_index {
-    name               = "type"
-    hash_key           = "type"
-    write_capacity     = 2
-    read_capacity      = 2
-    projection_type    = "ALL"
+    name            = "type"
+    hash_key        = "type"
+    write_capacity  = 2
+    read_capacity   = 2
+    projection_type = "ALL"
   }
 
   global_secondary_index {
-    name               = "name"
-    hash_key           = "name"
-    write_capacity     = 2
-    read_capacity      = 2
-    projection_type    = "ALL"
+    name            = "name"
+    hash_key        = "name"
+    write_capacity  = 2
+    read_capacity   = 2
+    projection_type = "ALL"
   }
 
   lifecycle {
     prevent_destroy = true
+  }
+
+  tags = {
+    app = var.app_name
   }
 }
 
@@ -90,31 +94,35 @@ resource "aws_dynamodb_table" "destiny_insights_xur" {
   }
 
   global_secondary_index {
-    name               = "timestamp"
-    hash_key           = "timestamp"
-    write_capacity     = 2
-    read_capacity      = 2
-    projection_type    = "ALL"
+    name            = "timestamp"
+    hash_key        = "timestamp"
+    write_capacity  = 2
+    read_capacity   = 2
+    projection_type = "ALL"
   }
 
   global_secondary_index {
-    name               = "type"
-    hash_key           = "type"
-    write_capacity     = 2
-    read_capacity      = 2
-    projection_type    = "ALL"
+    name            = "type"
+    hash_key        = "type"
+    write_capacity  = 2
+    read_capacity   = 2
+    projection_type = "ALL"
   }
 
   global_secondary_index {
-    name               = "name"
-    hash_key           = "name"
-    write_capacity     = 2
-    read_capacity      = 2
-    projection_type    = "ALL"
+    name            = "name"
+    hash_key        = "name"
+    write_capacity  = 2
+    read_capacity   = 2
+    projection_type = "ALL"
   }
 
   lifecycle {
     prevent_destroy = true
+  }
+
+  tags = {
+    app = var.app_name
   }
 }
 
