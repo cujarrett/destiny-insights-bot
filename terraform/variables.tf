@@ -1,9 +1,3 @@
-variable "app_name" {
-  description = "app name"
-  type        = string
-  default     = "destiny-insights-bot"
-}
-
 variable "aws_region" {
   description = "Region for the infrastructure"
   type        = string

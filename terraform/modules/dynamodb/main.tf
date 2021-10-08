@@ -56,10 +56,6 @@ resource "aws_dynamodb_table" "destiny_insights_mods" {
   lifecycle {
     prevent_destroy = true
   }
-
-  tags = {
-    app = var.app_name
-  }
 }
 
 resource "aws_dynamodb_table" "destiny_insights_xur" {
@@ -119,10 +115,6 @@ resource "aws_dynamodb_table" "destiny_insights_xur" {
 
   lifecycle {
     prevent_destroy = true
-  }
-
-  tags = {
-    app = var.app_name
   }
 }
 
