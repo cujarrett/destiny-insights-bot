@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.43.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.42.2...v1.43.0) (2021-10-08)
+
+
+### Features
+
+* adds default terraform tags ([#181](https://github.com/cujarrett/destiny-insights-bot/issues/181)) ([17deabf](https://github.com/cujarrett/destiny-insights-bot/commit/17deabf937ebfb3a724de487233dc988001f864b))
+
 ## [1.42.2](https://github.com/cujarrett/destiny-insights-bot/compare/v1.42.1...v1.42.2) (2021-10-08)
 
 
