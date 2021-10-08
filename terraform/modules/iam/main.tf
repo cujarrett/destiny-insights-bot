@@ -14,10 +14,6 @@ resource "aws_iam_role" "destiny_insights_bot" {
   }
 }
 POLICY
-
-  tags = {
-    app = var.app_name
-  }
 }
 
 resource "aws_iam_policy" "destiny_insights_bot_logs" {
@@ -40,10 +36,6 @@ resource "aws_iam_policy" "destiny_insights_bot_logs" {
   ]
 }
 EOF
-
-  tags = {
-    app = var.app_name
-  }
 }
 
 resource "aws_iam_role_policy_attachment" "attach_logs" {
@@ -67,10 +59,6 @@ resource "aws_iam_policy" "destiny_insights_bot_sns" {
   ]
 }
 EOF
-
-  tags = {
-    app = var.app_name
-  }
 }
 
 resource "aws_iam_role_policy_attachment" "attach_sns" {
@@ -96,10 +84,6 @@ resource "aws_iam_policy" "destiny_insights_bot_parameter_store" {
   ]
 }
 EOF
-
-  tags = {
-    app = var.app_name
-  }
 }
 
 resource "aws_iam_role_policy_attachment" "attach_parameter_store" {
@@ -126,10 +110,6 @@ resource "aws_iam_policy" "destiny_insights_mods" {
   ]
 }
 EOF
-
-  tags = {
-    app = var.app_name
-  }
 }
 
 resource "aws_iam_role_policy_attachment" "attach_destiny_insights_mods_dynamodb" {
@@ -156,10 +136,6 @@ resource "aws_iam_policy" "destiny_insights_xur" {
   ]
 }
 EOF
-
-  tags = {
-    app = var.app_name
-  }
 }
 
 resource "aws_iam_role_policy_attachment" "attach_destiny_insights_xur_dynamodb" {

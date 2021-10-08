@@ -6,10 +6,6 @@ resource "aws_lambda_function" "destiny_insights_bot" {
   runtime       = "nodejs14.x"
   memory_size   = 128
   timeout       = 60
-
-  tags = {
-    app = var.app_name
-  }
 }
 
 resource "aws_lambda_permission" "allow_cloudwatch_to_call_destiny_insights_bot" {
