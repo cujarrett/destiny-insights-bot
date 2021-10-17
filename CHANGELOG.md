@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.43.5](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.4...v1.43.5) (2021-10-17)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump eslint from 8.0.0 to 8.0.1 ([#189](https://github.com/cujarrett/destiny-insights-bot/issues/189)) ([6651ac4](https://github.com/cujarrett/destiny-insights-bot/commit/6651ac4b47738d901bce88e44d797cea63abee73))
+
 ## [1.43.4](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.3...v1.43.4) (2021-10-16)
 
 
