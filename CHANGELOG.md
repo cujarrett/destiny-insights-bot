@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.43.10](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.9...v1.43.10) (2021-10-22)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump husky from 7.0.2 to 7.0.4 ([#197](https://github.com/cujarrett/destiny-insights-bot/issues/197)) ([cd9e34f](https://github.com/cujarrett/destiny-insights-bot/commit/cd9e34fc2bbc761a9c1cad7ea4c09c8c0d24ca49))
+
 ## [1.43.9](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.8...v1.43.9) (2021-10-22)
 
 
