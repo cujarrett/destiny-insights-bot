@@ -57,7 +57,7 @@
     "path": "~0.12.7"
   },
   "dependencies": {
-    "node-fetch": "~2.6.5",
+    "node-fetch": "~2.6.6",
     "twit": "~2.2.11"
   },
   "husky": {
