@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.46.2](https://github.com/cujarrett/destiny-insights-bot/compare/v1.46.1...v1.46.2) (2021-11-18)
+
+
+### Bug Fixes
+
+* **deps-dev:** bump @commitlint/cli from 14.1.0 to 15.0.0 ([#228](https://github.com/cujarrett/destiny-insights-bot/issues/228)) ([8c1c57e](https://github.com/cujarrett/destiny-insights-bot/commit/8c1c57e2ea5a0850e8a992b0c5e4c43d6daa1bed))
+
 ## [1.46.1](https://github.com/cujarrett/destiny-insights-bot/compare/v1.46.0...v1.46.1) (2021-11-18)
 
 
