@@ -1,4 +1,4 @@
-name: "update dependencies"
+name: 'update dependencies'
 
 on: [pull_request_target]
 
@@ -7,12 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     if: github.actor == 'dependabot[bot]'
     steps:
-      - name: "Checkout repository"
+      - name: 'Checkout repository'
         uses: actions/checkout@v2
-      - name: "Automerge dependency updates from Dependabot"
+      - name: 'Automerge dependency updates from Dependabot'
         uses: ahmadnassri/action-dependabot-auto-merge@v2
-        # Guarantee that commit comes from Dependabot (don"t blindly trust external GitHub Actions)
+        # Guarantee that commit comes from Dependabot (don't blindly trust external GitHub Actions)
         if: github.actor == 'dependabot[bot]'
         with:
           target: minor # includes patch updates
+          command: '@dependabot squash and merge'
           github-token: ${{ secrets.DEPENDABOT_AUTO_MERGE_GH_TOKEN }}
