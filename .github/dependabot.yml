@@ -1,9 +1,8 @@
 version: 2
 updates:
 - package-ecosystem: npm
-  directory: '/'
+  directory: "/"
   schedule:
-    interval: daily
-  commit-message:
-      prefix: 'chore'
-      include: 'scope'
+    interval: "daily"
+  reviewers:
+    - "cujarrett"
