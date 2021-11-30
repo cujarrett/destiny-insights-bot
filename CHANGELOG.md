@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.50.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.49.0...v1.50.0) (2021-11-30)
+
+
+### Features
+
+* remove auto merge ([#241](https://github.com/cujarrett/destiny-insights-bot/issues/241)) ([4ef1ff8](https://github.com/cujarrett/destiny-insights-bot/commit/4ef1ff84cad63576c21189ee90809a5f58a585af))
+
 # [1.49.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.48.2...v1.49.0) (2021-11-20)
 
 
