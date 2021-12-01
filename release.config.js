@@ -12,7 +12,16 @@ module.exports = {
         release: "patch"
       }]
     }],
-    "@semantic-release/release-notes-generator",
+    "@semantic-release/release-notes-generator", {
+      preset: "conventionalcommits",
+      presetConfig: {
+        types: [{
+          type: "chore",
+          section: "Chore",
+          hidden: false
+        }]
+      }
+    },
     ["@semantic-release/npm", { npmPublish: false }],
     ["@semantic-release/changelog", { changelogTitle }],
     "@semantic-release/git",
