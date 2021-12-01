@@ -13,12 +13,18 @@ module.exports = {
       }]
     }],
     "@semantic-release/release-notes-generator", {
+      preset: "conventionalcommits",
       presetConfig: {
-        types: [{
-          type: "chore",
-          section: "Chore",
-          hidden: false
-        }]
+        types: [
+          { type: "feat", section: "Features" },
+          { type: "fix", section: "Bug Fixes" },
+          { type: "chore", hidden: false },
+          { type: "docs", hidden: false },
+          { type: "style", hidden: false },
+          { type: "refactor", hidden: false },
+          { type: "perf", hidden: false },
+          { type: "test", hidden: false }
+        ]
       }
     },
     ["@semantic-release/npm", { npmPublish: false }],
