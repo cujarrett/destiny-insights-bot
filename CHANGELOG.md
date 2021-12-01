@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.50.10](https://github.com/cujarrett/destiny-insights-bot/compare/v1.50.9...v1.50.10) (2021-12-01)
+
+
+### Bug Fixes
+
+* husky release issue ([d459d19](https://github.com/cujarrett/destiny-insights-bot/commit/d459d1949dfa4cb9e2dd105c3b6c8db0162eee8e))
+
 ## [1.50.9](https://github.com/cujarrett/destiny-insights-bot/compare/v1.50.8...v1.50.9) (2021-12-01)
 
 
