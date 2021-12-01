@@ -2,17 +2,45 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+### Bug Fixes
+
+* fixes semantic-release setup
+
 ## [1.50.6](https://github.com/cujarrett/destiny-insights-bot/compare/v1.50.5...v1.50.6) (2021-12-01)
+
+### Bug Fixes
+
+* fixes semantic-release setup
 
 ## [1.50.5](https://github.com/cujarrett/destiny-insights-bot/compare/v1.50.4...v1.50.5) (2021-12-01)
 
+### Bug Fixes
+
+* fixes semantic-release setup
+
 ## [1.50.4](https://github.com/cujarrett/destiny-insights-bot/compare/v1.50.3...v1.50.4) (2021-12-01)
+
+### Bug Fixes
+
+* fixes semantic-release setup
 
 ## [1.50.3](https://github.com/cujarrett/destiny-insights-bot/compare/v1.50.2...v1.50.3) (2021-12-01)
 
+### Bug Fixes
+
+* fixes semantic-release setup
+
 ## [1.50.2](https://github.com/cujarrett/destiny-insights-bot/compare/v1.50.1...v1.50.2) (2021-12-01)
 
+### Bug Fixes
+
+* fixes semantic-release setup
+
 ## [1.50.1](https://github.com/cujarrett/destiny-insights-bot/compare/v1.50.0...v1.50.1) (2021-12-01)
+
+### Bug Fixes
+
+* fixes semantic-release setup
 
 # [1.50.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.49.0...v1.50.0) (2021-11-30)
 
@@ -24,7 +52,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 # [1.49.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.48.2...v1.49.0) (2021-11-20)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1027.0 to 2.1033.0 ([#232](https://github.com/cujarrett/destiny-insights-bot/issues/232)) ([cdef35b](https://github.com/cujarrett/destiny-insights-bot/commit/cdef35b87a44a96bf6d7adbff3ceeecda218c62f))
 
@@ -64,14 +92,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.46.2](https://github.com/cujarrett/destiny-insights-bot/compare/v1.46.1...v1.46.2) (2021-11-18)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @commitlint/cli from 14.1.0 to 15.0.0 ([#228](https://github.com/cujarrett/destiny-insights-bot/issues/228)) ([8c1c57e](https://github.com/cujarrett/destiny-insights-bot/commit/8c1c57e2ea5a0850e8a992b0c5e4c43d6daa1bed))
 
 ## [1.46.1](https://github.com/cujarrett/destiny-insights-bot/compare/v1.46.0...v1.46.1) (2021-11-18)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @commitlint/config-conventional ([#229](https://github.com/cujarrett/destiny-insights-bot/issues/229)) ([39e3797](https://github.com/cujarrett/destiny-insights-bot/commit/39e379799ae6727b7f94286d7611af077ee33d27))
 
@@ -121,147 +149,147 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.43.36](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.35...v1.43.36) (2021-11-12)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1026.0 to 2.1027.0 ([#223](https://github.com/cujarrett/destiny-insights-bot/issues/223)) ([bd44c82](https://github.com/cujarrett/destiny-insights-bot/commit/bd44c8228877795c2cd4b0a2498aac3dd7ae0731))
 
 ## [1.43.35](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.34...v1.43.35) (2021-11-11)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1025.0 to 2.1026.0 ([#222](https://github.com/cujarrett/destiny-insights-bot/issues/222)) ([0c5ed69](https://github.com/cujarrett/destiny-insights-bot/commit/0c5ed69d5cf6789ea82ddd4ea2e1d7c4c6c71a99))
 
 ## [1.43.34](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.33...v1.43.34) (2021-11-10)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1024.0 to 2.1025.0 ([#221](https://github.com/cujarrett/destiny-insights-bot/issues/221)) ([b6e5b4a](https://github.com/cujarrett/destiny-insights-bot/commit/b6e5b4aa28b6487d3f7cd111a4837a04c766fb56))
 
 ## [1.43.33](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.32...v1.43.33) (2021-11-09)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1023.0 to 2.1024.0 ([#220](https://github.com/cujarrett/destiny-insights-bot/issues/220)) ([03143a2](https://github.com/cujarrett/destiny-insights-bot/commit/03143a2f0105875e2571546c61541b0006144d00))
 
 ## [1.43.32](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.31...v1.43.32) (2021-11-08)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1022.0 to 2.1023.0 ([#219](https://github.com/cujarrett/destiny-insights-bot/issues/219)) ([7fc7b3e](https://github.com/cujarrett/destiny-insights-bot/commit/7fc7b3e91b673f32e0667c78a322807c84452306))
 
 ## [1.43.31](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.30...v1.43.31) (2021-11-08)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump eslint from 8.1.0 to 8.2.0 ([#218](https://github.com/cujarrett/destiny-insights-bot/issues/218)) ([d0c4bb1](https://github.com/cujarrett/destiny-insights-bot/commit/d0c4bb1828f1b7d95e103d9b235ab5575b822d7e))
 
 ## [1.43.30](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.29...v1.43.30) (2021-11-05)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/npm from 8.0.2 to 8.0.3 ([#217](https://github.com/cujarrett/destiny-insights-bot/issues/217)) ([96c19e0](https://github.com/cujarrett/destiny-insights-bot/commit/96c19e0592d4807d720342ed24d75c750c6d8111))
 
 ## [1.43.29](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.28...v1.43.29) (2021-11-05)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1021.0 to 2.1022.0 ([#216](https://github.com/cujarrett/destiny-insights-bot/issues/216)) ([e41c715](https://github.com/cujarrett/destiny-insights-bot/commit/e41c71597eba9f2112491bac42010e97fb9aa612))
 
 ## [1.43.28](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.27...v1.43.28) (2021-11-04)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1020.0 to 2.1021.0 ([#215](https://github.com/cujarrett/destiny-insights-bot/issues/215)) ([9cc3312](https://github.com/cujarrett/destiny-insights-bot/commit/9cc3312045cd6fc6b7d6ee62d8962da504dd611c))
 
 ## [1.43.27](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.26...v1.43.27) (2021-11-04)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/github from 8.0.1 to 8.0.2 ([#214](https://github.com/cujarrett/destiny-insights-bot/issues/214)) ([91bf3fa](https://github.com/cujarrett/destiny-insights-bot/commit/91bf3fa92064238372997b57d5410738edb411a7))
 
 ## [1.43.26](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.25...v1.43.26) (2021-11-03)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1019.0 to 2.1020.0 ([#213](https://github.com/cujarrett/destiny-insights-bot/issues/213)) ([2951ad2](https://github.com/cujarrett/destiny-insights-bot/commit/2951ad2e5ebf20e8b917886803379882bb3da6d5))
 
 ## [1.43.25](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.24...v1.43.25) (2021-11-02)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1018.0 to 2.1019.0 ([#212](https://github.com/cujarrett/destiny-insights-bot/issues/212)) ([6cda82c](https://github.com/cujarrett/destiny-insights-bot/commit/6cda82c5c0d61aac2766db4d31f2dc44b275df7e))
 
 ## [1.43.24](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.23...v1.43.24) (2021-11-02)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @commitlint/config-conventional ([#211](https://github.com/cujarrett/destiny-insights-bot/issues/211)) ([c18c7d2](https://github.com/cujarrett/destiny-insights-bot/commit/c18c7d25514a8a91f1a668693e820f78f101e001))
 
 ## [1.43.23](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.22...v1.43.23) (2021-11-02)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @commitlint/cli from 13.2.1 to 14.1.0 ([#210](https://github.com/cujarrett/destiny-insights-bot/issues/210)) ([401a3cd](https://github.com/cujarrett/destiny-insights-bot/commit/401a3cdd02c8d8f6d67e799a618ad273b6f0e2d9))
 
 ## [1.43.22](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.21...v1.43.22) (2021-11-01)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/git from 10.0.0 to 10.0.1 ([#209](https://github.com/cujarrett/destiny-insights-bot/issues/209)) ([1c37b1e](https://github.com/cujarrett/destiny-insights-bot/commit/1c37b1e4068fa4f222676f326c51e12f33fef7e5))
 
 ## [1.43.21](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.20...v1.43.21) (2021-11-01)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1017.0 to 2.1018.0 ([#208](https://github.com/cujarrett/destiny-insights-bot/issues/208)) ([aca1b1f](https://github.com/cujarrett/destiny-insights-bot/commit/aca1b1f8bd8a599bcef92c1360be35a6211b0ae4))
 
 ## [1.43.20](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.19...v1.43.20) (2021-11-01)
 
 
-### Chore
+### Bug Fixes
 
 * **deps:** bump node-fetch from 2.6.5 to 2.6.6 ([#207](https://github.com/cujarrett/destiny-insights-bot/issues/207)) ([4b05906](https://github.com/cujarrett/destiny-insights-bot/commit/4b05906c3fd71b0dc40ea316b9d142f3b7540736))
 
 ## [1.43.19](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.18...v1.43.19) (2021-11-01)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/changelog from 6.0.0 to 6.0.1 ([#206](https://github.com/cujarrett/destiny-insights-bot/issues/206)) ([29bca40](https://github.com/cujarrett/destiny-insights-bot/commit/29bca40e3dcb9045b9797562a5cb27f77bae442a))
 
 ## [1.43.18](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.17...v1.43.18) (2021-11-01)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/exec from 6.0.1 to 6.0.2 ([#205](https://github.com/cujarrett/destiny-insights-bot/issues/205)) ([6fde84f](https://github.com/cujarrett/destiny-insights-bot/commit/6fde84f43b30df9ded0812a9d45860826bb3229c))
 
 ## [1.43.17](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.16...v1.43.17) (2021-10-29)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1016.0 to 2.1017.0 ([#204](https://github.com/cujarrett/destiny-insights-bot/issues/204)) ([e377fe4](https://github.com/cujarrett/destiny-insights-bot/commit/e377fe41cf231d8cce7c81e76bb9d8c3cd85d1d1))
 
 ## [1.43.16](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.15...v1.43.16) (2021-10-28)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1015.0 to 2.1016.0 ([#203](https://github.com/cujarrett/destiny-insights-bot/issues/203)) ([a64095c](https://github.com/cujarrett/destiny-insights-bot/commit/a64095cdbebd468eb4ed88b100454e470e3c98a4))
 
@@ -275,98 +303,98 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.43.14](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.13...v1.43.14) (2021-10-27)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1014.0 to 2.1015.0 ([#201](https://github.com/cujarrett/destiny-insights-bot/issues/201)) ([fd9204d](https://github.com/cujarrett/destiny-insights-bot/commit/fd9204d44e0e8d3afeb508f90f8cc42b2a3dfe01))
 
 ## [1.43.13](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.12...v1.43.13) (2021-10-26)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1013.0 to 2.1014.0 ([#200](https://github.com/cujarrett/destiny-insights-bot/issues/200)) ([7380cd4](https://github.com/cujarrett/destiny-insights-bot/commit/7380cd4882e78b46dc34bdf5ada0a029cefd24cc))
 
 ## [1.43.12](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.11...v1.43.12) (2021-10-25)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1012.0 to 2.1013.0 ([#199](https://github.com/cujarrett/destiny-insights-bot/issues/199)) ([2d8c293](https://github.com/cujarrett/destiny-insights-bot/commit/2d8c29302adecfa04a4977325f2735294e3f1802))
 
 ## [1.43.11](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.10...v1.43.11) (2021-10-25)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump eslint from 8.0.1 to 8.1.0 ([#198](https://github.com/cujarrett/destiny-insights-bot/issues/198)) ([1e88b3d](https://github.com/cujarrett/destiny-insights-bot/commit/1e88b3dae312f0cb4bf37997e950fda7a209db8b))
 
 ## [1.43.10](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.9...v1.43.10) (2021-10-22)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump husky from 7.0.2 to 7.0.4 ([#197](https://github.com/cujarrett/destiny-insights-bot/issues/197)) ([cd9e34f](https://github.com/cujarrett/destiny-insights-bot/commit/cd9e34fc2bbc761a9c1cad7ea4c09c8c0d24ca49))
 
 ## [1.43.9](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.8...v1.43.9) (2021-10-22)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1010.0 to 2.1012.0 ([#195](https://github.com/cujarrett/destiny-insights-bot/issues/195)) ([84f4796](https://github.com/cujarrett/destiny-insights-bot/commit/84f47960803e2d8ced29eaa7b3645e4e3b4cdd80))
 
 ## [1.43.8](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.7...v1.43.8) (2021-10-21)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/npm from 8.0.1 to 8.0.2 ([#194](https://github.com/cujarrett/destiny-insights-bot/issues/194)) ([719feed](https://github.com/cujarrett/destiny-insights-bot/commit/719feedb6b5f29a2cf85505cbf4b18570485f30c))
 
 ## [1.43.7](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.6...v1.43.7) (2021-10-19)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1008.0 to 2.1010.0 ([#192](https://github.com/cujarrett/destiny-insights-bot/issues/192)) ([de452b1](https://github.com/cujarrett/destiny-insights-bot/commit/de452b1cd047e8f4c0795e266338817a74e4fad8))
 
 ## [1.43.6](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.5...v1.43.6) (2021-10-19)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/npm from 8.0.0 to 8.0.1 ([#190](https://github.com/cujarrett/destiny-insights-bot/issues/190)) ([8f9231a](https://github.com/cujarrett/destiny-insights-bot/commit/8f9231a606df3f8d46c8508021183e77c000b627))
 
 ## [1.43.5](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.4...v1.43.5) (2021-10-17)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump eslint from 8.0.0 to 8.0.1 ([#189](https://github.com/cujarrett/destiny-insights-bot/issues/189)) ([6651ac4](https://github.com/cujarrett/destiny-insights-bot/commit/6651ac4b47738d901bce88e44d797cea63abee73))
 
 ## [1.43.4](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.3...v1.43.4) (2021-10-16)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1007.0 to 2.1008.0 ([#188](https://github.com/cujarrett/destiny-insights-bot/issues/188)) ([48ddf6f](https://github.com/cujarrett/destiny-insights-bot/commit/48ddf6f5d89856bdd5cb038d34eba7a11c264662))
 
 ## [1.43.3](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.2...v1.43.3) (2021-10-14)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1004.0 to 2.1007.0 ([#187](https://github.com/cujarrett/destiny-insights-bot/issues/187)) ([3b16770](https://github.com/cujarrett/destiny-insights-bot/commit/3b1677099c769280b01bf5b967c440cb3f257145))
 
 ## [1.43.2](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.1...v1.43.2) (2021-10-11)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump eslint from 7.32.0 to 8.0.0 ([#184](https://github.com/cujarrett/destiny-insights-bot/issues/184)) ([a9bb878](https://github.com/cujarrett/destiny-insights-bot/commit/a9bb8789c31f2f115187d2b4f5bc7389dbaf1fd4))
 
 ## [1.43.1](https://github.com/cujarrett/destiny-insights-bot/compare/v1.43.0...v1.43.1) (2021-10-11)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @commitlint/cli from 13.2.0 to 13.2.1 ([#183](https://github.com/cujarrett/destiny-insights-bot/issues/183)) ([ba692eb](https://github.com/cujarrett/destiny-insights-bot/commit/ba692ebb74748391a31ade6de900445d9dbb6cc9))
 * **deps-dev:** bump aws-sdk from 2.1003.0 to 2.1004.0 ([#182](https://github.com/cujarrett/destiny-insights-bot/issues/182)) ([c53fe05](https://github.com/cujarrett/destiny-insights-bot/commit/c53fe0518fd614443702d452006d346a202329ba))
@@ -381,14 +409,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.42.2](https://github.com/cujarrett/destiny-insights-bot/compare/v1.42.1...v1.42.2) (2021-10-08)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1002.0 to 2.1003.0 ([#180](https://github.com/cujarrett/destiny-insights-bot/issues/180)) ([21e18c5](https://github.com/cujarrett/destiny-insights-bot/commit/21e18c54ed6fe1cbd2089f72a2516adb47739398))
 
 ## [1.42.1](https://github.com/cujarrett/destiny-insights-bot/compare/v1.42.0...v1.42.1) (2021-10-07)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1001.0 to 2.1002.0 ([#179](https://github.com/cujarrett/destiny-insights-bot/issues/179)) ([dc9a900](https://github.com/cujarrett/destiny-insights-bot/commit/dc9a900dc06e9fc1d42c32995fb77787e7217c43))
 
@@ -402,7 +430,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.41.2](https://github.com/cujarrett/destiny-insights-bot/compare/v1.41.1...v1.41.2) (2021-10-07)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.1000.0 to 2.1001.0 ([#177](https://github.com/cujarrett/destiny-insights-bot/issues/177)) ([15e8724](https://github.com/cujarrett/destiny-insights-bot/commit/15e87249772d1d89ea89a1673f87e224d7676431))
 
@@ -428,21 +456,21 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.40.24](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.23...v1.40.24) (2021-09-24)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.993.0 to 2.994.0 ([#164](https://github.com/cujarrett/destiny-insights-bot/issues/164)) ([951a452](https://github.com/cujarrett/destiny-insights-bot/commit/951a4527093640d6332b64c874210fc69d6a9f0c))
 
 ## [1.40.23](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.22...v1.40.23) (2021-09-24)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/github from 8.0.0 to 8.0.1 ([#163](https://github.com/cujarrett/destiny-insights-bot/issues/163)) ([98f07e5](https://github.com/cujarrett/destiny-insights-bot/commit/98f07e53d7d00ccc6e29457cb5ec2968912c7f9a))
 
 ## [1.40.22](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.21...v1.40.22) (2021-09-23)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.992.0 to 2.993.0 ([#161](https://github.com/cujarrett/destiny-insights-bot/issues/161)) ([215e63d](https://github.com/cujarrett/destiny-insights-bot/commit/215e63ddfe79dbece4a8d4f7e81a3a57de150804))
 * **deps:** bump node-fetch from 2.6.4 to 2.6.5 ([#162](https://github.com/cujarrett/destiny-insights-bot/issues/162)) ([50298f9](https://github.com/cujarrett/destiny-insights-bot/commit/50298f9113ed86477585339a8f0749ccff7b2316))
@@ -450,7 +478,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.40.21](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.20...v1.40.21) (2021-09-22)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/exec from 5.0.0 to 6.0.1 ([#157](https://github.com/cujarrett/destiny-insights-bot/issues/157)) ([4eb573c](https://github.com/cujarrett/destiny-insights-bot/commit/4eb573c85c2598d0158d29793a18e04a568eb754))
 * **deps-dev:** bump aws-sdk from 2.991.0 to 2.992.0 ([#156](https://github.com/cujarrett/destiny-insights-bot/issues/156)) ([4d4e3de](https://github.com/cujarrett/destiny-insights-bot/commit/4d4e3de47637e92298cc3ed71fd79dba7c8d5cee))
@@ -459,7 +487,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.40.20](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.19...v1.40.20) (2021-09-22)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/changelog from 5.0.1 to 6.0.0 ([#160](https://github.com/cujarrett/destiny-insights-bot/issues/160)) ([a0f7827](https://github.com/cujarrett/destiny-insights-bot/commit/a0f78278b5397f7c4e141bafdd07d4d7fcd1b5dc))
 * **deps-dev:** bump @semantic-release/npm from 7.1.3 to 8.0.0 ([#159](https://github.com/cujarrett/destiny-insights-bot/issues/159)) ([4846edb](https://github.com/cujarrett/destiny-insights-bot/commit/4846edb350b87a237d6906e36a0a0faf01662353))
@@ -467,14 +495,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.40.19](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.18...v1.40.19) (2021-09-21)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/git from 9.0.1 to 10.0.0 ([#152](https://github.com/cujarrett/destiny-insights-bot/issues/152)) ([4791a36](https://github.com/cujarrett/destiny-insights-bot/commit/4791a36916d4c7f1330faea34eea914e96d74112))
 
 ## [1.40.18](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.17...v1.40.18) (2021-09-21)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/github from 7.2.3 to 8.0.0 ([#153](https://github.com/cujarrett/destiny-insights-bot/issues/153)) ([d862e6c](https://github.com/cujarrett/destiny-insights-bot/commit/d862e6c8f07fe65423054be1f4b0d0140dbf269a))
 * **deps:** bump node-fetch from 2.6.2 to 2.6.3 ([#154](https://github.com/cujarrett/destiny-insights-bot/issues/154)) ([094266f](https://github.com/cujarrett/destiny-insights-bot/commit/094266fa09f8a083763c5072622c60cb136e7f7c))
@@ -482,21 +510,21 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.40.17](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.16...v1.40.17) (2021-09-21)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/release-notes-generator ([#155](https://github.com/cujarrett/destiny-insights-bot/issues/155)) ([1ae3572](https://github.com/cujarrett/destiny-insights-bot/commit/1ae357252f75c5cce0132b84b3e192da58672a99))
 
 ## [1.40.16](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.15...v1.40.16) (2021-09-21)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/commit-analyzer ([#151](https://github.com/cujarrett/destiny-insights-bot/issues/151)) ([d0f9941](https://github.com/cujarrett/destiny-insights-bot/commit/d0f99412644195f2951741f3836411bef0881eeb))
 
 ## [1.40.15](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.14...v1.40.15) (2021-09-20)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.990.0 to 2.991.0 ([#149](https://github.com/cujarrett/destiny-insights-bot/issues/149)) ([22809ef](https://github.com/cujarrett/destiny-insights-bot/commit/22809ef74dc4e2aabd137fc4897807e964e41fe3))
 * **deps-dev:** bump semantic-release from 17.4.7 to 18.0.0 ([#150](https://github.com/cujarrett/destiny-insights-bot/issues/150)) ([97a01bd](https://github.com/cujarrett/destiny-insights-bot/commit/97a01bdf1aa220e19af9f8e3f3186370d32dc509))
@@ -504,21 +532,21 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.40.14](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.13...v1.40.14) (2021-09-17)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.989.0 to 2.990.0 ([#148](https://github.com/cujarrett/destiny-insights-bot/issues/148)) ([e7f3b7c](https://github.com/cujarrett/destiny-insights-bot/commit/e7f3b7c2001d7c5da28f6a7ad8d60241beea7a5f))
 
 ## [1.40.13](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.12...v1.40.13) (2021-09-15)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.988.0 to 2.989.0 ([#147](https://github.com/cujarrett/destiny-insights-bot/issues/147)) ([6c3b89e](https://github.com/cujarrett/destiny-insights-bot/commit/6c3b89ee6467ac876935653d11c2ce5910dc5037))
 
 ## [1.40.12](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.11...v1.40.12) (2021-09-14)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.987.0 to 2.988.0 ([#146](https://github.com/cujarrett/destiny-insights-bot/issues/146)) ([8b4fc75](https://github.com/cujarrett/destiny-insights-bot/commit/8b4fc755a84a876ec3676492cd34e826923ba7e0))
 
@@ -553,28 +581,28 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.40.7](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.6...v1.40.7) (2021-08-02)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @commitlint/config-conventional ([#137](https://github.com/cujarrett/destiny-insights-bot/issues/137)) ([4a082b1](https://github.com/cujarrett/destiny-insights-bot/commit/4a082b19998463bb106ffcaacd13af0ba12bb177))
 
 ## [1.40.6](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.5...v1.40.6) (2021-08-02)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump eslint from 7.31.0 to 7.32.0 ([#138](https://github.com/cujarrett/destiny-insights-bot/issues/138)) ([2f598c6](https://github.com/cujarrett/destiny-insights-bot/commit/2f598c641b49638a8b74d676bf0c1f30435a51be))
 
 ## [1.40.5](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.4...v1.40.5) (2021-08-02)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.950.0 to 2.958.0 ([#139](https://github.com/cujarrett/destiny-insights-bot/issues/139)) ([1268bc5](https://github.com/cujarrett/destiny-insights-bot/commit/1268bc5cbd579a2279a7fee9c25010e4d8e4baa4))
 
 ## [1.40.4](https://github.com/cujarrett/destiny-insights-bot/compare/v1.40.3...v1.40.4) (2021-08-02)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @commitlint/cli from 12.1.4 to 13.1.0 ([#136](https://github.com/cujarrett/destiny-insights-bot/issues/136)) ([927a16d](https://github.com/cujarrett/destiny-insights-bot/commit/927a16d1fd9eecfe6df74eb5289d6a9c3437db54))
 
@@ -727,21 +755,21 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.26.3](https://github.com/cujarrett/destiny-insights-bot/compare/v1.26.2...v1.26.3) (2021-02-19)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.846.0 to 2.847.0 ([9ae863f](https://github.com/cujarrett/destiny-insights-bot/commit/9ae863f1243b7159e43d4694342001a3b67a38a8))
 
 ## [1.26.2](https://github.com/cujarrett/destiny-insights-bot/compare/v1.26.1...v1.26.2) (2021-02-18)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.845.0 to 2.846.0 ([26e1799](https://github.com/cujarrett/destiny-insights-bot/commit/26e1799f938fe120ac9e622c5f232b38a0d16ac8))
 
 ## [1.26.1](https://github.com/cujarrett/destiny-insights-bot/compare/v1.26.0...v1.26.1) (2021-02-17)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.844.0 to 2.845.0 ([a9c6c4c](https://github.com/cujarrett/destiny-insights-bot/commit/a9c6c4cd9c842cabb9e193fbb9fad4677b538ef3))
 
@@ -770,77 +798,77 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [1.23.12](https://github.com/cujarrett/destiny-insights-bot/compare/v1.23.11...v1.23.12) (2021-02-12)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.841.0 to 2.842.0 ([084e70e](https://github.com/cujarrett/destiny-insights-bot/commit/084e70e848c14b0454c544b59ca3270b7acedda1))
 
 ## [1.23.11](https://github.com/cujarrett/destiny-insights-bot/compare/v1.23.10...v1.23.11) (2021-02-11)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.840.0 to 2.841.0 ([8291141](https://github.com/cujarrett/destiny-insights-bot/commit/829114107030ff9c6d677bb11f164e2fa0defdf0))
 
 ## [1.23.10](https://github.com/cujarrett/destiny-insights-bot/compare/v1.23.9...v1.23.10) (2021-02-10)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump semantic-release from 17.3.7 to 17.3.8 ([06bf7c6](https://github.com/cujarrett/destiny-insights-bot/commit/06bf7c6f73a0c657ba477fd026a2458d6465437f))
 
 ## [1.23.9](https://github.com/cujarrett/destiny-insights-bot/compare/v1.23.8...v1.23.9) (2021-02-10)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.839.0 to 2.840.0 ([924b297](https://github.com/cujarrett/destiny-insights-bot/commit/924b297db3858c7db605563a960e26a969b8be5a))
 
 ## [1.23.8](https://github.com/cujarrett/destiny-insights-bot/compare/v1.23.7...v1.23.8) (2021-02-06)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump aws-sdk from 2.809.0 to 2.839.0 ([fe606c2](https://github.com/cujarrett/destiny-insights-bot/commit/fe606c2409b7eaa1f3fca87da76ad8b5a9c78bfa))
 
 ## [1.23.7](https://github.com/cujarrett/destiny-insights-bot/compare/v1.23.6...v1.23.7) (2021-02-06)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump husky from 4.3.7 to 4.3.8 ([dfbf080](https://github.com/cujarrett/destiny-insights-bot/commit/dfbf080c47c40a2c351bd17f4cb74a1fc1bef1a2))
 
 ## [1.23.6](https://github.com/cujarrett/destiny-insights-bot/compare/v1.23.5...v1.23.6) (2021-02-06)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump @semantic-release/npm from 7.0.9 to 7.0.10 ([45094e9](https://github.com/cujarrett/destiny-insights-bot/commit/45094e9e8a21cb3819e7bc8a8c2cfeb66721be82))
 
 ## [1.23.5](https://github.com/cujarrett/destiny-insights-bot/compare/v1.23.4...v1.23.5) (2021-02-06)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump commitizen from 4.2.2 to 4.2.3 ([a1d0135](https://github.com/cujarrett/destiny-insights-bot/commit/a1d0135e74fb3f7648dd4abd71ae92b39cbf10ec))
 
 ## [1.23.4](https://github.com/cujarrett/destiny-insights-bot/compare/v1.23.3...v1.23.4) (2021-02-06)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump eslint from 7.15.0 to 7.19.0 ([75aee18](https://github.com/cujarrett/destiny-insights-bot/commit/75aee18ccb5c529fd92756c007b18a1349b50c35))
 
 ## [1.23.3](https://github.com/cujarrett/destiny-insights-bot/compare/v1.23.2...v1.23.3) (2021-02-05)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump nconf from 0.11.1 to 0.11.2 ([2262ed8](https://github.com/cujarrett/destiny-insights-bot/commit/2262ed839e55d85b0ea62c01b2db6235e427641b))
 
 ## [1.23.2](https://github.com/cujarrett/destiny-insights-bot/compare/v1.23.1...v1.23.2) (2021-02-05)
 
 
-### Chore
+### Bug Fixes
 
 * **deps-dev:** bump semantic-release from 17.3.1 to 17.3.7 ([f0f5505](https://github.com/cujarrett/destiny-insights-bot/commit/f0f55052e8c16ab3839c39119c84f8233fdc20c1))
 
