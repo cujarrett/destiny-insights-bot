@@ -6,28 +6,8 @@ module.exports = {
   branches: ["main"],
   tagFormat: "v${version}",
   plugins: [
-    ["@semantic-release/commit-analyzer", {
-      preset: "conventionalcommits",
-      releaseRules: [{
-        type: "chore",
-        release: "patch"
-      }]
-    }],
-    "@semantic-release/release-notes-generator", {
-      preset: "conventionalcommits",
-      presetConfig: {
-        types: [
-          { type: "feat", section: "Features" },
-          { type: "fix", section: "Bug Fixes" },
-          { type: "chore", hidden: false },
-          { type: "docs", hidden: false },
-          { type: "style", hidden: false },
-          { type: "refactor", hidden: false },
-          { type: "perf", hidden: false },
-          { type: "test", hidden: false }
-        ]
-      }
-    },
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
     ["@semantic-release/npm", { npmPublish: false }],
     ["@semantic-release/changelog", { changelogTitle }],
     "@semantic-release/git",

@@ -5,7 +5,7 @@ updates:
   schedule:
     interval: "daily"
   commit-message:
-      prefix: "chore"
+      prefix: "fix"
       include: "scope"
   reviewers:
     - "cujarrett"
