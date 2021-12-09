@@ -46,7 +46,7 @@
     "@semantic-release/npm": "~8.0.3",
     "@semantic-release/release-notes-generator": "~10.0.3",
     "ava": "~3.15.0",
-    "aws-sdk": "~2.1044.0",
+    "aws-sdk": "~2.1045.0",
     "commitizen": "~4.2.4",
     "cz-conventional-changelog": "~3.3.0",
     "eslint": "~8.4.1",
