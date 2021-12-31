@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.52.1](https://github.com/cujarrett/destiny-insights-bot/compare/v1.52.0...v1.52.1) (2021-12-31)
+
+
+### Bug Fixes
+
+* renames vendor field to source ([#267](https://github.com/cujarrett/destiny-insights-bot/issues/267)) ([f3673ad](https://github.com/cujarrett/destiny-insights-bot/commit/f3673adf4c3af93cad6a3b775d008208a367f464))
+
 # [1.52.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.51.0...v1.52.0) (2021-12-31)
 
 
