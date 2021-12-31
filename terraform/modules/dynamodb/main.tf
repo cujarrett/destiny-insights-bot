@@ -150,7 +150,7 @@ resource "aws_dynamodb_table" "destiny_insights_items" {
   }
 
   attribute {
-    name = "vendor"
+    name = "source"
     type = "S"
   }
 
@@ -184,8 +184,8 @@ resource "aws_dynamodb_table" "destiny_insights_items" {
   }
 
   global_secondary_index {
-    name            = "vendor"
-    hash_key        = "vendor"
+    name            = "source"
+    hash_key        = "source"
     write_capacity  = 10
     read_capacity   = 10
     projection_type = "ALL"
