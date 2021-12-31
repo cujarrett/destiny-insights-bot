@@ -143,6 +143,32 @@ resource "aws_iam_role_policy_attachment" "attach_destiny_insights_xur_dynamodb"
   policy_arn = aws_iam_policy.destiny_insights_xur.arn
 }
 
+resource "aws_iam_policy" "destiny_insights_items" {
+  name        = "destiny-insights-items-dynamodb"
+  description = "Adds DynamoDB access"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:Scan",
+        "dynamodb:PutItem"
+      ],
+      "Resource": "${var.destiny_insights_items_arn}"
+    }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_role_policy_attachment" "attach_destiny_insights_items_dynamodb" {
+  role       = aws_iam_role.destiny_insights_bot.name
+  policy_arn = aws_iam_policy.destiny_insights_items.arn
+}
+
 output "aws_iam_role_destiny_insights_bot_arn" {
   value = aws_iam_role.destiny_insights_bot.arn
 }
