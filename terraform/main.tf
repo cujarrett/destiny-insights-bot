@@ -3,7 +3,7 @@ module "archive" {
 }
 
 module "dynamodb" {
-  source   = "./modules/dynamodb"
+  source = "./modules/dynamodb"
 }
 
 module "iam" {
@@ -11,11 +11,12 @@ module "iam" {
   error_sns_topic                  = var.error_sns_topic
   destiny_insights_mods_arn        = module.dynamodb.destiny_insights_mods_arn
   destiny_insights_xur_arn         = module.dynamodb.destiny_insights_xur_arn
+  destiny_insights_items_arn       = module.dynamodb.destiny_insights_items_arn
   parameter_store_twitter_auth_arn = var.parameter_store_twitter_auth_arn
 }
 
 module "event_bridge" {
-  source   = "./modules/event_bridge"
+  source = "./modules/event_bridge"
 }
 
 module "lambda" {
