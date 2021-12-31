@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.52.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.51.0...v1.52.0) (2021-12-31)
+
+
+### Features
+
+* adds items table ([#266](https://github.com/cujarrett/destiny-insights-bot/issues/266)) ([04349bd](https://github.com/cujarrett/destiny-insights-bot/commit/04349bd8984f2bfe281b58064e3a1b55aa458281))
+
 # [1.51.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.50.24...v1.51.0) (2021-12-31)
 
 
