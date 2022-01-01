@@ -17,7 +17,7 @@ ${mod2Info}
 module.exports.banshee44 = async () => {
   let result
   const { inventory: { mods: currentMods } } = await getVendorInventory("banshee-44")
-  const lastSoldMods = await getLastSoldItems("banshee-44")
+  const lastSoldMods = await getLastSoldItems("banshee-44", 1)
   const newInventory = await isNewInventory(currentMods, lastSoldMods)
 
   if (newInventory) {
