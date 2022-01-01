@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.53.1](https://github.com/cujarrett/destiny-insights-bot/compare/v1.53.0...v1.53.1) (2022-01-01)
+
+
+### Bug Fixes
+
+* adds back different timeframes to last sold lookups ([#270](https://github.com/cujarrett/destiny-insights-bot/issues/270)) ([d34ad76](https://github.com/cujarrett/destiny-insights-bot/commit/d34ad76166d8da8116ef57d90dbba7f3f5d3c342))
+
 # [1.53.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.52.1...v1.53.0) (2022-01-01)
 
 
