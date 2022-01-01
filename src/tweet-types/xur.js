@@ -1,23 +1,77 @@
-const { getXur } = require("../integrations/destiny-insights-backend.js")
-const { addXurItem, getLastSoldXurItems } = require("../integrations/dynamodb.js")
+const { getVendorInventory } = require("../integrations/destiny-insights-backend.js")
+const { addItem, getLastSoldItems } = require("../integrations/dynamodb.js")
 const { isNewInventory } = require ("../util/is-new-inventory.js")
 const { tweet } = require("../integrations/twitter.js")
 
+const getRoll = (item) => {
+  let roll = ""
+
+  if (item.mobility || item.mobility === 0) {
+    roll += `${item.mobility}-`
+  }
+  if (item.resilience || item.resilience === 0) {
+    roll += `${item.resilience}-`
+  }
+  if (item.recovery || item.recovery === 0) {
+    roll += `${item.recovery}-`
+  }
+  if (item.discipline || item.discipline === 0) {
+    roll += `${item.discipline}-`
+  }
+  if (item.intellect || item.intellect === 0) {
+    roll += `${item.intellect}-`
+  }
+  if (item.strength || item.strength === 0) {
+    roll += `${item.strength}`
+  }
+
+  if (item.perks) {
+    roll += `${item.perks}`
+  }
+
+  if (item.roll) {
+    roll += `${item.roll}`
+  }
+
+  return roll
+}
+
+const getCompareStrings = (items) => {
+  const results = []
+
+  for (const item of items) {
+    let itemCompareString = item.name
+    itemCompareString += `${itemCompareString} ${getRoll(item)}`
+    results.push({ name: itemCompareString })
+  }
+  return results
+}
+
 module.exports.xur = async () => {
   let result
-  const { inventory } = await getXur()
-  const exotics = inventory.filter((item) => item.type.startsWith("Exotic"))
-  const lastSoldItems = await getLastSoldXurItems()
-  const newInventory = await isNewInventory(exotics, lastSoldItems)
+  const { inventory: { armor, weapons } } = await getVendorInventory("xur")
+  const currentInventory = [...weapons, ...armor]
+  const exotics = currentInventory.filter((item) => item.type.startsWith("Exotic"))
+  const lastSoldItems = await getLastSoldItems("xur")
+  const currentInventoryForCompare = getCompareStrings(exotics)
+  const lastInventoryForCompare = getCompareStrings(lastSoldItems)
+  const newInventory = await isNewInventory(currentInventoryForCompare, lastInventoryForCompare)
 
   if (newInventory) {
-    const { inventory: doubleCheckedMods } = await getXur()
-    const exotics = inventory.filter((item) => item.type.startsWith("Exotic"))
-    const confirmedNewInventory = await isNewInventory(doubleCheckedMods, lastSoldItems)
+    // eslint-disable-next-line max-len
+    const { inventory: { armor: doubleCheckedArmor, weapons: doubleCheckedWeapons } } = await getVendorInventory("xur")
+    const doubleCheckedInventory = [...doubleCheckedArmor, ...doubleCheckedWeapons]
+    // eslint-disable-next-line max-len
+    const doubleCheckedExotics = doubleCheckedInventory.filter((item) => item.type.startsWith("Exotic"))
+    const doubleCheckedInventoryForCompare = getCompareStrings(doubleCheckedExotics)
+    // eslint-disable-next-line max-len
+    const confirmedNewInventory = await isNewInventory(doubleCheckedInventoryForCompare, lastInventoryForCompare)
     if (confirmedNewInventory) {
       const timestamp = new Date().toISOString()
       for (const item of exotics) {
-        await addXurItem(item, timestamp)
+        item.source = "xur"
+        item.roll = getRoll(item)
+        await addItem(item, timestamp)
       }
       /* eslint-disable max-len */
       const message = `Xur is selling:
@@ -36,7 +90,7 @@ ${exotics[3].mobility}-${exotics[3].resilience}-${exotics[3].recovery}-${exotics
 Mob-Res-Rec-Dis-Int-Str
 
 #Destiny2 #TwitterBot`
-      /* eslint-enable max-len */
+
       await tweet(message)
       result = `Tweeted:\n${message}`
     }

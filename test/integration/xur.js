@@ -1,7 +1,7 @@
 const test = require("ava")
-const { getXur } = require("../../src/integrations/destiny-insights-backend.js")
+const { getVendorInventory } = require("../../src/integrations/destiny-insights-backend.js")
 
 test("Integration - api.destinyinsights Xur", async (assert) => {
-  const { inventory } = await getXur()
+  const { inventory } = await getVendorInventory("xur")
   assert.truthy(inventory)
 })
