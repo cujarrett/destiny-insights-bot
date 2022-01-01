@@ -12,8 +12,8 @@ module.exports.getModSalesInLastYear = async (mod) => {
   oneYearAgo = oneYearAgo.toISOString().split("T")[0]
 
   const query = {
-    TableName: "destiny-insights-mods",
-    FilterExpression: "#ts > :startDate and #modName = :name",
+    TableName: "destiny-insights-items",
+    FilterExpression: "#ts > :startDate AND #modName = :name",
     ExpressionAttributeValues: {
       // AWS DynamoDB uses single char for types
       // eslint-disable-next-line id-length
@@ -42,28 +42,26 @@ module.exports.getModSalesInLastYear = async (mod) => {
   return sortedResults
 }
 
-module.exports.getLastSoldAda1Mods = async () => {
-  console.log("getLastSoldAda1Mods called")
+module.exports.getLastSoldItems = async (source) => {
+  console.log("getLastSoldItems called")
   AWS.config.update({ region: "us-east-1" })
   const ddb = new AWS.DynamoDB({ apiVersion: "2012-08-10" })
   const responses = []
   const oneDayAgo = new Date(new Date().getTime() - (24 * 60 * 60 * 1000)).toISOString()
 
   const query = {
-    TableName: "destiny-insights-mods",
-    FilterExpression: "#ts > :startDate AND (#type = :armorType OR #type = :combatSyleType)",
+    TableName: "destiny-insights-items",
+    FilterExpression: "#ts > :startDate AND #s = :source",
     ExpressionAttributeValues: {
       // AWS DynamoDB uses single char for types
       // eslint-disable-next-line id-length
       ":startDate": { S: oneDayAgo },
       // eslint-disable-next-line id-length
-      ":armorType": { S: "Armor Mod" },
-      // eslint-disable-next-line id-length
-      ":combatSyleType": { S: "Combat Style Mod" }
+      ":source": { S: source }
     },
     ExpressionAttributeNames: {
       "#ts": "timestamp",
-      "#type": "type"
+      "#s": "source"
     }
   }
 
@@ -75,7 +73,9 @@ module.exports.getLastSoldAda1Mods = async () => {
     results.push({
       timestamp: sale.timestamp.S,
       name: sale.name.S,
-      type: sale.type.S
+      type: sale.type.S,
+      source: sale.source.S,
+      roll: sale.roll?.S || ""
     })
   }
 
@@ -86,52 +86,11 @@ module.exports.getLastSoldAda1Mods = async () => {
   return sortedResults
 }
 
-module.exports.getLastSoldBanshee44Mods = async () => {
-  console.log("getLastSoldBanshee44Mods called")
-  AWS.config.update({ region: "us-east-1" })
-  const ddb = new AWS.DynamoDB({ apiVersion: "2012-08-10" })
-  const responses = []
-  const oneDayAgo = new Date(new Date().getTime() - (24 * 60 * 60 * 1000)).toISOString()
-
-  const query = {
-    TableName: "destiny-insights-mods",
-    FilterExpression: "#ts > :startDate AND #type = :weaponType",
-    ExpressionAttributeValues: {
-      // AWS DynamoDB uses single char for types
-      // eslint-disable-next-line id-length
-      ":startDate": { S: oneDayAgo },
-      // eslint-disable-next-line id-length
-      ":weaponType": { S: "Weapon Mod" }
-    },
-    ExpressionAttributeNames: {
-      "#ts": "timestamp",
-      "#type": "type"
-    }
-  }
-
-  const response = await ddb.scan(query).promise()
-  responses.push(...response.Items)
-
-  const results = []
-  for (const sale of responses) {
-    results.push({
-      timestamp: sale.timestamp.S,
-      name: sale.name.S,
-      type: sale.type.S
-    })
-  }
-
-  const sortedResults = results.sort((first, second) => {
-    return new Date(first.timestamp) - new Date(second.timestamp)
-  })
-
-  return sortedResults
-}
-
-module.exports.addMod = async (mod, timestamp) => {
-  console.log("addMod called")
-  let type = mod.type
-  if (type.includes("Armor")) {
+module.exports.addItem = async (item, timestamp) => {
+  console.log("addItem called")
+  console.log(item)
+  let type = item.type
+  if (type.includes("Mod") && type.includes("Armor")) {
     type = "Armor Mod"
   } else if (type === "Legendary Weapon Mod") {
     type = "Weapon Mod"
@@ -143,86 +102,28 @@ module.exports.addMod = async (mod, timestamp) => {
   const ddb = new AWS.DynamoDB({ apiVersion: "2012-08-10" })
 
   const params = {
-    TableName: "destiny-insights-mods",
+    TableName: "destiny-insights-items",
     Item: {
       // AWS DynamoDB uses single char for types
       // eslint-disable-next-line id-length
-      key: { S: `${timestamp} (${mod.itemHash})` },
+      key: { S: `${timestamp} (${item.itemHash})` },
       // eslint-disable-next-line id-length
       timestamp: { S: timestamp },
       // eslint-disable-next-line id-length
+      name: { S: item.name },
+      // eslint-disable-next-line id-length
       type: { S: type },
       // eslint-disable-next-line id-length
-      name: { S: mod.name }
+      source: { S: item.source },
+      // eslint-disable-next-line id-length
+      roll: { S: item.roll }
     }
+
+  }
+
+  if (!item.roll) {
+    delete params.Item.roll
   }
 
   await ddb.putItem(params).promise()
-}
-
-module.exports.getLastSoldXurItems = async () => {
-  console.log("getLastSoldXurItems called")
-  AWS.config.update({ region: "us-east-1" })
-  const ddb = new AWS.DynamoDB({ apiVersion: "2012-08-10" })
-  const responses = []
-  const oneWeekAgo = new Date(new Date().getTime() - (7 * 24 * 60 * 60 * 1000)).toISOString()
-
-  const query = {
-    TableName: "destiny-insights-xur",
-    FilterExpression: "#ts > :startDate",
-    ExpressionAttributeValues: {
-      // AWS DynamoDB uses single char for types
-      // eslint-disable-next-line id-length
-      ":startDate": { S: oneWeekAgo }
-    },
-    ExpressionAttributeNames: {
-      "#ts": "timestamp"
-    }
-  }
-
-  const response = await ddb.scan(query).promise()
-  responses.push(...response.Items)
-
-  const results = []
-  for (const sale of responses) {
-    results.push({
-      timestamp: sale.timestamp.S,
-      name: sale.name.S,
-      type: sale.type.S
-    })
-  }
-
-  const sortedResults = results.sort((first, second) => {
-    return new Date(second.timestamp) - new Date(first.timestamp)
-  })
-
-  return sortedResults
-}
-
-module.exports.addXurItem = async (item, timestamp) => {
-  console.log("addXurItem called")
-  const { itemHash, type, name } = item
-  AWS.config.update({ region: "us-east-1" })
-  const ddb = new AWS.DynamoDB({ apiVersion: "2012-08-10" })
-
-  const params = {
-    TableName: "destiny-insights-xur",
-    Item: {
-      // AWS DynamoDB uses single char for types
-      // eslint-disable-next-line id-length
-      key: { S: `${timestamp} (${itemHash})` },
-      // eslint-disable-next-line id-length
-      timestamp: { S: timestamp },
-      // eslint-disable-next-line id-length
-      type: { S: type },
-      // eslint-disable-next-line id-length
-      name: { S: name }
-    }
-  }
-
-  try {
-    await ddb.putItem(params).promise()
-  } catch (error) {
-    console.log(error)
-  }
 }
