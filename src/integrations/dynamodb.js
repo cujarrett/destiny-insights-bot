@@ -42,12 +42,20 @@ module.exports.getModSalesInLastYear = async (mod) => {
   return sortedResults
 }
 
-module.exports.getLastSoldItems = async (source) => {
+module.exports.getLastSoldItems = async (source, timeframeInDays) => {
   console.log("getLastSoldItems called")
   AWS.config.update({ region: "us-east-1" })
   const ddb = new AWS.DynamoDB({ apiVersion: "2012-08-10" })
   const responses = []
   const oneDayAgo = new Date(new Date().getTime() - (24 * 60 * 60 * 1000)).toISOString()
+  const oneWeekAgo = new Date(new Date().getTime() - (7 * 24 * 60 * 60 * 1000)).toISOString()
+  let timeframe
+
+  if (timeframeInDays === 1) {
+    timeframe = oneDayAgo
+  } else {
+    timeframe = oneWeekAgo
+  }
 
   const query = {
     TableName: "destiny-insights-items",
@@ -55,7 +63,7 @@ module.exports.getLastSoldItems = async (source) => {
     ExpressionAttributeValues: {
       // AWS DynamoDB uses single char for types
       // eslint-disable-next-line id-length
-      ":startDate": { S: oneDayAgo },
+      ":startDate": { S: timeframe },
       // eslint-disable-next-line id-length
       ":source": { S: source }
     },

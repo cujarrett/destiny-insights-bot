@@ -52,7 +52,7 @@ module.exports.xur = async () => {
   const { inventory: { armor, weapons } } = await getVendorInventory("xur")
   const currentInventory = [...weapons, ...armor]
   const exotics = currentInventory.filter((item) => item.type.startsWith("Exotic"))
-  const lastSoldItems = await getLastSoldItems("xur")
+  const lastSoldItems = await getLastSoldItems("xur", 7)
   const currentInventoryForCompare = getCompareStrings(exotics)
   const lastInventoryForCompare = getCompareStrings(lastSoldItems)
   const newInventory = await isNewInventory(currentInventoryForCompare, lastInventoryForCompare)

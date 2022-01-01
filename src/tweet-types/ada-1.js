@@ -17,7 +17,7 @@ ${mod2Info}
 module.exports.ada1 = async () => {
   let result
   const { inventory: { mods: currentMods } } = await getVendorInventory("ada-1")
-  const lastSoldMods = await getLastSoldItems("ada-1")
+  const lastSoldMods = await getLastSoldItems("ada-1", 1)
   const newInventory = await isNewInventory(currentMods, lastSoldMods)
 
   if (newInventory) {
