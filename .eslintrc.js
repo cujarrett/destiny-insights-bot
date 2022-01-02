@@ -210,10 +210,6 @@ module.exports = {
     "prefer-template": [
       "error"
     ],
-    "quote-props": [
-      "error",
-      "as-needed"
-    ],
     quotes: [
       "error",
       "double"
