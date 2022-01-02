@@ -1,6 +1,6 @@
 {
   "name": "destiny-insights-bot",
-  "version": "1.53.1",
+  "version": "1.54.0",
   "author": "Matt Jarrett",
   "license": "MIT",
   "description": "Node JS Twitter bot that tweets Destiny's mods, armor, and weapons available",
