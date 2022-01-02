@@ -96,7 +96,6 @@ module.exports.getLastSoldItems = async (source, timeframeInDays) => {
 
 module.exports.addItem = async (item, timestamp) => {
   console.log("addItem called")
-  console.log(item)
   let type = item.type
   if (type.includes("Mod") && type.includes("Armor")) {
     type = "Armor Mod"
