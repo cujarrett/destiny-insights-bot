@@ -52,10 +52,6 @@ resource "aws_dynamodb_table" "destiny_insights_mods" {
     read_capacity   = 2
     projection_type = "ALL"
   }
-
-  lifecycle {
-    prevent_destroy = true
-  }
 }
 
 resource "aws_dynamodb_table" "destiny_insights_xur" {
@@ -111,10 +107,6 @@ resource "aws_dynamodb_table" "destiny_insights_xur" {
     write_capacity  = 2
     read_capacity   = 2
     projection_type = "ALL"
-  }
-
-  lifecycle {
-    prevent_destroy = true
   }
 }
 
