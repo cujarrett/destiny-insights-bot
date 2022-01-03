@@ -8,16 +8,6 @@ variable "parameter_store_twitter_auth_arn" {
   type        = string
 }
 
-variable "destiny_insights_mods_arn" {
-  description = "DynamoDB destiny_insights_mods table ARN"
-  type        = string
-}
-
-variable "destiny_insights_xur_arn" {
-  description = "DynamoDB destiny_insights_xur table ARN"
-  type        = string
-}
-
 variable "destiny_insights_items_arn" {
   description = "DynamoDB destiny_insights_items table ARN"
   type        = string

@@ -91,58 +91,6 @@ resource "aws_iam_role_policy_attachment" "attach_parameter_store" {
   policy_arn = aws_iam_policy.destiny_insights_bot_parameter_store.arn
 }
 
-resource "aws_iam_policy" "destiny_insights_mods" {
-  name        = "destiny-insights-mods-dynamodb"
-  description = "Adds DynamoDB access"
-
-  policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "dynamodb:Scan",
-        "dynamodb:PutItem"
-      ],
-      "Resource": "${var.destiny_insights_mods_arn}"
-    }
-  ]
-}
-EOF
-}
-
-resource "aws_iam_role_policy_attachment" "attach_destiny_insights_mods_dynamodb" {
-  role       = aws_iam_role.destiny_insights_bot.name
-  policy_arn = aws_iam_policy.destiny_insights_mods.arn
-}
-
-resource "aws_iam_policy" "destiny_insights_xur" {
-  name        = "destiny-insights-xur-dynamodb"
-  description = "Adds DynamoDB access"
-
-  policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "dynamodb:Scan",
-        "dynamodb:PutItem"
-      ],
-      "Resource": "${var.destiny_insights_xur_arn}"
-    }
-  ]
-}
-EOF
-}
-
-resource "aws_iam_role_policy_attachment" "attach_destiny_insights_xur_dynamodb" {
-  role       = aws_iam_role.destiny_insights_bot.name
-  policy_arn = aws_iam_policy.destiny_insights_xur.arn
-}
-
 resource "aws_iam_policy" "destiny_insights_items" {
   name        = "destiny-insights-items-dynamodb"
   description = "Adds DynamoDB access"
