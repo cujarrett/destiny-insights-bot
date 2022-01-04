@@ -54,7 +54,7 @@ module.exports.highStatLegendaryArmor = async (vendor) => {
       item.roll = getRoll(item)
       await addItem(item, timestamp)
     }
-    const message = `${prettyVendorNames[vendor]} is selling:
+    const message = `${prettyVendorNames[vendor]} is selling high stat armor:
 
 ${getArmorInfo(wellRolledArmor)}
 
