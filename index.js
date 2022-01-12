@@ -1,14 +1,12 @@
 const { name, version } = require("./package.json")
-const { ada1Mods } = require("./src/tweet-types/ada-1-mods.js")
-const { banshee44Mods } = require("./src/tweet-types/banshee-44-mods.js")
+const { mods } = require("./src/tweet-types/mods.js")
 const { xurExotics } = require("./src/tweet-types/xur-exotics")
 const { highStatLegendaryArmor } = require("./src/tweet-types/high-stat-legendary-armor.js")
 
 exports.handler = async (event, context, callback) => {
   console.log(`${name} ${version} called`)
 
-  let ada1ModsResult
-  let banshee44ModsResult
+  let modsResult
   let xurExoticsResult
   let ada1LegendaryArmorResults
   let theDrifterLegendaryArmorResults
@@ -19,15 +17,8 @@ exports.handler = async (event, context, callback) => {
   let xurLegendaryArmorResults
 
   try {
-    ada1ModsResult = await ada1Mods()
-    console.log({ ada1ModsResult })
-  } catch (error) {
-    console.log(error)
-  }
-
-  try {
-    banshee44ModsResult = await banshee44Mods()
-    console.log({ banshee44ModsResult })
+    modsResult = await mods()
+    console.log({ modsResult })
   } catch (error) {
     console.log(error)
   }
@@ -88,8 +79,7 @@ exports.handler = async (event, context, callback) => {
     console.log(error)
   }
 
-  const result = ada1ModsResult
-  && banshee44ModsResult
+  const result = modsResult
   && xurExoticsResult
   && ada1LegendaryArmorResults
   && theDrifterLegendaryArmorResults
