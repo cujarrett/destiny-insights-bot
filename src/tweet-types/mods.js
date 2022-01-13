@@ -10,11 +10,11 @@ module.exports.getmodTweetMessage = async (ada1Mod1, ada1Mod2, banshee44Mod1, ba
   const banshee44Mod1LastSoldInfo = await getModLastSoldInfo(banshee44Mod1)
   const banshee44Mod2LastSoldInfo = await getModLastSoldInfo(banshee44Mod2)
 
-  return `Ada-1 mods:
+  return `Ada-1 is selling:
 - ${ada1Mod2.name} (${ada1Mod2LastSoldInfo})
 - ${ada1Mod1.name} (${ada1Mod1LastSoldInfo})
 
-Banshee-44 mods:
+Banshee-44 is selling:
 - ${banshee44Mod1.name} (${banshee44Mod1LastSoldInfo})
 - ${banshee44Mod2.name} (${banshee44Mod2LastSoldInfo})
 
