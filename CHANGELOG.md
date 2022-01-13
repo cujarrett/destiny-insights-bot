@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.59.1](https://github.com/cujarrett/destiny-insights-bot/compare/v1.59.0...v1.59.1) (2022-01-13)
+
+
+### Bug Fixes
+
+* updates mod selling phrasing ([#291](https://github.com/cujarrett/destiny-insights-bot/issues/291)) ([e691309](https://github.com/cujarrett/destiny-insights-bot/commit/e69130994dce6542bdef1db16aa8e50f03766281))
+
 # [1.59.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.58.0...v1.59.0) (2022-01-13)
 
 
