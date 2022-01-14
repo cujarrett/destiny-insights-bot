@@ -18,8 +18,17 @@ module.exports.getModLastSoldInfo = async (mod) => {
     if (day.startsWith("0")) {
       day = day.substring(1)
     }
+
+    const now = new Date()
+    const lastSold = new Date(modSales[1])
+    const isRare = Math.ceil(Math.abs(now - lastSold) / (1000 * 60 * 60 * 24)) > 90
     const ordinal = getOrdinal(day)
-    lastSoldMessage = `📅 ${month} ${day}${ordinal}`
+
+    if (isRare) {
+      lastSoldMessage = `🚨 ${month} ${day}${ordinal}`
+    } else {
+      lastSoldMessage = `${month} ${day}${ordinal}`
+    }
   } else {
     lastSoldMessage = "🚨 First sale in the last year"
   }
