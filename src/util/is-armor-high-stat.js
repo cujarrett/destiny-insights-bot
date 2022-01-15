@@ -1,5 +1,5 @@
-module.exports.isArmorWellRolled = (armor) => {
-  console.log("isArmorWellRolled called")
+module.exports.isArmorHighStat = (armor) => {
+  console.log("isArmorHighStat called")
   if (armor.total > 60) {
     const { mobility, resilience, recovery, discipline, intellect, strength } = armor
     const values = [mobility, resilience, recovery, discipline, intellect, strength]

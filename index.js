@@ -2,6 +2,7 @@ const { name, version } = require("./package.json")
 const { mods } = require("./src/tweet-types/mods.js")
 const { xurExotics } = require("./src/tweet-types/xur-exotics")
 const { highStatLegendaryArmor } = require("./src/tweet-types/high-stat-legendary-armor.js")
+const { wishListLegendaryWeapons } = require("./src/tweet-types/wish-list-legendary-weapons")
 
 exports.handler = async (event, context, callback) => {
   console.log(`${name} ${version} called`)
@@ -15,6 +16,8 @@ exports.handler = async (event, context, callback) => {
   let devrimKayLegendaryArmorResults
   let failsafeLegendaryArmorResults
   let xurLegendaryArmorResults
+  let banshee44LegendaryWeaponResults
+  let xurLegendaryWeaponResults
 
   try {
     modsResult = await mods()
@@ -79,6 +82,20 @@ exports.handler = async (event, context, callback) => {
     console.log(error)
   }
 
+  try {
+    banshee44LegendaryWeaponResults = await wishListLegendaryWeapons("banshee-44")
+    console.log({ banshee44LegendaryWeaponResults })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
+    xurLegendaryWeaponResults = await wishListLegendaryWeapons("xur")
+    console.log({ xurLegendaryWeaponResults })
+  } catch (error) {
+    console.log(error)
+  }
+
   const result = modsResult
   && xurExoticsResult
   && ada1LegendaryArmorResults
@@ -88,6 +105,8 @@ exports.handler = async (event, context, callback) => {
   && devrimKayLegendaryArmorResults
   && failsafeLegendaryArmorResults
   && xurLegendaryArmorResults
+  && banshee44LegendaryWeaponResults
+  && xurLegendaryWeaponResults
 
   if (result) {
     callback(null, { statusCode: 200 })
