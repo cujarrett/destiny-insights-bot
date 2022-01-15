@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.61.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.60.1...v1.61.0) (2022-01-15)
+
+
+### Features
+
+* adds wishlist tweets aligning to DIM wishlists ([#294](https://github.com/cujarrett/destiny-insights-bot/issues/294)) ([23e473c](https://github.com/cujarrett/destiny-insights-bot/commit/23e473c8913c8909af7c732c50a090d9164b9565))
+
 ## [1.60.1](https://github.com/cujarrett/destiny-insights-bot/compare/v1.60.0...v1.60.1) (2022-01-14)
 
 
