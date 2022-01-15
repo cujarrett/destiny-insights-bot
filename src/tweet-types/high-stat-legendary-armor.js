@@ -5,24 +5,35 @@ const { getRoll } = require("../util/get-roll.js")
 const { prettyVendorNames } = require("../data/pretty-vendor-names.js")
 const { getCompareStrings } = require("../util/get-compare-strings.js")
 const { tweet } = require("../integrations/twitter.js")
-const { isArmorWellRolled } = require("../util/is-armor-well-rolled.js")
+const { isArmorHighStat } = require("../util/is-armor-high-stat.js")
 
-const getArmorInfo = (armor) => {
-  let info = ""
+const tweetArmor = async (vendor, armor) => {
+  let highStatArmorItems = ""
 
   for (const [index, item] of armor.entries()) {
     /* eslint-disable max-len */
-    info += `${item.class.charAt(0).toUpperCase()}${item.class.substr(1)} ${item.type}
+    highStatArmorItems += `${item.class.charAt(0).toUpperCase()}${item.class.substr(1)} ${item.type}
 ${item.mobility}-${item.resilience}-${item.recovery}-${item.discipline}-${item.intellect}-${item.strength} (${item.total})`
     /* eslint-enable max-len */
 
     // Increase index by 1 to account for 0 based index
     if (index + 1 < armor.length) {
-      info += "\n"
+      highStatArmorItems += "\n\n"
     }
   }
 
-  return info
+  const message = `👀 High stat armor 👀
+
+${prettyVendorNames[vendor]} is selling:
+
+${highStatArmorItems}
+
+Mob-Res-Rec-Dis-Int-Str
+
+#Destiny2 #TwitterBot`
+
+  await tweet(message)
+  return message
 }
 
 module.exports.highStatLegendaryArmor = async (vendor) => {
@@ -34,13 +45,13 @@ module.exports.highStatLegendaryArmor = async (vendor) => {
 
   const wellRolledArmor = []
   for (const item of legendaryArmor) {
-    if (isArmorWellRolled(item)) {
+    if (isArmorHighStat(item)) {
       wellRolledArmor.push(item)
     }
   }
   const currentInventoryForCompare = getCompareStrings(wellRolledArmor)
   const lastSoldItems = await getLastSoldItems(vendor, 7)
-  // Looking for - in the roll finds armor as weapons are comma separated
+  // Looking for - in the roll finds armor as armor are - separated
   // eslint-disable-next-line max-len
   const legendaryLastSoldArmor = lastSoldItems.filter((item) => item.type.startsWith("Legendary") && item.roll.includes("-"))
   const lastLegendaryArmorInventoryForCompare = getCompareStrings(legendaryLastSoldArmor)
@@ -54,16 +65,20 @@ module.exports.highStatLegendaryArmor = async (vendor) => {
       item.roll = getRoll(item)
       await addItem(item, timestamp)
     }
-    const message = `${prettyVendorNames[vendor]} is selling high stat armor:
 
-${getArmorInfo(wellRolledArmor)}
-
-Mob-Res-Rec-Dis-Int-Str
-
-#Destiny2 #TwitterBot`
-
-    await tweet(message)
-    result = `Tweeted:\n${message}`
+    const titanHighStatArmor = wellRolledArmor.filter((armor) => armor.class === "titan")
+    const hunterHighStatArmor = wellRolledArmor.filter((armor) => armor.class === "hunter")
+    const warlockHighStatArmor = wellRolledArmor.filter((armor) => armor.class === "warlock")
+    result = "Tweeted:"
+    if (titanHighStatArmor.length > 0) {
+      result += `\n\n${await tweetArmor(vendor, titanHighStatArmor)}`
+    }
+    if (hunterHighStatArmor.length > 0) {
+      result += `\n\n${await tweetArmor(vendor, hunterHighStatArmor)}`
+    }
+    if (warlockHighStatArmor.length > 0) {
+      result += `\n\n${await tweetArmor(vendor, warlockHighStatArmor)}`
+    }
   } else {
     result = `New ${prettyVendorNames[vendor]} legendary high stat armor tweet is not ready`
   }

@@ -1,7 +1,7 @@
 const test = require("ava")
-const { isArmorWellRolled } = require("../../src/util/is-armor-well-rolled.js")
+const { isArmorHighStat } = require("../../src/util/is-armor-high-stat")
 
-test("Unit - isArmorWellRolled", async (assert) => {
+test("Unit - isArmorHighStat", async (assert) => {
   const mockData1 = {
     itemHash: 3552091116,
     name: "Illicit Reaper Boots",
@@ -30,8 +30,8 @@ test("Unit - isArmorWellRolled", async (assert) => {
     total: 64
   }
 
-  let result = isArmorWellRolled(mockData1)
+  let result = isArmorHighStat(mockData1)
   assert.is(result, false)
-  result = isArmorWellRolled(mockData2)
+  result = isArmorHighStat(mockData2)
   assert.is(result, true)
 })
