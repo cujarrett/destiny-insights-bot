@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.61.2](https://github.com/cujarrett/destiny-insights-bot/compare/v1.61.1...v1.61.2) (2022-01-17)
+
+
+### Bug Fixes
+
+* **deps:** bump node-fetch from 2.6.6 to 2.6.7 ([#296](https://github.com/cujarrett/destiny-insights-bot/issues/296)) ([d91a9f5](https://github.com/cujarrett/destiny-insights-bot/commit/d91a9f5373c884f53c51338ed1cff602eeb50f1a))
+
 ## [1.61.1](https://github.com/cujarrett/destiny-insights-bot/compare/v1.61.0...v1.61.1) (2022-01-17)
 
 
