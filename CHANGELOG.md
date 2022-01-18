@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.62.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.61.3...v1.62.0) (2022-01-18)
+
+
+### Features
+
+* reduces tweet check timespan ([#298](https://github.com/cujarrett/destiny-insights-bot/issues/298)) ([f881d88](https://github.com/cujarrett/destiny-insights-bot/commit/f881d883a82239a1391e1d0bd26778ec02b85511))
+
 ## [1.61.3](https://github.com/cujarrett/destiny-insights-bot/compare/v1.61.2...v1.61.3) (2022-01-17)
 
 
