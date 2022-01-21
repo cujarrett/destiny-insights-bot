@@ -1,6 +1,6 @@
 resource "aws_cloudwatch_event_rule" "check_after_destiny_reset" {
   name                = "check-after-destiny-reset"
-  description         = "Fires daily every five mins after reset for six hours"
+  description         = "Fires daily every fiveteen mins after reset for six hours"
   schedule_expression = "cron(0/15 17-20 * * ? *)"
 }
 
