@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.65.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.64.0...v1.65.0) (2022-01-21)
+
+
+### Features
+
+* updates eventbridge to run every fiveteen mins ([#307](https://github.com/cujarrett/destiny-insights-bot/issues/307)) ([f2beb13](https://github.com/cujarrett/destiny-insights-bot/commit/f2beb13819e80aa029f5b19fd709bf13ef7fdff9))
+
 # [1.64.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.63.0...v1.64.0) (2022-01-21)
 
 
