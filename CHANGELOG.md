@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.64.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.63.0...v1.64.0) (2022-01-21)
+
+
+### Features
+
+* adds terraform to dependabot ([#304](https://github.com/cujarrett/destiny-insights-bot/issues/304)) ([7901af9](https://github.com/cujarrett/destiny-insights-bot/commit/7901af95bdf66f38f86b245f602412fc1fc03eb2))
+
 # [1.63.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.62.4...v1.63.0) (2022-01-21)
 
 
