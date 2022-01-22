@@ -9,7 +9,3 @@ updates:
       include: "scope"
   reviewers:
     - "cujarrett"
-- package-ecosystem: terraform
-  directory: "/terraform"
-  schedule:
-    interval: weekly
