@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.67.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.66.3...v1.67.0) (2022-02-18)
+
+
+### Features
+
+* update high stat armor check ([#312](https://github.com/cujarrett/destiny-insights-bot/issues/312)) ([793b782](https://github.com/cujarrett/destiny-insights-bot/commit/793b7829ec9dafb8dadfa2fde15b5f95cd761329))
+
 ## [1.66.3](https://github.com/cujarrett/destiny-insights-bot/compare/v1.66.2...v1.66.3) (2022-02-01)
 
 
