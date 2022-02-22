@@ -1,83 +1,24 @@
 const { name, version } = require("./package.json")
 const { mods } = require("./src/tweet-types/mods.js")
-const { xurExotics } = require("./src/tweet-types/xur-exotics")
-const { highStatLegendaryArmor } = require("./src/tweet-types/high-stat-legendary-armor.js")
 const { wishListLegendaryWeapons } = require("./src/tweet-types/wish-list-legendary-weapons")
 
 exports.handler = async (event, context, callback) => {
   console.log(`${name} ${version} called`)
 
-  let modsResult
-  let xurExoticsResult
-  let ada1LegendaryArmorResults
-  let theDrifterLegendaryArmorResults
-  let commanderZavalaLegendaryArmorResults
-  let lordShaxxLegendaryArmorResults
-  let devrimKayLegendaryArmorResults
-  let failsafeLegendaryArmorResults
-  let xurLegendaryArmorResults
+  let ada1ModsResult
+  let banshee44ModsResult
   let banshee44LegendaryWeaponResults
-  let xurLegendaryWeaponResults
 
   try {
-    modsResult = await mods()
-    console.log({ modsResult })
+    ada1ModsResult = await mods("ada-1")
+    console.log({ ada1ModsResult })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    xurExoticsResult = await xurExotics()
-    console.log({ xurExoticsResult })
-  } catch (error) {
-    console.log(error)
-  }
-
-  try {
-    xurLegendaryArmorResults = await highStatLegendaryArmor("xur")
-    console.log({ xurLegendaryArmorResults })
-  } catch (error) {
-    console.log(error)
-  }
-
-  try {
-    ada1LegendaryArmorResults = await highStatLegendaryArmor("ada-1")
-    console.log({ ada1LegendaryArmorResults })
-  } catch (error) {
-    console.log(error)
-  }
-
-  try {
-    theDrifterLegendaryArmorResults = await highStatLegendaryArmor("the-drifter")
-    console.log({ theDrifterLegendaryArmorResults })
-  } catch (error) {
-    console.log(error)
-  }
-
-  try {
-    commanderZavalaLegendaryArmorResults = await highStatLegendaryArmor("commander-zavala")
-    console.log({ commanderZavalaLegendaryArmorResults })
-  } catch (error) {
-    console.log(error)
-  }
-
-  try {
-    lordShaxxLegendaryArmorResults = await highStatLegendaryArmor("lord-shaxx")
-    console.log({ lordShaxxLegendaryArmorResults })
-  } catch (error) {
-    console.log(error)
-  }
-
-  try {
-    devrimKayLegendaryArmorResults = await highStatLegendaryArmor("devrim-kay")
-    console.log({ devrimKayLegendaryArmorResults })
-  } catch (error) {
-    console.log(error)
-  }
-
-  try {
-    failsafeLegendaryArmorResults = await highStatLegendaryArmor("failsafe")
-    console.log({ failsafeLegendaryArmorResults })
+    banshee44ModsResult = await mods("banshee-44")
+    console.log({ banshee44ModsResult })
   } catch (error) {
     console.log(error)
   }
@@ -89,24 +30,9 @@ exports.handler = async (event, context, callback) => {
     console.log(error)
   }
 
-  try {
-    xurLegendaryWeaponResults = await wishListLegendaryWeapons("xur")
-    console.log({ xurLegendaryWeaponResults })
-  } catch (error) {
-    console.log(error)
-  }
-
-  const result = modsResult
-  && xurExoticsResult
-  && ada1LegendaryArmorResults
-  && theDrifterLegendaryArmorResults
-  && commanderZavalaLegendaryArmorResults
-  && lordShaxxLegendaryArmorResults
-  && devrimKayLegendaryArmorResults
-  && failsafeLegendaryArmorResults
-  && xurLegendaryArmorResults
+  const result = ada1ModsResult
+  && banshee44ModsResult
   && banshee44LegendaryWeaponResults
-  && xurLegendaryWeaponResults
 
   if (result) {
     callback(null, { statusCode: 200 })
