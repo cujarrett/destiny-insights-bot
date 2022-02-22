@@ -97,11 +97,12 @@ module.exports.getLastSoldItems = async (source, timeframeInDays) => {
 module.exports.addItem = async (item, timestamp) => {
   console.log("addItem called")
   let type = item.type
-  if (type.includes("Mod") && type.includes("Armor")) {
+  if (type.endsWith("Armor Mod")) {
     type = "Armor Mod"
   } else if (type === "Legendary Weapon Mod") {
     type = "Weapon Mod"
-  } else if (type === "Common Charged with Light Mod" || type === "Common Warmind Cell Mod") {
+    // eslint-disable-next-line max-len
+  } else if (type === "Common Charged with Light Mod" || type === "Common Warmind Cell Mod" || type === "Elemental Well Mod" || type === "Legendary Elemental Well Mod") {
     type = "Combat Style Mod"
   }
 
