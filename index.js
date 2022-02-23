@@ -5,20 +5,20 @@ const { wishListLegendaryWeapons } = require("./src/tweet-types/wish-list-legend
 exports.handler = async (event, context, callback) => {
   console.log(`${name} ${version} called`)
 
-  let ada1ModsResult
   let banshee44ModsResult
+  let ada1ModsResult
   let banshee44LegendaryWeaponResults
 
   try {
-    ada1ModsResult = await mods("ada-1")
-    console.log({ ada1ModsResult })
+    banshee44ModsResult = await mods("banshee-44")
+    console.log({ banshee44ModsResult })
   } catch (error) {
     console.log(error)
   }
 
   try {
-    banshee44ModsResult = await mods("banshee-44")
-    console.log({ banshee44ModsResult })
+    ada1ModsResult = await mods("ada-1")
+    console.log({ ada1ModsResult })
   } catch (error) {
     console.log(error)
   }
