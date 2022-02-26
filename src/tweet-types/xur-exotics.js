@@ -8,7 +8,12 @@ const { getRoll } = require("../util/get-roll.js")
 module.exports.xurExotics = async () => {
   let result
   const { inventory: { armor, weapons } } = await getVendorInventory("xur")
-  const currentInventory = [...weapons, ...armor]
+  const removedRandomExoticWeapons = weapons
+  // eslint-disable-next-line max-len
+  // Remove Hawkmoon and Dead Mans Tale as they are static sold and wishlist rolls are handled by wish list weapon tweet(s)
+  removedRandomExoticWeapons.splice(1, 1)
+  removedRandomExoticWeapons.splice(1, 1)
+  const currentInventory = [...removedRandomExoticWeapons, ...armor]
   const exotics = currentInventory.filter((item) => item.type.startsWith("Exotic"))
   const lastSoldItems = await getLastSoldItems("xur", 7)
   const currentInventoryForCompare = getCompareStrings(exotics)

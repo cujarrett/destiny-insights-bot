@@ -8,7 +8,7 @@ const { tweet } = require("../integrations/twitter.js")
 
 const getTweetMessage = (vendor, weapon) => {
   // eslint-disable-next-line max-len
-  const message = `👀 Community Wish List Legendary Weapon 👀
+  const message = `🔫 Community Wish List Weapon
 
 ${prettyVendorNames[vendor]} is selling a ${weapon.type}:
 
@@ -20,15 +20,13 @@ ${weapon.name}
   return message
 }
 
-module.exports.wishListLegendaryWeapons = async (vendor) => {
-  console.log(`wishListLegendaryWeapons called for ${vendor}`)
-  let result
+module.exports.wishListWeapons = async (vendor) => {
+  console.log(`wishListWeapons called for ${vendor}`)
+  let result = ""
   const { inventory: { weapons } } = await getVendorInventory(vendor)
-  const currentInventory = [...weapons]
-  const legendaryWeapons = currentInventory.filter((item) => item.type.startsWith("Legendary"))
 
   const wishListWeapons = []
-  for (const item of legendaryWeapons) {
+  for (const item of weapons) {
     if (item.wishList) {
       wishListWeapons.push(item)
     }
@@ -37,10 +35,10 @@ module.exports.wishListLegendaryWeapons = async (vendor) => {
   const lastSoldItems = await getLastSoldItems(vendor, 7)
   // Looking for , in the roll finds armor as weapons are comma separated
   // eslint-disable-next-line max-len
-  const legendaryLastSoldWeapons = lastSoldItems.filter((item) => item.type.startsWith("Legendary") && item.roll.includes(","))
-  const lastLegendaryWeaponsInventoryForCompare = getCompareStrings(legendaryLastSoldWeapons)
+  const lastSoldWeapons = lastSoldItems.filter((item) => item.roll.includes(","))
+  const lastWeaponsInventoryForCompare = getCompareStrings(lastSoldWeapons)
   // eslint-disable-next-line max-len
-  const newInventory = await isNewInventory(currentInventoryForCompare, lastLegendaryWeaponsInventoryForCompare)
+  const newInventory = await isNewInventory(currentInventoryForCompare, lastWeaponsInventoryForCompare)
 
   if (newInventory) {
     const timestamp = new Date().toISOString()
@@ -50,10 +48,10 @@ module.exports.wishListLegendaryWeapons = async (vendor) => {
       await addItem(weapon, timestamp)
       const message = getTweetMessage(vendor, weapon)
       await tweet(message)
-      result = `Tweeted:\n${message}`
+      result += `Tweeted: ${message}${"\n"}`
     }
   } else {
-    result = `New ${prettyVendorNames[vendor]} legendary wish list weapons tweet is not ready`
+    result = `New ${prettyVendorNames[vendor]} wish list weapons tweet is not ready`
   }
   return result
 }

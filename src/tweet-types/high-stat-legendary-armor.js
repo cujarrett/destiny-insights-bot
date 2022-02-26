@@ -22,7 +22,7 @@ ${item.mobility}-${item.resilience}-${item.recovery}-${item.discipline}-${item.i
     }
   }
 
-  const message = `👀 High stat armor 👀
+  const message = `👀 High stat armor
 
 ${prettyVendorNames[vendor]} is selling:
 
