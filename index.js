@@ -9,9 +9,9 @@ exports.handler = async (event, context, callback) => {
 
   let banshee44ModsResult
   let ada1ModsResult
+  let xurExoticsResult
   let banshee44WeaponResults
   let xurWeaponResults
-  let xurExoticsResult
   let xurLegendaryArmorResults
   let ada1LegendaryArmorResults
   let theDrifterLegendaryArmorResults
@@ -35,6 +35,13 @@ exports.handler = async (event, context, callback) => {
   }
 
   try {
+    xurExoticsResult = await xurExotics()
+    console.log({ xurExoticsResult })
+  } catch (error) {
+    console.log(error)
+  }
+
+  try {
     banshee44WeaponResults = await wishListWeapons("banshee-44")
     console.log({ banshee44WeaponResults })
   } catch (error) {
@@ -44,13 +51,6 @@ exports.handler = async (event, context, callback) => {
   try {
     xurWeaponResults = await wishListWeapons("xur")
     console.log({ xurWeaponResults })
-  } catch (error) {
-    console.log(error)
-  }
-
-  try {
-    xurExoticsResult = await xurExotics()
-    console.log({ xurExoticsResult })
   } catch (error) {
     console.log(error)
   }
