@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.70.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.69.0...v1.70.0) (2022-02-26)
+
+
+### Features
+
+* adds support for Xur selling Hawkmoon and Dead Mans Tale ([#315](https://github.com/cujarrett/destiny-insights-bot/issues/315)) ([0e7137f](https://github.com/cujarrett/destiny-insights-bot/commit/0e7137f532694e6d28216770c45c56d8c1c56355))
+
 # [1.69.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.68.0...v1.69.0) (2022-02-23)
 
 
