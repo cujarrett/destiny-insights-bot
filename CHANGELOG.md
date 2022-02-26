@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.71.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.70.0...v1.71.0) (2022-02-26)
+
+
+### Features
+
+* moves Xur exotic tweet higher ([#316](https://github.com/cujarrett/destiny-insights-bot/issues/316)) ([96f46b8](https://github.com/cujarrett/destiny-insights-bot/commit/96f46b8179e9808aa681efdaa75b473f12e734b8))
+
 # [1.70.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.69.0...v1.70.0) (2022-02-26)
 
 
