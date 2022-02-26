@@ -13,8 +13,7 @@ module.exports.xurExotics = async () => {
   // Remove Hawkmoon and Dead Mans Tale as they are static sold and wishlist rolls are handled by wish list weapon tweet(s)
   removedRandomExoticWeapons.splice(1, 1)
   removedRandomExoticWeapons.splice(1, 1)
-  console.log(removedRandomExoticWeapons)
-  const currentInventory = [...weapons, ...armor]
+  const currentInventory = [...removedRandomExoticWeapons, ...armor]
   const exotics = currentInventory.filter((item) => item.type.startsWith("Exotic"))
   const lastSoldItems = await getLastSoldItems("xur", 7)
   const currentInventoryForCompare = getCompareStrings(exotics)
