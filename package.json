@@ -43,7 +43,7 @@
     "@semantic-release/exec": "~6.0.3",
     "@semantic-release/git": "~10.0.1",
     "@semantic-release/github": "~8.0.2",
-    "@semantic-release/npm": "~9.0.0",
+    "@semantic-release/npm": "~9.0.1",
     "@semantic-release/release-notes-generator": "~10.0.3",
     "ava": "~4.0.1",
     "aws-sdk": "~2.1066.0",
