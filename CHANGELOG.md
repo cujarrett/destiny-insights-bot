@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.72.0](https://github.com/cujarrett/destiny-insights-bot/compare/v1.71.1...v1.72.0) (2022-03-13)
+
+
+### Features
+
+* increases timeout ([#323](https://github.com/cujarrett/destiny-insights-bot/issues/323)) ([bc32923](https://github.com/cujarrett/destiny-insights-bot/commit/bc32923989c94473b9b444a92a4c086aafd4b568))
+
 ## [1.71.1](https://github.com/cujarrett/destiny-insights-bot/compare/v1.71.0...v1.71.1) (2022-03-04)
 
 
