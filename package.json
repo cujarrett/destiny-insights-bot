@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/cujarrett/destiny-insights-bot#readme",
   "devDependencies": {
-    "@commitlint/cli": "~16.2.1",
+    "@commitlint/cli": "~16.2.3",
     "@commitlint/config-conventional": "~16.2.1",
     "@semantic-release/changelog": "~6.0.1",
     "@semantic-release/commit-analyzer": "~9.0.2",
