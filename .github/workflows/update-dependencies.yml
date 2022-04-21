@@ -1,0 +1,36 @@
+name: update-dependencies
+
+on:
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+
+jobs:
+  update-dependencies:
+    name: update-dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+        persist-credentials: false
+
+    - name: Node setup
+      uses: actions/setup-node@v2
+
+    - name: Update dependencies
+      run: |
+        npx npm-check-updates -u
+        npm install
+    - name: Create pull request
+      id: cpr
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "chore: updates dependencies"
+        committer: GitHub <noreply@github.com>
+        author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+        title: "chore: updates dependencies"
+        reviewers: "@cujarrett"
