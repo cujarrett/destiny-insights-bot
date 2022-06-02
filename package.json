@@ -9,7 +9,7 @@
     "commit": "git-cz",
     "lint": "eslint .",
     "fix-lint": "eslint . --fix",
-    "test": "nyc ava",
+    "test": "nyc ava --timeout=10s",
     "test-exclude-twitter": "nyc ava --match='!*Twitter*'",
     "build": "npm set-script prepare '' && npm install --production && rm -rf build && mkdir build && zip -r -q -x='*media*' -x='package-lock.json' -x='*terraform*' -x=*coverage* -x='*.md' -x='LICENSE' -x='*build*' -x='*test*' -x='*.DS_Store*' -x='*.nyc_output*' -x='*.git*' -x='*.nycrc' -x='*.eslintrc.js' -x='release.config.js' -x='commitlint.config.js' build/destiny-insights-bot.zip . && du -sh build && npm set-script prepare 'husky install'",
     "deploy": "aws lambda update-function-code --function-name=destiny-insights-bot --zip-file=fileb://build/destiny-insights-bot.zip --region=us-east-1 1> /dev/null",
