@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "fix-lint": "eslint . --fix",
     "test": "nyc ava",
-    "test-exclude-twitter": "nyc ava --match='!*Twitter*'",
+    "test-exclude-twitter": "nyc ava --match='!*Twitter*' --timeout=20s",
     "build": "npm set-script prepare '' && npm install --production && rm -rf build && mkdir build && zip -r -q -x='*media*' -x='package-lock.json' -x='*terraform*' -x=*coverage* -x='*.md' -x='LICENSE' -x='*build*' -x='*test*' -x='*.DS_Store*' -x='*.nyc_output*' -x='*.git*' -x='*.nycrc' -x='*.eslintrc.js' -x='release.config.js' -x='commitlint.config.js' build/destiny-insights-bot.zip . && du -sh build && npm set-script prepare 'husky install'",
     "deploy": "aws lambda update-function-code --function-name=destiny-insights-bot --zip-file=fileb://build/destiny-insights-bot.zip --region=us-east-1 1> /dev/null",
     "ci": "npm run lint && npm run test",
@@ -36,8 +36,8 @@
   },
   "homepage": "https://github.com/cujarrett/destiny-insights-bot#readme",
   "devDependencies": {
-    "@commitlint/cli": "~16.2.4",
-    "@commitlint/config-conventional": "~16.2.4",
+    "@commitlint/cli": "~17.0.2",
+    "@commitlint/config-conventional": "~17.0.2",
     "@semantic-release/changelog": "~6.0.1",
     "@semantic-release/commit-analyzer": "~9.0.2",
     "@semantic-release/exec": "~6.0.3",
@@ -46,18 +46,18 @@
     "@semantic-release/npm": "~9.0.1",
     "@semantic-release/release-notes-generator": "~10.0.3",
     "ava": "~4.2.0",
-    "aws-sdk": "~2.1125.0",
+    "aws-sdk": "~2.1147.0",
     "commitizen": "~4.2.4",
     "cz-conventional-changelog": "~3.3.0",
-    "eslint": "~8.14.0",
-    "husky": "~7.0.4",
+    "eslint": "~8.16.0",
+    "husky": "~8.0.1",
     "nconf": "~0.12.0",
     "nyc": "~15.1.0",
     "os": "~0.1.2",
     "path": "~0.12.7"
   },
   "dependencies": {
-    "node-fetch": "~3.2.4",
+    "node-fetch": "~3.2.5",
     "twit": "~2.2.11"
   },
   "husky": {
