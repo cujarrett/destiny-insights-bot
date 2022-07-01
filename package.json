@@ -36,8 +36,8 @@
   },
   "homepage": "https://github.com/cujarrett/destiny-insights-bot#readme",
   "devDependencies": {
-    "@commitlint/cli": "~17.0.2",
-    "@commitlint/config-conventional": "~17.0.2",
+    "@commitlint/cli": "~17.0.3",
+    "@commitlint/config-conventional": "~17.0.3",
     "@semantic-release/changelog": "~6.0.1",
     "@semantic-release/commit-analyzer": "~9.0.2",
     "@semantic-release/exec": "~6.0.3",
@@ -45,11 +45,11 @@
     "@semantic-release/github": "~8.0.4",
     "@semantic-release/npm": "~9.0.1",
     "@semantic-release/release-notes-generator": "~10.0.3",
-    "ava": "~4.2.0",
-    "aws-sdk": "~2.1147.0",
+    "ava": "~4.3.0",
+    "aws-sdk": "~2.1166.0",
     "commitizen": "~4.2.4",
     "cz-conventional-changelog": "~3.3.0",
-    "eslint": "~8.16.0",
+    "eslint": "~8.18.0",
     "husky": "~8.0.1",
     "nconf": "~0.12.0",
     "nyc": "~15.1.0",
@@ -57,7 +57,7 @@
     "path": "~0.12.7"
   },
   "dependencies": {
-    "node-fetch": "~3.2.5",
+    "node-fetch": "~3.2.6",
     "twit": "~2.2.11"
   },
   "husky": {
