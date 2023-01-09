@@ -1,10 +1,14 @@
 const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args))
+const { getParameters } = require("./aws-parameter-store.js")
 
 module.exports.getVendorInventory = async (vendor) => {
   console.log(`getVendorInventory for ${vendor} called`)
+  const { DESTINY_INSIGHTS_BACKEND_AUTH_KEY } = await getParameters()
+
   const endpoint = `https://api.destinyinsights.com/${vendor}`
   const options = {
     method: "GET",
+    headers: { "key": DESTINY_INSIGHTS_BACKEND_AUTH_KEY },
     json: true
   }
   const maxRetries = 3
