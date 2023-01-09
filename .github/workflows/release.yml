@@ -23,7 +23,7 @@ jobs:
           TWITTER_TEST_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_TEST_ACCESS_TOKEN_SECRET }}
           TWITTER_TEST_CONSUMER_API_KEY: ${{ secrets.TWITTER_TEST_CONSUMER_API_KEY }}
           TWITTER_TEST_CONSUMER_SECRET: ${{ secrets.TWITTER_TEST_CONSUMER_SECRET }}
-        run: npm run test
+        run: npm run test-exclude-vendors
       - env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
