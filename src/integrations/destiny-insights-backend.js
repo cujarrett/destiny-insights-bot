@@ -8,7 +8,7 @@ module.exports.getVendorInventory = async (vendor) => {
   const endpoint = `https://api.destinyinsights.com/${vendor}`
   const options = {
     method: "GET",
-    headers: {'key': DESTINY_INSIGHTS_BACKEND_AUTH_KEY },
+    headers: { "key": DESTINY_INSIGHTS_BACKEND_AUTH_KEY },
     json: true
   }
   const maxRetries = 3
