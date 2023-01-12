@@ -52,10 +52,6 @@ resource "aws_dynamodb_table" "destiny_insights_items" {
     write_capacity  = 1
     projection_type = "ALL"
   }
-
-  lifecycle {
-    prevent_destroy = true
-  }
 }
 
 output "destiny_insights_items_arn" {
